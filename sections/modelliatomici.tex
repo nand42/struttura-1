@@ -80,7 +80,7 @@ L'angolo $\varphi$ descrive la posizione in coordinate polari.
 L'angolo $\theta$ è l'angolo di deflessione.
 $D$ è una costante che corrisponde alla distanza di avvicinamento minima in una collisione frontale, ovvero dove l'energia potenziale coulombiana è uguale all'energia cinetica della particella (vedi eq \ref{v_k}).
 \begin{equation}
-F = \frac{z Z e^2}{4\pi \epsilon_0 r^2}
+F = \frac{z Z e^2}{4\pi \varepsilon_0 r^2}
 \end{equation}
 da cui si ottiene
 \begin{equation}
@@ -89,8 +89,8 @@ da cui si ottiene
 dove $b$ è il parametro di impatto
 \begin{equation}
 \begin{split}
-& D = \frac{1}{4\pi \epsilon_0} \frac{z Z e^2}{M r^2/2} \\
-& \frac{1}{4\pi \epsilon_0} \frac{z Z e^2}{D} = \frac{ 1}{2 } M v^2
+& D = \frac{1}{4\pi \varepsilon_0} \frac{z Z e^2}{M r^2/2} \\
+& \frac{1}{4\pi \varepsilon_0} \frac{z Z e^2}{D} = \frac{ 1}{2 } M v^2
 \end{split}
 \label{v_k}
 \end{equation}
@@ -121,7 +121,7 @@ Un'altra formula importante è quella della distanza di avvicinamento minima è 
 Ebbene il problema di calcolare il numero $ N(\Theta) d\Theta$ delle particelle alfa scatterate nel range angolare $[\Theta, \Theta +d\Theta]$ nell'attraversare la lamina è equivalente al problema di calcolare il numero di quelle incidenti, con un parametro d'impatto nel range $[b, b +db]$.
 Da cui si ottiene la formula di Rutherford:
 \begin{equation}
-N(\Theta)d\Theta = \biggl( \frac{1}{4\pi \epsilon_0} \biggr) ^2  \biggl( \frac{z Z e^2}{2 M v^2} \biggr)^2  \frac{ 2 \pi I \rho t  \sin\Theta d\Theta }{ \sin^4(\Theta/2) }
+N(\Theta)d\Theta = \biggl( \frac{1}{4\pi \varepsilon_0} \biggr) ^2  \biggl( \frac{z Z e^2}{2 M v^2} \biggr)^2  \frac{ 2 \pi I \rho t  \sin\Theta d\Theta }{ \sin^4(\Theta/2) }
 \label{scattering_rutherford}
 \end{equation}
 Dove $I$ è il numero di particelle alfa che incidono sulla lamina di spessore $t$.
@@ -141,8 +141,8 @@ N = \sigma I n
 e considerando che $d\Omega = 2\pi\sin\Theta d\Theta$, si riscrive la formula di scattering come differenziale
 \begin{equation}
 \begin{split}
-& dN =  \biggl( \frac{1}{4\pi \epsilon_0} \biggr) ^2  \biggl( \frac{z Z e^2}{2 M v^2} \biggr)^2  \frac{ I e t 2 \pi \sin\Theta d\Theta }{ \sin^4(\Theta/2) } \\
-& \frac{ds}{d\Omega} = \biggl( \frac{1}{4 \pi \epsilon_0} \biggr)^2  \biggl( \frac{z Z e^2}{2 M v^2} \biggr)^2  \frac{ 1 }{ \sin^4(\Theta/2) }
+& dN =  \biggl( \frac{1}{4\pi \varepsilon_0} \biggr) ^2  \biggl( \frac{z Z e^2}{2 M v^2} \biggr)^2  \frac{ I e t 2 \pi \sin\Theta d\Theta }{ \sin^4(\Theta/2) } \\
+& \frac{ds}{d\Omega} = \biggl( \frac{1}{4 \pi \varepsilon_0} \biggr)^2  \biggl( \frac{z Z e^2}{2 M v^2} \biggr)^2  \frac{ 1 }{ \sin^4(\Theta/2) }
 \end{split}
 \end{equation}
 
@@ -169,6 +169,8 @@ Allora si può pensare agli elettroni orbitanti intorno al nucleo, ma siccome so
 Gli elettroni dovrebbero irradiare energia sotto forma di onde elettromagnetiche con uno spetto continuo della radiazione emessa, ma ciò che si osserva negli esperimenti che sono spettri atomici discreti.
 \end{enumerate}
 
+
+%% ----------------------------------------------------------------------------------------------------------------------------------------
 \subsection{Spettri atomici} 
 Quando si parla di spettro atomico si fa riferimento all'emissione elettromagnetica discreta di un gas monoatomico.
 Gli spetti atomici possono essere osservati utilizzando una scarica elettrica passante attraverso una regione contenete il gas.
@@ -179,9 +181,9 @@ Ogni tipo di atomo ha un suo spettro caratteristico, quindi lunghezze d'onda ben
 \begin{figure}[h]
 \centering
 \includegraphics[scale=1]{/INFN_Asimmetrie22_pag8_img1}
-\caption{ Le righe spettrali emesse nel visibile dall’atomo di idrogeno. Le prime quattro da destra furono osservate inizialmente da Ångström. I valori osservati vengono riprodotti dalla formula di Rydberg-Balmer fissando Ry=10.9721 cm-1 e n=2, per m=3,4,5,6. }
+\caption{Le righe spettrali emesse nel visibile dall’atomo di idrogeno. Le prime quattro da destra furono osservate inizialmente da Ångström. I valori osservati vengono riprodotti dalla formula di Rydberg-Balmer fissando Ry=10.9721 cm-1 e n=2, per m=3,4,5,6.}
 \end{figure}
-Nel 1885 \textit{Johann J. Balmer} osservò che alcune righe dello spettro di emissione dell'idrogeno possono essere calcolate utilizzando la \underline{formula di Balmer}:
+Nel 1885 \textit{Johann J. Balmer} osservò alcune righe dello spettro di emissione dell'idrogeno che possono essere calcolate utilizzando la \underline{formula di Balmer}:
 \begin{equation}
 \lambda = 3646 \frac{n^2}{n^2 - 4} \quad \mbox{ (in $\AA$}
 \end{equation}
@@ -192,15 +194,17 @@ Righe di emissione dell'idrogeno:
 \item $H_{\gamma}$ $n=5$ $\rightarrow$ violet $\lambda = \SI{4340.5}{\AA}$
 \end{itemize}
 Balmer suppose che tale formula fosse, in realtà, un caso particolare di una legge più generale.
-Infatti tale formula venne trovata da \textit{Johannes Rydberg} e \textit{Walther Ritz}, sempre relativa all'idrogeno
+Infatti tale formula venne trovata da \textit{Johannes Rydberg} e \textit{Walther Ritz}, sempre relativa all'idrogeno,
+ovvero la \underline{formula di Ridberg} (1908)
 \begin{equation}
 \begin{split}
 & k = \frac{1}{\lambda} = R_H \biggl( \frac{1}{n_1^2} - \frac{1}{n_2^2}  \biggr) \\
 & \mbox{con } n_{1} \mbox{, } n_{2} \in \mathbb{N} > 0 : n_{1} < n_{2} \\
-& R_H = \SI{10.9721}{cm^{-1}} \quad R \mbox{ dell'idrogeno}
+& R_H = \SI{10967757.6}{m^{-1}} \quad R \mbox{ dell'idrogeno}
+\label{formula_Ridberg}
 \end{split}
 \end{equation}
-Chiamata \underline{formula di Ridberg Ritz} (1908)
+Ed infine trovarono la \underline{formula di Ridberg-Ritz} (1908) per gli elementi alcalini
 \begin{equation}
 k = \frac{1}{\lambda} = R \biggl[ \frac{1}{(m-a)^2} - \frac{1}{(n-b)^2}  \biggr]
 \end{equation}
@@ -223,13 +227,170 @@ Occorre sapere che per ogni riga dello spettro di emissione ce n'è una nello sp
 
 
 %% ----------------------------------------------------------------------------------------------------------------------------------------
-\subsection{Modello atomico di Bohr}
+\subsection{Modello atomico di Bohr (1913)}
+Entrambi i modelli precedenti (di Thompson e di Rutherford) non riescono però a spiegare l'emissione e l'assorbimento degli spettri atomici prodotti da elementi gassosi.
+Il modello di Rutherford inoltre presentava molti problemi di stabilità dell'atomo stesso, come visto in precedenza.
+Bohr costruisce un modello atomico sulla base dei risultati degli esperimenti di spettroscopia sull'idrogeno, fondandolo su quattro \underline{postulati}:
+\begin{enumerate}
+\item Un elettrone si muove su un'orbita \textbf{circolare} attorno al nucleo, soggetto a una attrazione Coulombiana.
+\item Non tutte le orbite sono permesse, ma solo quelle tali che $L=n\hbar$, con $n=1, 2, 3, ... $. Introduce una regola di quantizzazione per il momento angolare dell'elettrone.
+\item L'elettrone che si muove sulle orbite permesse non produce emissione elettromagnetica, la sua energia totale non varia (viene rimosso il problema della stabilità dell'atomo)
+\item Viene emessa radiazione elettromagnetica, di frequenza $\nu$, quando un elettrone passa da un' orbita permessa ad un'altra; tale frequenza è data da $ \nu = \frac{(E_i - E_f)}{h}$
+\end{enumerate}
+%
+\paragraph{Atomo di idrogeno} Consideriamo un atomo con un nucleo di carica $Ze$ e massa $M$ ed un solo elettrone di carica $e$ e massa $m$, quindi un atomo di idrogeno, ed assumiamo inizialmente che $m \ll M$ approssimando così il nucleo fisso nello spazio e l'elettrone orbitante attorno ad esso.
+Impostiamo la condizione di stabilità meccanica dell'elettrone, dove compare la forza di attrazione coulombiana tra nucleo ed elettrone che viene compensata dalla forza centrifuga
+\begin{equation}
+\begin{split}
+F_{coulomb} & = ma_{centrifuga} \\ 
+\frac{1}{4\pi \varepsilon_0} \frac{Z e^2}{r^2} & = m \frac{v^2}{r}
+\end{split}
+\end{equation}
+Il momento angolare $L$ è 
+\begin{equation}
+\begin{split}
+L & = m v r = n \hbar \\
+v & = \frac{ n\hbar}{m r }
+\end{split}
+\end{equation}
+da cui ottengo 
+\begin{equation}
+Ze^2 = 4 \pi \varepsilon_0 m v^2 r = 4\pi \varepsilon_0 m r \Bigl(  \frac{ n\hbar}{mr }  \Bigr)^2 = 4\pi \varepsilon_0 \frac{ n^2 \hbar^2}{m r }
+\end{equation}
+e trovo il raggio dell'orbita
+\begin{equation}
+\begin{split}
+& r = 4\pi \varepsilon_0 \frac{ \hbar^2 n^2}{m Z e^2 } \propto \frac{ n^2}{Z }\\
+& \mbox{in cui} \quad n = 1,2,3,...
+\end{split}
+\end{equation}
+Da questa relazione vedo in modo esplicito la quantizzazione dell'orbita: il raggio dell'orbita dipende dal quadrato del numero $n$.
+Da questa espressione posso trovare inoltre la velocità
+\begin{equation}
+v = \frac{ n\hbar}{m r } = \frac{ 1}{4\pi \varepsilon_0 } \frac{ Ze^2}{n\hbar } \propto \frac{ Z}{n }
+\end{equation}
+Per $n=1$ ottengo i valori
+\begin{equation}
+\begin{split}
+& r = \SI{5.3e-11}{m} \simeq \SI{0.5}{\AA} \\
+& v = \SI{2.2e6}{m/s} \simeq 1\% c
+\end{split}
+\end{equation}
+Il modello di Bohr è costruito sull'atomo di idrogeno, per cui funziona benissimo per l'idrogeno e bene per atomi leggeri (come l'elio ionizzato), con numero atomico piccolo, ma non funziona per atomi più pesanti.
+La quantizzazione del momento angolare implica l'esistenza di orbite permesse.
+\paragraph{Energia totale} Calcoliamo l'energia totale di un elettrone nelle sue orbite permesse, sarà data dall'energia cinetica più l'energia potenziale, che sono rispettivamente $K$ e $V$
+\begin{equation}
+\begin{split}
+K & = \frac{ 1}{2 } m v^2 = \frac{ Z e^2}{4 \pi \varepsilon_0 (2r) } \\
+V & = - \frac{ Z e^2}{4 \pi \varepsilon_0 r }
+\end{split}
+\end{equation}
+la cui somma equivale a
+\begin{equation}
+\begin{split}
+E = K + V = - \frac{ Z e^2}{4 \pi \varepsilon_0 2 r } = - K
+\end{split}
+\end{equation}
+Inserendo il valore di $r$ ricavato sopra troviamo una relazione importante
+\begin{equation}
+E = - \frac{ m e^4}{(4\pi \varepsilon_0)^2 2\hbar^2 } \frac{ Z^2}{n^2 }
+\label{energia_quantizzata}
+\end{equation}
+dove $n=1,2,3,...$ è il numero quantico.
+Quindi la quantizzazione del momento angolare non solo implica che solo alcune orbite sono permesse ma implica anche la quantizzazione dell'energia, vedi figura \ref{energie_permesse}.
+L'energia più negativa lo ho per $n=1$, quindi lo stato di energia più basso è lo stato più stabile: tutti i sistemi fisici tendono ad andare verso il minimo dell'energia, tale stato è detto \underline{stato fondamentale} (o \textit{ground state})
+tale che per $n=1$ e $Z=1$ l'energia dello stato fondamentale è
+\begin{equation}
+E_{min} = -\SI{2.179868e-18}{J} = - \SI{13.6}{eV}
+\label{energia_fondamentale}
+\end{equation}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{/livelli_energia}
+\caption{Diagramma delle energie permesse nell'atomo di idrogeno}
+\label{energie_permesse}
+\end{figure}
+%
+\paragraph{Modello di Bohr vs spettri atomici}
+Utilizzando la formula \ref{energia_quantizzata} per le energie permesse ed applichiamo il quarto postulato di Bohr per calcolare la frequenza della radiazione emessa nel passaggio tra uno stato iniziale $E_i$ ed uno stato finale $E_f$ di energia
+\begin{equation}
+\nu = \frac{ E_f - E_i}{h } = \Bigl(  \frac{ 1}{4 \pi \varepsilon_0 }  \Bigr)^2 \frac{ m Z^2 e^4}{4\pi \hbar^3 } \Bigl(  \frac{ 1}{n_f^2 } - \frac{ 1}{n_i^2 }  \Bigr)
+\end{equation}
+In termini di lunghezza d'onda reciproca, che compare nella formula di Ridberg \ref{formula_Ridberg}
+\begin{equation}
+\begin{split}
+& k = \frac{ 1}{\lambda } = \frac{ \nu}{c } \\
+& k = \Bigl(  \frac{ 1}{4 \pi \varepsilon_0 }  \Bigr)^2 \frac{ m Z^2 e^4}{4\pi \hbar^3 c} \Bigl(  \frac{ 1}{n_f^2 } - \frac{ 1}{n_i^2 }  \Bigr) \\
+& k = R_{\infty} Z^2 \Bigl(  \frac{ 1}{n_f^2 } - \frac{ 1}{n_i^2 }  \Bigr) \\
+& \mbox{con la costante} \quad R_{\infty} = \Bigl(  \frac{ 1}{4 \pi \varepsilon_0 }  \Bigr)^2 \frac{ m Z^2 e^4}{4\pi \hbar^3 c} = \SI{109737}{cm^{-1}}
+\end{split}
+\end{equation}
+Dove $R_{\infty}$ risulta un po' più grande della costante di Ridberg $R_H$ per l'idrogeno.
+Tale formula restituisce tutti i valori di $k$ del set di linee che costituiscono lo spettro atomico, con il vincolo sui numeri $n_i, n_f \in \mathbb{N} \quad t.c \quad n_i > n_f$.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{/spettro_atomico_idrogeno}
+\caption{La serie di Lyman è costituita da tutte le transizioni da un qualsiasi stato $n_i$ ad uno stato $n_f = 1$.
+La serie di Balmer è costituita da tutte le transizioni da un qualsiasi stato $n_i$ ad uno stato $n_f = 2$.
+Analogamente per le altre serie.
+Nel transire da orbite superiori ad orbite inferiori l'elettrone perde energia emessa sotto forma di radiazione elettromagnetica.}
+\end{figure}
+Il modello di Bohr spiega anche lo spettro di assorbimento: i fotoni assorbiti sono solo quelli che permettono agli elettroni di saltare ad uno stato con energia maggiore, per cui solo a determinate frequenze.
+Nello spettro di assorbimento possono avvenire solo quei processi per cui da $n=1$ si passa a orbite di energia maggiore ovvero con $n>1$ ed è per questo che potremo vedere in assorbimento solo la serie di Lyman;
+ciò è dovuto al fatto che il gas si trova inizialmente allo stato fondamentale, solo se fosse inizialmente in uno stato eccitato allora si vedrebbero ulteriori serie in assorbimento (Balmer, Paschen).
+
+\paragraph{Correzione massa ridotta} Nei conti precedenti si era approssimato il nucleo fisso nello spazio, se invece si considerano nucleo ed elettrone entrambi orbitanti intorno al centro di massa si deve utilizzare la massa ridotta
+\begin{equation}
+\mu = \frac{ m M}{m + M }
+\end{equation}
+e questa correzione si applica anche alla costante di Ridberg
+\begin{equation}
+R_H^{teorico} = \frac{ \mu}{ m} R_{\infty}^{teorico}
+\end{equation}
+In cui è facile vedere che 
+\begin{equation}
+\begin{split}
+& \frac{ \mu}{m } = \frac{ 1}{1 + \frac{ m}{M } } \\
+& \mbox{se}\quad M \gg m  \Rightarrow \frac{ m}{M } \to 0 \\
+& \frac{ \mu}{m }\to 1 \Rightarrow R_H \to R_{\infty}
+\end{split}
+\end{equation}
+I valori della costante di Ridberg sono
+\begin{equation}
+\begin{split}
+R_{\infty}^{teorico} & = \SI{109737}{cm^{-1}} \\
+R_{H}^{teorico} & = \SI{109681}{cm^{-1}} \\
+R_{H}^{sperim} & = \SI{109678}{cm^{-1}}
+\end{split}
+\end{equation}
+con questa correzione il valore su $R_H$ teorico si avvicina notevolmente al valore sperimentale.
 
 
-
-
-
-
+\subsection{Esperimento di Franck-Hertz}
+Il setup sperimentale prevede un'ampolla con atomi di mercurio si trova un filamento riscaldato che emette elettroni, una differenza di potenziale tra due piastre per accelerarli e farli passare attraverso una griglia carica positivamente.
+\paragraph{La prima parte dell'esperimento}
+Consiste nell'aumentare gradualmente il voltaggio accelerante, quindi l'energia degli elettroni, e per ogni valore misurare la corrente elettrica con un amperometro.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.35]{/esp_Franck_Hertz}
+\caption{strumentazione dell'esperimento}
+\end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{/ris2_esp_Franck_Hertz}
+\caption{Dati ottenuti nell'esperimento di Franck-Hertz}
+\end{figure}
+Si accorsero che in corrispondenza dei minimi, a $\SI{4.89}{V}$, $\SI{6.67}{V}$, $\SI{8.84}{V}$, $\SI{9.80}{V}$, gli elettroni non raggiungono il piatto collettore.
+La spiegazione che diedero è che con energie minori di $\SI{4.0}{eV}$ l'elettrone urta contro l'atomo di mercurio senza perdere energia, mentre quando l'energia aumenta, ad esempio a $\SI{4.9}{eV}$, l'elettrone perde tutta la sua energia non avendo più energia rimanente per raggiungere l'altro elettrodo; quando l'energia supera la soglia precedente, ad esempio a $\SI{6.0}{eV}$ l'elettrone perde parte della sua energia ma ne ha ancora per arrivare all'altro elettrodo; in corrispondenza degli altri minimi succedono cose analoghe; ed infine per energie vicine a $\SI{10}{eV}$ ipotizzarono una doppia interazione che porta a perdere molta energia.
+Solo gli elettroni che hanno energie precise fanno compiere agli elettroni dell'atomo salti energetici.
+\paragraph{La prima parte dell'esperimento} 
+Consiste nell'andare ad osservare la radiazione emessa dagli atomi di mercurio.
+Trovarono una corrispondenza, utilizzando l'equazione $E=h\nu$, tra le energie dei minimi di voltaggio e le frequenze della luce emessa.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.7]{/ionizzazione}
+\caption{Livelli di ionizzazione degli elettroni all'interno dell'atomo di mercurio}
+\end{figure}
 
 
 %% ----------------------------------------------------------------------------------------------------------------------------------------
