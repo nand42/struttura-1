@@ -1,0 +1,165 @@
+%%
+%% Author: dariochinelli
+%% 2021-1-21
+%%
+
+\section{Distribuzione di Maxwell-Boltzmann}
+
+
+I moltiplicatori di Legrange $\alpha$ e $\beta$ sono legati al numero di particelle e all'energia.
+
+$$ \mbox{Siano: }  n_i = \frac{N}{Z} g_i e^{ - \beta E_i }  \mbox{ , }  Z = \sum_i e^{ - \beta E_i } $$
+
+Definisco la funzione $F(E)$, tale che
+
+$$ < F > =  \frac{1}{N} \sum_i n_i F(E_i) = \frac{1}{Z} \sum_i g_i e^{- \beta E_i} F(E_i) $$
+
+Ad esempio consideriamo un sistema con due stati possibili $E_{1,2} = \pm \varepsilon  \Rightarrow g_1 = g_2 = 1 $ 
+
+$$ Z = e^{ - \beta E_1 } + e^{ - \beta E_2 } = e^{ \beta \varepsilon } + e^{ - \beta \varepsilon } = 2 \cosh ( \beta \varepsilon ) $$
+
+$$  < E > = \frac{1}{Z} = \Bigl(  E_1  e^{ - \beta E_1 } + E_2 e^{ - \beta E_2 }  \Bigr)
+= \frac{ \varepsilon e^{-\beta \varepsilon }   \varepsilon e^{\beta \varepsilon }}{2 \cosh (\beta \varepsilon )}  = -  \varepsilon \tanh (\beta \varepsilon ) $$
+
+Poiché il termine $\beta E $ deve essere adimensionale allora $\beta$ deve avere le dimensioni di un inverso di un'energia.
+
+$$  U = \frac{N}{Z} \Bigl( g_1 E_1 e^{ - \beta E_1 } + g_2 E_2 e^{ - \beta E_2 }  + ... \Bigr)  
+= \frac{N}{Z} \sum_i g_i E_i e^{- \beta E_i} = - \frac{N}{Z}  \frac{d}{d\beta} \Bigl( \sum_i g_i e^{- \beta E_i}  \Bigr) = $$
+
+$$ = - \frac{N}{Z} \frac{d Z}{d \beta} = - N \frac{d}{d \beta} (\ln Z) \Rightarrow < E > = \frac{U}{N} = - \frac{d}{d \beta} ( \ln Z ) $$ 
+
+Sia l'energia totale del sistema di particelle sia quella media dipendono da $\beta$.
+
+Definisco ora la temperatura assoluta di sistemi in \textit{ equilibrio statistico } come $\beta = \frac{1}{k T} $ \\
+dove $k = \SI{1.38e-23}{J/K} = \SI{8.62e-5}{eV/K}$
+
+\begin{gather*} 
+Z = \sum_i g_i e^{- \frac{E_i}{k T}}  \\
+n_i = \frac{N}{Z} g_i e^{- \frac{E_i}{k T}}  \\
+d\beta =  - \frac{d T}{k T^2} \\
+U = k N T^2 \frac{d}{d T}(\ln Z)
+\end{gather*}
+
+$$ <E> = \frac{U}{N} = k T^2 \frac{d}{d T} (\ln Z) \Rightarrow <F> = \frac{1}{Z} \sum_i g_i F(E_i) e^{- \frac{E_i}{k T}} $$
+
+Al crescere del rapporto $\frac{E_i}{k T}$ diminuisce $n_i$, il numero di occupazione egli stati.
+Se fisso una temperatura $T$, al crescere di $E_i$ cala $n_i$,
+dunque si ha probabilità di occupazione maggiore per gli stati ad energia $E$ minore ed anche a temperature minori.
+Da notare è che allo zero assoluto si avrebbe un sovraffollamento totale.
+
+$$ \frac{n_i}{n_j} = \frac{g_i}{g_j} \Bigl[ e^{- \frac{E_i - E_j}{k T}}  \Bigr] $$
+Si possono confrontare $n_i$ ed $n_j$ con $ (E_i E_j ) = \Delta E \ll k T$
+
+I gas ideali, sistemi di particelle identiche non interagenti considerando poche moli in un gran volume.
+
+Consideriamo un numero di particelle comprese nell'intervallo energetico $E$ e $E+dE$, cioè si considera la Funzione densità degli stati:
+$$ n(E)dE = \frac{N g(E) e^{-\beta E} dE}{\int_0^\infty g(E) e^{-\beta E} dE } $$
+si può definire a partire da questo approccio classico e non solo, come visto in precedenza nell'equazione di Schrodinger.
+
+L'energia di una particella libera è:
+\begin{equation}
+E = K = \frac{p^2}{2m}
+\mbox{ con }
+\begin{cases}
+p = (p_x, p_y, p_z) \\
+q = (x, y, z)
+\end{cases}
+\end{equation}
+
+Si postula quindi che il numero di stati di energia disponibili sia proporzionale, e finito, rispetto al volume nello spazio delle fasi.
+
+\begin{gather*} 
+ N(E) \propto \int d^3 p d^3 q = 4 \pi V \int p^2 dp \\
+\mbox{pongo }  x = \frac{p}{\sqrt{2 m E}} \Rightarrow x^2 \leq 1 \\
+N(E) \propto 4 \pi V \int_{x^2 \le 1}^{x > 0} x^2 (2mE)^{\frac{3}{2}} dx = 4 \pi V \Bigl[ \frac{x^3}{3}  \Bigr]_0^1 (2mE)^{\frac{3}{2}} = \frac{4}{3} \pi V (2m)^{\frac{3}{2}} E^{\frac{3}{2}}
+\end{gather*}
+
+$$  g(E)dE = \frac{dN(E)}{dE}dE \Rightarrow g(E)dE \propto 4 \pi V (2m^3)^{\frac{1}{2}} E^{\frac{1}{2}} dE $$
+
+Nello spazio delle fasi ogni stato di energia non è rappresentato da un punto ma da un volume $V = h^3$, per Heisemberg $\Delta x \Delta p \simeq h$.
+Dunque la correzione quantistica alla fisica classica consiste nello scrivere che:
+
+
+\begin{equation}\label{ge_de}
+g(E) dE = \frac{4 \pi V (2m^3)^{\frac{1}{2}} E^{\frac{1}{2}} dE}{h^3}
+\end{equation}
+
+
+Si considera ad esempio l'oscillatore armonico unidimensionale $ E = \frac{p^2}{2m} + \frac{K q^2}{2} $
+
+\begin{gather*} 
+N(E) \propto \int dp dq \\
+\frac{p^2}{2mE} + \frac{K q^2}{2E} \leq 1 \mbox{ sostituendo: } 
+\begin{cases}
+	x = \frac{p}{\sqrt{2mE}} \\
+	y = \frac{q}{\sqrt{2E}} \sqrt{K}
+\end{cases} \\
+N(E) \propto \int_{x^2 + y^2 = 1} dx dy \frac{2E}{\sqrt{K}} \sqrt{m}  \mbox{ con } \omega = 2 \pi \nu = \sqrt{\frac{K}{m}} \\
+N(E) \propto \frac{E}{\nu} \Rightarrow g(E)dE \propto \frac{dE}{\nu}
+\end{gather*} 
+
+$$ \bar\varepsilon =  \frac{1}{N} \int_0^{\infty} n(\varepsilon) \varepsilon d\varepsilon = \frac{N}{N} \frac{\int_0^{\infty} g(\varepsilon) e^{- \beta E} \varepsilon dE}{\int_0^{\infty} g(\varepsilon) e^{- \beta \varepsilon} \varepsilon dE }$$
+
+È la stessa formula usata per il corpo nero, in cui $P(\varepsilon) = C e^{- \frac{\varepsilon}{k T}} $ e $ C = \frac{1}{k T}$ valida se il numero di stati è indipendente dall'energia. Per il corpo nero $g(\varepsilon)$ è costante.
+
+$$ \bar\varepsilon =   \frac{\int_0^{\infty} \varepsilon p(\varepsilon) d \varepsilon}{\int_0^{\infty} p(\varepsilon) d \varepsilon}$$
+
+\begin{gather*} \label{fun_partizione}
+g(E)dE = \frac{4 \pi V (2m^3)^\frac{1}{2}  E^\frac{1}{2} }{ h^3 } \\
+Z =  \frac{4 \pi V (2m^3)^\frac{1}{2} }{ h^3 }  \int_0^{\infty}  E^\frac{1}{2} e^{- \frac{E}{k T}}  dE \\
+\mbox{pongo: } \beta = \frac{1}{k T} \mbox{ \space ;  }  E = x^2  \rightarrow dE = 2x dx \\
+Z =  \frac{4 \pi V (2m^3)^\frac{1}{2} }{ h^3 }  \int_0^{\infty}  E^\frac{1}{2} e^{- \frac{E}{k T}}  dE \\
+= \frac{4 \pi V (2m^3)^\frac{1}{2} }{ h^3 } \int_0^{\infty} 2x^2 e^{- \beta x^2 } dx \\
+= \frac{8 \pi V (2m^3)^\frac{1}{2} }{ h^3 } \Bigl[  \frac{1}{4} \sqrt{\frac{\pi}{\beta^3}}  \Bigr] 
+= \frac{V (2 \pi m k T)^\frac{3}{2}}{h^3}
+\end{gather*}
+
+Abbiamo ottenuto la \underline{funzione di partizione per un gas monoatomico ideale}.
+Applicando a destra e sinistra il logaritmo naturale ottengo:
+
+$$ \ln (Z) = C + \frac{3}{2} \ln ( k T ) $$
+$$ <E> = k T^2 \frac{d}{dT} (\ln Z)  \Rightarrow <E> = \frac{3}{2} k T$$
+Che è l'energia cinetica media di Boltzmann, da cui si deduce che $\beta = (k T)^{-1}$.
+
+$$  U_{tot} =  \frac{3}{2} k N T = \frac{3}{2} n k N_A T = \frac{3}{2} n R T $$
+
+dove si vede $R = k N_A = \SI{8.3145}{J / mol * k}$
+
+\begin{equation} 
+n(E) dE = d n = \frac{N}{Z} e^{- \frac{E}{k T} } g(E) dE = \frac{N}{Z} \frac{4 \pi V (2m^3)^\frac{1}{2} E^\frac{1}{2} }{ h^3 } e^{- \frac{E}{k T}}  dE 
+\end{equation}
+
+
+\begin{equation} \label{formula_maxwell}
+\frac{dn}{dE} = \frac{2 \pi N}{(\pi k T)^\frac{3}{2}} E^\frac{1}{2} e^{-\frac{E}{k T}}
+\end{equation}
+
+Abbiamo ottenuto così la \underline{formula di Maxwell}.
+
+Infine dall'equazione dell'energia cinetica $E = \frac{1}{2} m v^2$
+
+\begin{equation}
+\frac{dn}{dv} = \frac{dn}{dE} \frac{dE}{dv} = mv \frac{dn}{dE} = 4 \pi N (\frac{m}{2 \pi k T})^\frac{3}{2} v^2 e^{- \frac{m v^2}{2 k T}}
+\end{equation}
+
+La formula $<E> = \frac{3}{2} k T $ è l'energia cinetica per particella e deriva dal \\
+\underline{Teorema di Equipartizione dell'energia}, 
+che afferma che ogni particella ha energia cinetica media pari a $\frac{1}{2} k T$ per ogni grado di libertà posseduto.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

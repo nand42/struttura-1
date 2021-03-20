@@ -1,0 +1,65 @@
+%%
+%% Author: dariochinelli
+%% 2021-01-25
+%%
+
+\section{Applicazione della statistica di Bose-Einstein al Corpo Nero}
+
+Oltre alla possibilità di utilizzare la statistica di Maxwell-Boltzmann per risolvere il problema del Corpo Nero, come già affrontato,
+un altro modo di affrontare il problema è considerare che la luce, nella cavità di Corpo Nero, sia un gas di fotoni, che sono bosoni.
+Per queste particelle occorre usare la statistica di Bose-Einstein,
+\begin{equation}
+\frac{ n_s}{g_s } = \frac{ 1}{e^{ \alpha + \beta E_s } - 1 }
+\end{equation}
+poiché si tratta di bosoni, i fotoni non sono soggetti al Principio di Esclusione di Pauli, e quindi tendono ad accumularsi nel livello energetico più basso,
+quello fondamentale $E=0$, avente energia minore.
+Nel caso di fotoni, $\alpha = 0$ poiché il numero di particelle nel sistema non si cQUALCOSA necessariamente.
+Infatti all'interno della cavità di Corpo Nero c'è uno scambio continuo fra il campo di radiazione e le pareti della cavità: $e^{ alpha } = 1 \Rightarrow \xi = 1$.
+Dunque un gas di fotoni è sempre degenere.
+Ogni modo di vibrazione può essere considerato come uno stato energetico occupato da $n$ fotoni, ciascuno con energia $h \nu$.
+Calcoliamo dunque la radianza:
+
+\begin{equation}
+\begin{split}
+& E_s = h \nu \quad \quad \beta = (kT)^{ -1 } \\
+& n_s = \frac{ g_s}{e^{ \beta E_s } - 1 } \Rightarrow \bar \varepsilon = \frac{ E_s}{e^{\beta E_s } - 1 } \\
+& g(\nu) d\nu = N(\nu)d\nu = \frac{ 8 \pi V}{c^3 } \nu^3 d\nu
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+\epsilon_T(\nu) d\nu & = \frac{ 1}{V } (h\nu) \frac{ 8 \pi V}{c^3 }d\nu \frac{ 1}{e^{ \frac{ h\nu}{kT } } - 1 }\nu^2 \\
+& = \frac{ (h\nu) 8 \pi}{c^3} \nu^2 \frac{ 1}{e^{ \frac{ h\nu}{kT } } - 1 }
+\end{split}
+\end{equation}
+
+Siamo dunque pervenuti allo stesso risultato di Planck, pur utilizzando la statistica di Bose-Einstein anziché quella classica.
+
+Si può eseguire il conto esprimendo $g=g(E)$, da cui:
+\begin{equation}
+\begin{split}
+n(E)dE & = \frac{ g(E) dE}{e^{ \beta E } - 1 } \\
+g(\nu) d\nu & = \frac{ 8 \pi V}{c^3 } \nu^2 d\nu \Rightarrow g(E) = \frac{ 8 \pi V}{c^3 } \frac{ E^2 dE}{h^3 } \\
+& \begin{cases}
+	E = h\nu \Rightarrow \nu = \frac{ E}{h } \\
+	d\nu = \frac{ dE}{h }
+\end{cases} \\
+\epsilon_T(E)dE & = \frac{ E}{V } n(E) dE = \frac{ 8\pi E^3 dE}{c^3 h^3 (e^{ \beta E } - 1) }
+\end{split}
+\end{equation}
+Debye assunse che ogni modo di vibrazione altro non fosse che un oscillatore semplice avente energia
+$$E=n \hbar \omega \Rightarrow \bar \varepsilon = \frac{ \hbar \omega}{e^{ \frac{ \hbar \omega}{ kT} } - 1 }$$
+Difatti ogni modo di vibrazione è uno stato che contiene un numero $N$ di \underline{fononi}, entità analoghe ai fotoni.
+Un fonone è il quanto di energia vibrazionale del sistema, esattamente come il fotone è il quanto di energia elettromagnetica.
+I fotoni, quasi-particelle prive di massa, possono quindi essere trattati come bosoni (hanno spin $= 0$ e $\alpha = 0$), e si può applicare la statistica di Bose-Einstein.
+
+
+
+
+
+
+
+
+
+

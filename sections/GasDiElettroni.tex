@@ -1,0 +1,179 @@
+%%
+%% Author: dariochinelli
+%% 2021-1-23
+%%
+
+\section{Gas di elettroni}
+
+Gli elettroni sono fermioni, la loro statistica è perciò descritta dal modello di Fermi-Dirac, poiché si tratta di particelle soggette al principio di esclusione di Pauli.
+
+Sostituisco nella formula di Fermi-Dirac
+
+\begin{equation}
+\frac{n_s}{g_s} = \frac{1}{e^{\alpha + \beta E_s} + 1 } \quad \mbox{con} \quad
+	\begin{cases}
+		\alpha = - \frac{ E_F}{k T } \quad \mbox{con $E_F$ funzione della temperatura} \\
+		\beta = \frac{ 1}{k T }
+	\end{cases} \\
+\end{equation}
+
+\begin{equation}
+\frac{n_s}{g_s} = \frac{1}{e^{\alpha + \beta E_s} + 1 }
+= \frac{ 1}{e^{ \frac{ E_s - E_F}{k T } } +1 }
+\end{equation}
+
+Quando $E_s = E_F$ si ha che $\frac{ n_s}{g_s } = \frac{ 1}{2 }$ \\
+e ciò è particolarmente evidente per $T \not = 0$, infatti $\lim_{T \to 0} \frac{ n_s}{g_s } = 0$
+
+Si definisce $E_F(T)$ l'\underline{energia di Fermi}, e si parla di \underline{livello di Fermi} quando si ha $E_F(0)$. Valutiamo ora lo studio di funzione di $\frac{ n_s}{g_s }$ al variare di $T$. \\
+
+Analizziamo tre casi significativi dell'andamento del rapporto $\frac{ n_s}{g_s }$ rispetto a diverse temperature:
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.13]{/Gas_elettroni_temperature}
+\caption{Grafici casi limite temperature gas di elettroni}
+\end{figure}
+
+\begin{enumerate}[label=(\alph*)]
+\item Caso $T = 0$ quindi $\alpha = - \infty$,  gli stati di più bassa energia vengono occupati per primi, gli altri a seguire. 
+In accordo con il Principio di esclusione di Pauli.
+\item Caso $T \not = 0$  con $T \ll T_F$ \quad $\Bigl( dove T_F = \frac{ E_F(0)}{K }   \Bigr)$, si può notare come la funzione a gradino si modifichi lievemente,
+il disegno non è in scala ma rende l'idea, è noto che $E_F(0) \gg kT$.
+Siamo infatti in una situazione per cui la differenza dal caso precedente è minima, poiché in tale condizione $E_F(T) \sim E_F(0)$.
+L'energia termica del sistema è usata per promuovere i fermioni dagli stati di energia un po' sotto $E_F$ agli stati un po' sopra $E_F$, 
+in particolare la variazione di energia è ristretta ad una regione (del grafico) di lunghezza $kT$, che è l'energia di ogni particella.
+\item Ad alte temperature abbiamo $T \gg T_F$ il numero di particelle per stato quantistico per la distribuzione classica è più piccolo di 1,
+le distribuzioni quantistiche si fondono con quella classica.
+\end{enumerate}
+
+Calcoliamo ora il numero di particelle: dalla statistica di Fermi-Dirac si ha che
+
+\begin{gather*} 
+n(E)dE = \frac{ g(E)}{e^{ \frac{ E - E_F}{kT } } + 1 } \\
+\mbox{dove} \quad g(E)= \frac{4 \pi V (2m^3)^{\frac{1}{2}} E^{\frac{1}{2}}}{h^3} \\
+\mbox{spin } \Bigl(  \pm \frac{ 1}{2 }  \Bigr) \Rightarrow \quad g(E)= \frac{8 \pi V (2m^3)^{\frac{1}{2}} E^{\frac{1}{2}}}{h^3}
+\end{gather*}
+
+trattandosi di elettroni occorre moltiplicare per due a causa della doppia possibilità dello spin
+
+\begin{equation}
+N = \int_0^{\infty} n(E)dE = \int_0^{\infty} \frac{8 \pi V (2m^3)^{\frac{1}{2}} E^{\frac{1}{2}}}{h^3} \frac{ dE}{e^{ \frac{ E-E_F}{kT } } + 1 }
+\end{equation}
+
+Notiamo che allo zero assoluto si ha che 
+
+\begin{equation}
+\frac{ 1 }{e^{ \frac{ E - E_F}{kT } } + 1 } = 1 \quad
+\mbox{come una funzione a gradino: } \quad
+\begin{cases}
+	1 \quad 0 \le E \le E_F \\
+	0 \quad > E_F
+\end{cases}
+\end{equation}
+dunque si semplifica scrivendo che 
+
+\begin{equation}
+\begin{split}
+N = \int_0^{E_F(0)} g(E)dE & =  \int_0^{E_F(0)} \frac{8 \pi V (2m^3)^{\frac{1}{2}} E^{\frac{1}{2}}}{h^3} dE \\
+& = \frac{16 \pi V (2m^3)^{\frac{1}{2}} }{3 h^3} [E_F(0)]^{\frac{3}{2}}
+\end{split}
+\end{equation}
+
+\begin{equation}
+\Longrightarrow \quad E_F(0) = \frac{ h^2}{8m } \Bigl(  \frac{ 3}{\pi } \frac{ N}{V }  \Bigr)^{ \frac{ 3}{ 2} } = \frac{ h^2}{8m } \Bigl(  \frac{ 3}{\pi } n \Bigr)^{ \frac{ 3}{ 2} }
+\end{equation}
+
+dove $n = \frac{ N}{V }$.
+Da un punto di vista matematico si è calcolato l'area del sottografico come in figura
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.07]{/gas_elettroni_areagrafico}
+\caption{area grafico}
+\end{figure}
+
+Ad ogni modo si vede che il valore del livello di Fermi $E_F(0)$ aumenta all'aumentare del numero di particelle presenti nel sistema.
+Calcoliamo quindi l'energia:
+
+\begin{equation}
+\begin{split}
+U & = \int_0^{E_F(0)} E g(E)dE = \frac{8 \pi V (2m^3)^{\frac{1}{2}} }{h^3} \int_0^{E_F(0)} E^{ \frac{ 3}{2 } } dE \\
+& = \frac{ 16}{5 } = \frac{ \pi V (2m)^{ \frac{ 1}{2 } }}{h^{ 3 } } \Bigl[ E_F(0) \Bigr]\frac{ 5}{2} \\
+& = \frac{ 3}{2} N E_F(0)
+\end{split}
+\end{equation}
+
+
+Dunque $\frac{ U}{N} = \frac{ 3}{5} E_F(0)$ e ciò significa che ogni particella, anche allo zero assoluto, 
+possiede almeno un'energia minima pari a $\frac{ 3}{5} E_F(0)$, quindi anche per $T = 0 K $ si ha energia non nulla!
+Come corollario si vede che il gas di fermioni, allo zero assoluto, possiede una pressione non nulla, detta
+\underline{Pressione di Pauli}, pari a 
+
+\begin{equation}
+P = \frac{ 2}{3} \frac{ U}{N} = \frac{ 2}{5} n E_F(0)
+\end{equation}
+
+Poiché $\alpha = -\frac{ E_F}{k T} \quad \Rightarrow \quad \xi = e^{-\alpha} = e^{ \frac{ E_F}{k T}}$ allora si ha che per $T=0 \Rightarrow \xi = +\infty $
+e si è in presenza di un gas totalmente degenere, che significa, nel caso di fermioni, che le particelle sono tutte "ammassate", pur rispettando il Principio di Esclusione di Pauli, nei livelli più bassi.
+Un gas di fermioni continua a rimanere degenere se $T \ll T_F$ dove $T_F = \frac{ E_F(0)}{k}$, cioè se $kT \ll E_F(0)$, 
+dove $E_F(T) \approx E_F(0)$ e quindi $\xi \gg 1$
+In tal caso occorre usare la statistica di Fermi-Dirac.
+Tuttavia se $kT \gg E_F(0) \Rightarrow T \gg T_F $, si deve (o si può?) applicare la statistica classica.
+
+Supponiamo ora di avere un metallo di \underline{valenza 1} (la valenza esprime quanti elettroni di conduzione possono essere forniti da ogni atomo del metallo).
+Supponiamo che la distanza fra gli elettroni sia $a \simeq \SI{0.1}{nm}$, allora una stima della densità elettronica è $n = \frac{ 1}{a^{ 3}} = a^{ -3}$.
+Stimiamo $T_F$, perciò:
+
+\begin{equation}
+\begin{cases}
+	T_F = \frac{ E_F(0)}{k} = \frac{ h^2}{8 k m} \Bigl(  \frac{ 3}{\pi}  \Bigr)^{ \frac{ 2}{3}} n^{ \frac{ 2}{3}} \simeq \frac{ h^2}{k m a^2} \simeq \frac{ 10^{ -68}}{10^{-23 } 10^{ 30} 10^{-20 }} \frac{ J \cdot s^2 \cdot K}{J \cdot Kg \cdot m^2} = 10^{5} K \\
+	n^{ \frac{ 2}{3}} = \Bigl(  a^{ -3}  \Bigr)^{ \frac{ 2}{3}} = a^{ -2}
+\end{cases}
+\end{equation}
+
+$T_F$ separa il regime di Fermi-Dirac da quello classico di Maxwell-Boltzmann, ed essendo dell'ordine di $10^{ -5}$, si ha che in situazioni ordinarie il sistema di elettroni è sempre degenere.
+Il calcolo precedente è semplice perché si ha a che fare con lo zero assoluto, mentre le cose si complicano per $T \not = 0 $.
+
+Studiamo ora la \underline{capacità termica} $C_V$, a volume costante: tale grandezza è legata a $T$ (temperatura assoluta).
+Il contributo fondamentale alla capacità termica è dato dal reticolo del solido cristallino, ora studiamo il contributo elettronico.
+Solo una frazione delle particelle vede variare la propria energia, perché siamo nel caso $T \not = o \ll T_F$, e tale variazione è:
+$$ \Delta U \simeq N \frac{ k T}{E_F(0)} kT \simeq N\Bigl(  \frac{ T}{T_F}  \Bigr)kT $$
+
+Poiché $C_V = \frac{ dU}{dT} \simeq N k \Bigl(  \frac{ T}{T_F}  \Bigr) $ usando $U = \frac{ 3}{2} N k T$ si ha che $C_V = \frac{ 3}{2} N k$ 
+ed è allora necessario che $T$ sia confrontabile con $T_F \quad (T \approx T_F)$, ma ciò non accade nel caso ordinario per i fermioni,
+per i quali quindi $C_V = C_V(T)$, e in particolare:
+\begin{equation}
+C_V = \frac{ \pi^2}{2} N k \Bigl(  \frac{ T}{T_F}  \Bigr)
+\end{equation}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.1]{/buca_potenziale}
+\caption{Buca di potenziale in un metallo}
+\end{figure}
+
+Consideriamo ora una \underline{buca di potenziale}: \\
+
+Funzione lavoro $W_0 = h\nu_0 \Rightarrow V_0 = E_F(0) + W_0$ ed in generale si ha che $V_0$ è dell'ordine di qualche $eV$,
+ad esempio l'argento ha $W_0 = \SI{4.7}{eV}$ e $ E_F(0) = \SI{5.5}{eV} $
+Gli elettroni nel metallo riempiono i livelli energetici fino a $E_f(0)$. 
+$W_0$ nei metalli è generalmente tale che $\SI{5}{eV} < V_0 < \SI{15}{eV} $
+
+Questo spiega l'\underline{effetto termoionico}: è un fenomeno per cui un metallo riscaldato ad una temperatura sufficientemente alta inizia ad emettere elettroni presenti sulla sua superficie. A $T \not = 0 $ gli elettroni cominciano ad occupare gli strati più elevati e ad uscire dalla buca di potenziale.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
