@@ -15,6 +15,7 @@
 \usepackage{siunitx}
 \usepackage{imakeidx}
 \usepackage{graphicx}
+%\usepackage[table,xcdraw]{xcolor}
 \graphicspath{ {img/} }
 \usepackage{color}   %May be necessary if you want to color links
 \usepackage{hyperref}
@@ -55,17 +56,17 @@ Laurea in Fisica - Università di Ferrara}
     \include{sections/crosssection}
 
     \include{sections/Onde_di_materia}
-%\fi
+
     \include{sections/principioindeterminazione}
 
     \include{sections/ModelliAtomici}
-%\iffalse
+%\fi
     \include{sections/teoriaquantomeccanicadiShrodinger}
-    
+
     \include{sections/PrincipioEsclusionePauli}
-    
+
     \include{sections/MeccanicaStatistica}
-    
+\iffalse
     \include{sections/DistribuzioneMaxwellBoltzmann}
     
     \include{sections/Degenerazione}
@@ -79,7 +80,7 @@ Laurea in Fisica - Università di Ferrara}
     \include{sections/ApplicazioneBoseEinsteinCorpoNero}
     
     \include{sections/CondensazioneBoseEinstein}
-%\fi
+\fi
 
 \end{document}
 
