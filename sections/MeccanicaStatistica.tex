@@ -86,14 +86,17 @@ Analogamente per il terzo stato
 \begin{equation}
 P_3 = \frac{(N-n_1 - n_2)!}{n_3! ( N - n_1 - n_2 - n_3)!}
 \end{equation}
-Estendendo questo ragionamento a tutti i livelli si trova, moltiplicando tutte le $P_i$, il seguente risultato
+Estendendo questo ragionamento si trova il seguente risultato per il livello $P_s$
+\begin{equation}
+P_s = \frac{(N-n_1 - n_2 - ... - n_{s-1})!}{n_s! ( N - n_1 - n_2 - ... - n_{s})!}
+\end{equation}
+da cui si ricava $W$, che indica il numero di modi diversi totali per fare la partizione, nel quale molti termini si semplificano:
 \begin{equation}
 W =  \frac{N!}{n_1! n_2! n_3! ... } = \prod_s P_s
 \end{equation}
-$W$ indica il numero di modi diversi totali per fare la partizione.
-La probabilità di trovare la partizione è proporzionale al numero $W$, più tale numero è alto, più è alta la probabilità che quella partizione si realizzi.
+La probabilità di trovare la partizione è proporzionale al numero $W$: più tale numero è alto, più è alta la probabilità che quella partizione si realizzi.
 
-\paragraph{Supponiamo livelli degeneri}
+\paragraph{Livelli degeneri}
 È necessario tener conto della correzione dovuta alla \textit{degenerazione}: più stati (diversi) corrispondono alla stessa energia, per cui ad esempio potrò distribuire le $n_1$ particelle che stanno nel livello $E_1$ in $g_1^{n_1}$ (inteso come $g_1$ elevato alla $n_1$) modi diversi.
 Rispetto a quanto ricavato sopra, per il livello 1 il risultato si modifica con l'aggiunta del fattore motiplicativo $g_1^{n_1}$
 \begin{figure}[h]
@@ -105,7 +108,10 @@ Rispetto a quanto ricavato sopra, per il livello 1 il risultato si modifica con 
 \begin{equation}
 P_1 = \frac{ N! g_1^{n_1}}{n_1! (N-n_1)! }
 \end{equation}
-analogo per tutti gli stati.
+analogo per tutti gli stati, quindi per lo stato $P_s$ ho
+\begin{equation}
+P_s = \frac{g_s^{n_s}(N-n_1 - n_2 - ... - n_{s-1})!}{n_s! ( N - n_1 - n_2 - ... - n_{s})!}
+\end{equation}
 Il numero di modi totali distinti $W$ sarà quindi dato da
 \begin{equation}
 W(n_1,...,n_s) = \prod_{s=1}^{\infty} P_s = N! \prod_{s=1}^{\infty}\frac{ g_s^{n_s}}{ n_s!}
@@ -114,81 +120,90 @@ W(n_1,...,n_s) = \prod_{s=1}^{\infty} P_s = N! \prod_{s=1}^{\infty}\frac{ g_s^{n
 \paragraph{La distribuzione più probabile è quella che massimizza il numero $W$} è il concetto chiave della meccanica statistica.
 Vediamo ora come ricavare il set di numeri $n_1 ... n_s$ che massimizza $W$, tenendo presente le due condizioni iniziali: 
 \begin{equation}
-\begin{split}
-N & =  \sum_{s=1}^{\infty} n_s \\
-U & =  \sum_{s=1}^{\infty} n_s E_s
-\end{split}
+N  =  \sum_{s=1}^{\infty} n_s 
+\quad\quad\quad
+U =  \sum_{s=1}^{\infty} n_s E_s
 \end{equation}
 il numero delle particelle iniziali $N$ è fisso e l'energia totale è costante $U$.
 
-Se invece di massimizzare $W$ si massimizza $\ln(W)$, i prodotti diventano somme che mi agevolano i conti, questa operazione è consentita in quanto valida in generale tra $f(x)$ e $\ln(f(x))$.
-Quindi significa risolvere la seguente equazione
+Se invece di massimizzare $W$ si massimizza $\ln(W)$, i prodotti diventano somme che mi agevolano i conti, questa operazione è consentita poiché valida in generale tra $f(x)$ e $\ln(f(x))$.
+Quindi significa
 \begin{equation}
-\begin{split}
-& \delta (\ln W) = 0 \\
-& \delta (\ln W) = \sum_{s=1}^{\infty} \frac{ \partial (\ln W)}{\partial n_s } \delta n_s = 0
-\end{split}
+\delta ( W) = 0 \quad \Leftrightarrow  \quad \delta (\ln W) = 0
+\end{equation}
+
+\begin{equation}
+\delta (\ln W) = \frac{ \partial (\ln W)}{\partial n_s } \delta n_s = 0
 \label{massimizzare}
 \end{equation}
 $\delta n_s$ rappresenta la \textit{piccola variazione} sul numero $n_s$, che dovrà essere anch'essa compatibile con i due vincoli
 \begin{equation}
-\begin{split}
-\delta N & = \sum_{s=1}^{\infty} \delta n_s = 0 \\
-\delta U & = \sum_{s=1}^{\infty} E_s \delta n_s = 0
+\delta N = \sum_{s=1}^{\infty} \delta n_s = 0
+\quad\quad\quad
+\delta U = \sum_{s=1}^{\infty} E_s \delta n_s = 0
 \label{vincoli}
+\end{equation}
+questo problema si risolve con il metodo dei \textit{moltiplicatori di Lagrange}, accorpando le equazioni \ref{massimizzare} e \ref{vincoli}
+\begin{equation}
+\begin{split}
+& \delta (\ln W)   - \alpha \delta N  - \beta \delta U  = 0 \\
+& \delta (\ln W)   - \alpha  \sum_{s=1}^{\infty} \delta n_s   - \beta  \sum_{s=1}^{\infty} E_s \delta n_s  = 0
+\label{molti_lag}
 \end{split}
 \end{equation}
-questo problema si risolve con il metodo dei \textit{moltiplicatori di Lagrange} accorpando le equazioni \ref{massimizzare} e \ref{vincoli}
-\begin{equation}
-\delta (\ln W)   - \alpha  \sum_{s=1}^{\infty} \delta n_s   - \beta  \sum_{s=1}^{\infty} E_s \delta n_s  = 0
-\label{molti_lag}
-\end{equation}
 dove $\alpha$ e $\beta$ sono i coefficienti dei moltiplicatori di Lagrange, tali che $\alpha$ è il moltiplicatore collegato al vincolo riguardante il numero $N$ di particelle totali che è costante (prima equazione della \ref{vincoli}) e $\beta$ è il moltiplicatore collegato al vincolo riguardante l'energia $U$ del sistema costante (seconda equazione della \ref{vincoli}).
-Riscriviamo allora l'equazione come 
+Analizziamo allora il logaritmo di $W$
 \begin{equation}
-\ln W = \ln N! + \sum_{s=1}^{\infty} (n_s \ln g_s - \ln n_s !)
+\begin{split}
+\ln W & = \ln \Bigl[ N! \prod_{s=1}^{\infty}\frac{ g_s^{n_s}}{ n_s!} \Bigr] \\
+& = \ln N! + \sum_{s=1}^{\infty}\ln \frac{ g_s^{n_s}}{ n_s!}  \\
+& = \ln N! + \sum_{s=1}^{\infty} (n_s \ln g_s - \ln n_s !)
 \label{eq_max}
+\end{split}
 \end{equation}
-e applichiamo l'\textit{approssimazione di Stirling} \ref{stirling}
+e applichiamo l'\textit{approssimazione di Stirling} \ref{stirling} all'ultimo termine
 \begin{equation}
-\ln n! \to n \ln n - n \quad\quad \mbox{per } n \to \infty
+\ln x! \to x \ln x - x \quad\quad \mbox{per } x \to \infty
 \label{stirling}
 \end{equation}
 quindi l'equazione \ref{eq_max} diventa
 \begin{equation}
-\ln W = \ln N! + \sum_{s=1}^{\infty} (n_s \ln g_s - n_s \ln n_s + n_s)
-\end{equation}
-
-Ora usando l'equazione \ref{massimizzare} eseguiamo la derivata parziale in $n_s$ e otteniamo
-\begin{equation}
 \begin{split}
-\delta (\ln W) & = \sum_{s=1}^{\infty} (\ln g_s - \ln n_s - 1 + 1) \delta n_s \\
-\delta (\ln W) & = \sum_{s=1}^{\infty} (\ln g_s - \ln n_s ) \delta n_s
+\ln W & = \ln N! + \sum_{s=1}^{\infty} (n_s \ln g_s - n_s \ln n_s + n_s) \\
+& = \ln N! + \sum_{s=1}^{\infty} (\ln g_s - \ln n_s + 1) n_s
 \end{split}
 \end{equation}
-l'equazione così ottenuta la sostituiamo nell'equazione \ref{molti_lag} in cui comparivano i moltiplicatori di Lagrange
+Ora usando la condizione \ref{massimizzare}, eseguiamo la derivata parziale in $n_s$ e otteniamo
 \begin{equation}
-\sum_{s=1}^{\infty} (\ln g_s - \ln n_s - \alpha - \beta E_s) \delta n_s = 0
+\begin{split}
+\delta (\ln W) & = \frac{ \partial}{\partial n_s } \Bigl[ \ln N! + \sum_{s=1}^{\infty} (\ln g_s - \ln n_s + 1) n_s \Bigr]  \delta n_s \\
+& = \sum_{s=1}^{\infty} (\ln g_s - \ln n_s - 1 + 1) \delta n_s \\
+& = \sum_{s=1}^{\infty} (\ln g_s - \ln n_s ) \delta n_s
+\end{split}
+\end{equation}
+sostituiamo questo risultato nell'equazione \ref{molti_lag} e otteniamo
+\begin{equation}
+\sum_{s=1}^{\infty} (\ln g_s - \ln n_s - \alpha - \beta E_s) \delta n_s = 0 
 \end{equation}
 che sarà verificata per
 \begin{equation}
-\ln \frac{ n_s}{g_s } = -\alpha - \beta E_s
-\end{equation}
-quindi ottengo i valori di $n_s$ in funzione di $\alpha$ e $\beta$, da cui
-\begin{equation}
 \begin{split}
-\frac{ n_s}{g_s } & = e^{ -\alpha - \beta E_s } \\
-n_s & = g_s e^{ -\alpha - \beta E_s } \\
-\frac{ n_s}{g_s } & = \frac{ 1}{ e^{ \alpha + \beta E_s }  }
+\sum_{s=1}^{\infty} \Bigl[ \ln g_s - \ln n_s  \Bigr]\delta n_s & = \sum_{s=1}^{\infty} ( \alpha + \beta E_s) \delta n_s \\
+\ln \frac{ g_s}{n_s } & = \alpha + \beta E_s \\
+\frac{ g_s}{n_s } & = e^{ \alpha + \beta E_s } 
 \end{split}
 \end{equation}
-che corrispondono a tre modi equivalenti per indicare la \textit{Legge di distribuzione di Maxwell Boltzmann}.
+da cui otteniamo i valori di $n_s$ in funzione di $\alpha$ e $\beta$
+\begin{equation}
+\frac{ n_s}{g_s } = \frac{ 1}{ e^{ \alpha + \beta E_s }  }
+\label{dist_MB}
+\end{equation}
+arrivando infine alla \textit{Legge di distribuzione di Maxwell Boltzmann}.
 Da cui possiamo ricavare la \textit{Funzione di Partizione} $Z$
 \begin{equation}
 \begin{split}
 N & = \sum_{s=1}^{\infty} n_s = \sum_{s=1}^{\infty} g_s e^{ -\alpha } e^{ -\beta E_s } \\
-e^{ -\alpha } & = \frac{ N}{ g_s  e^{ -\beta E_s }} = \frac{ N}{Z } \\
-Z & =  \sum_{s=1}^{\infty} g_s e^{ -\beta E_s }
+e^{ -\alpha } & = \frac{ N}{ g_s  e^{ -\beta E_s }} = \frac{ N}{Z } \quad\Rightarrow\quad  Z =  \sum_{s=1}^{\infty} g_s e^{ -\beta E_s }
 \end{split}
 \end{equation}
 e possiamo riscrivere la \textit{Legge di distribuzione di Maxwell Boltzmann} come
@@ -214,12 +229,15 @@ Supponiamo, ad esempio illustrativo, una schematizzazione di un unico generico l
 \label{livello_Es}
 \end{figure}
 otteniamo un diverso \textit{modo} cambiando il numero di particelle in uno o più stati, ma non otteniamo un \textit{modo} nuovo se scambiamo due particelle fra loro all'interno dello stesso stato o tra i diversi stati dello stesso livello.
-Per contare il numero di modi utilizziamo il seguente ragionamento:
+
+Per contare il numero di modi vediamo il seguente ragionamento:
 ci sono $g_s - 1$ linee di divisione tra gli stati
 e ci sono $n_s + g_s - 1$ particelle + linee di divisione 
-quindi nel caso in esempio ho: \\
-$g_s - 1 = 10 - 1 = 9 $ \textit{linee di divisione} \\
-$n_s + g_s - 1 = 13 + 10 - 1 = 22$ \textit{particelle + linee di divisione}. \\
+quindi nel caso in esempio ho:
+\begin{itemize}
+\item $g_s - 1 = 10 - 1 = 9 $ \textit{linee di divisione}
+\item $n_s + g_s - 1 = 13 + 10 - 1 = 22$ \textit{particelle + linee di divisione}
+\end{itemize}
 Posso ottenere il seguente altro \textit{modo} di figura \ref{livello_Es_2} variando la composizione dei soli primi due stati 
 \begin{figure}[h]
 \centering
@@ -232,31 +250,47 @@ Quindi ci sono $(n_s + g_s - 1)!$ possibili permutazioni di particelle e linee d
 \begin{equation}
 P_s = \frac{ (n_s + g_s - 1)!}{n_s! (g_s - 1)! }
 \end{equation}
-Per cui il numero di modi totali è
+per cui il numero di modi totali è
 \begin{equation}
 \begin{split}
 W(n_1, ..., n_s) = \prod_{s=1}^{ \infty } P_s = \prod_{s=1}^{ \infty } \frac{ (n_s + g_s - 1)!}{n_s! (g_s - 1)! }
 \end{split}
 \end{equation}
-Quindi ora, come visto nella statistica precedente, cerco di massimizzare il numero $W$, o meglio $\ln W$
+Quindi ora, come visto nella statistica precedente, cerco di massimizzare il numero $W$, ovvero massimizzo $\ln W$, utilizzando l'approssimazione di Stirling, in cui approssimo per $(x+1) \to x$ quando $x \to \infty$
+\begin{equation}
+\ln (x+1)! \to x \ln x - x \quad\quad \mbox{per } x \to \infty
+\label{stirling_2}
+\end{equation}
+e trovo
 \begin{equation}
 \begin{split}
 \ln W & = \sum_{s=1}^{\infty} \Bigl[ \ln ( n_s + g_s - 1 )! - \ln n_s ! - \ln (g_s - 1)! \Bigr] \\
-\delta (\ln W) & = \sum_{s=1}^{\infty} \Bigl[ \ln(n_s + g_s) - \ln n_s \Bigr] \delta n_s
+& = \sum_{s=1}^{\infty} \Bigl[ ( n_s + g_s )(\ln ( n_s + g_s ) - 1) - n_s (\ln n_s -1 ) - g_s (\ln g_s - 1) \Bigr]
 \end{split}
 \end{equation}
-utilizzando l'approssimazione di Stirling ed inserendo questo risultato nella \ref{molti_lag} ottengo l'equazione 
+che differenziata diventa
+\begin{equation}
+\delta (\ln W) = \sum_{s=1}^{\infty} \Bigl[ \ln(n_s + g_s) - \ln n_s \Bigr] \delta n_s
+\end{equation}
+inserendo questo risultato nella \ref{molti_lag} ottengo l'equazione 
 da cui posso ottenere i valori di $n_s$ in funzione di $\alpha$ e di $\beta$
 \begin{equation}
+\sum_{s=1}^{\infty} \Bigl[ \ln(n_s + g_s) - \ln n_s - \alpha -\beta E_s\Bigr] \delta n_s = 0
+\end{equation}
+verificata per 
+\begin{equation}
 \begin{split}
-& \sum_{s=1}^{\infty} \Bigl[ \ln(n_s + g_s) - \ln n_s - \alpha -\beta E_s\Bigr] \delta n_s = 0 \\
-& \ln \frac{ n_s}{n_s + g_s } = -\alpha - \beta E_s
+\sum_{s=1}^{\infty} \Bigl[ \ln \Bigl(  1 + \frac{ g_s}{n_s }  \Bigr) \Bigr]\delta n_s & = \sum_{s=1}^{\infty} \Bigl[ \alpha + \beta E_s \Bigr]\delta n_s \\
+\ln \Bigl(  1 + \frac{ g_s}{n_s}  \Bigr) &= \alpha + \beta E_s \\
+1 + \frac{ g_s}{n_s} & = e^{ \alpha + \beta E_s  }
 \end{split}
 \end{equation}
 arrivando infine alla \textit{Legge di distribuzione di Bose Einstein}
 \begin{equation}
 \frac{ n_s}{g_s } = \frac{ 1}{e^{\alpha +\beta E_s} - 1 }
+\label{dist_BE}
 \end{equation}
+
 
 
 \subsection{Statistica quantistica di Fermi Dirac}
@@ -272,29 +306,56 @@ Il numero totale $W$ è
 \begin{equation}
 W = \prod_{s=1}^{\infty} P_s = \prod_{s=1}^{\infty} \frac{ g_s !}{n_s! (g_s - n_s)! }
 \end{equation}
-quindi come nei casi precedenti: uso Stirling e differenzio
+quindi come nei casi precedenti
 \begin{equation}
 \begin{split}
 \ln W & = \sum _{s=1}^{\infty} \Bigl[  \ln g_s! - \ln n_s! - \ln (g_s -n_s)!  \Bigr] \\
-\delta (\ln W) & = \sum _{s=1}^{\infty} \Bigl[  - \ln n_s + \ln (g_s - n_s) - \alpha - \beta E_s  \Bigr] \delta n_s = 0 \\
-& \ln \frac{ n_s}{g_s - n_s } = - \alpha - \beta E_s
+& = \sum _{s=1}^{\infty} \Bigl[   g_s \ln g_s - n_s \ln n_s  - (g_s - n_s) \ln (g_s - n_s)  \Bigr]
+\end{split}
+\end{equation}
+che differenziata diventa
+\begin{equation}
+\delta (\ln W) = \sum _{s=1}^{\infty} \Bigl[ \ln (g_s - n_s) - \ln n_s \Bigr] \delta n_s
+\end{equation}
+da cui poi si applica la tecnica dei Moltiplicatori di Lagrange
+\begin{equation}
+\sum _{s=1}^{\infty} \Bigl[   \ln (g_s - n_s) - \ln n_s - \alpha - \beta E_s  \Bigr] \delta n_s = 0
+\end{equation}
+verificata per
+\begin{equation}
+\begin{split}
+\sum _{s=1}^{\infty} \Bigl[   \ln (g_s - n_s) - \ln n_s \Bigr] \delta n_s &= \sum _{s=1}^{\infty} \Bigl[ \alpha + \beta E_s  \Bigr] \delta n_s \\
+\ln \Bigl(  \frac{g_s }{n_s } - 1  \Bigr) & =  \alpha + \beta E_s \\
+\frac{g_s }{n_s } - 1 & =  e^{ \alpha + \beta E_s  }
 \end{split}
 \end{equation}
 arrivando infine alla \textit{Legge di distribuzione di Fermi Dirac}
 \begin{equation}
 \frac{ n_s}{g_s } = \frac{ 1}{e^{ \alpha + \beta E_s } + 1 }
+\label{dist_FD}
 \end{equation}
 
 
-\subsection{Plot delle statistiche}
-Nei seguenti grafici sono riportati i plot di $\frac{ n_s}{g_s }$ in funzione di $E_s$, ponendo i parametri $\alpha=\beta=1$
+\subsection{Riassunto statistiche}
+Distribuzione di Maxwell Boltzmann (eq \ref{dist_MB})
+\begin{equation}
+\frac{ n_s}{g_s } = \frac{ 1}{e^{ \alpha + \beta E_s } }
+\end{equation}
+Distribuzione di Bose Einstein (eq \ref{dist_BE})
+\begin{equation}
+\frac{ n_s}{g_s } = \frac{ 1}{e^{ \alpha + \beta E_s } - 1 }
+\end{equation}
+Distribuzione di Fermi Dirac (eq \ref{dist_FD})
+\begin{equation}
+\frac{ n_s}{g_s } = \frac{ 1}{e^{ \alpha + \beta E_s } + 1 }
+\end{equation}
+
+\paragraph{plot}
+Nei seguenti grafici sono riportati i plot di $\frac{ n_s}{g_s }$ in funzione di $E_s$, \\
+ponendo i parametri $\alpha=\beta=1$
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.26]{/plot_stat_1}
-\end{figure}
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.37]{/plot_stat_2}
+\includegraphics[scale=0.54]{/plot_distrib_oriz}
 \end{figure}
 
 
