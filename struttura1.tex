@@ -15,7 +15,6 @@
 \usepackage{siunitx}
 \usepackage{imakeidx}
 \usepackage{graphicx}
-%\usepackage[table,xcdraw]{xcolor}
 \graphicspath{ {img/} }
 \usepackage{color}   %May be necessary if you want to color links
 \usepackage{hyperref}
@@ -33,14 +32,17 @@ Laurea in Fisica - Università di Ferrara}
 
 \author{Scritto e impaginato in \LaTeX\ da \textbf{Dario Chinelli} nel 2021}
 
-\date{aggiornato al 26 marzo 2021}
+\date{aggiornato al 27 marzo 2021}
 
 \maketitle
 
-    \newpage
+\newpage
 
-    \tableofcontents
-%\iffalse
+\tableofcontents
+
+% inizio dei capitoli
+
+\iffalse
     \include{sections/constants}
 
     \include{sections/BlackBody}
@@ -64,11 +66,11 @@ Laurea in Fisica - Università di Ferrara}
     \include{sections/teoriaquantomeccanicadiShrodinger}
 
     \include{sections/PrincipioEsclusionePauli}
-%\fi
+\fi
     \include{sections/MeccanicaStatistica}
-%\iffalse
-    \include{sections/DistribuzioneMaxwellBoltzmann}
 
+    \include{sections/DistribuzioneMaxwellBoltzmann}
+\iffalse
     \include{sections/Degenerazione}
     
     \include{sections/GasDiElettroni}
@@ -80,7 +82,7 @@ Laurea in Fisica - Università di Ferrara}
     \include{sections/ApplicazioneBoseEinsteinCorpoNero}
     
     \include{sections/CondensazioneBoseEinstein}
-%\fi
+\fi
 
 \end{document}
 

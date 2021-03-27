@@ -1,54 +1,138 @@
 %%
 %% Author: dariochinelli
-%% 2021-1-21
+%% 2021-03-27
 %%
 
-\section{Distribuzione di Maxwell-Boltzmann}
+\section{Approfondimento sulla statistica classica di Maxwell-Boltzmann}
+
+Riprendiamo la legge di distribuzione
+\begin{equation}
+n_s = \frac{N}{Z} g_s e^{ - \beta E_s }
+\label{leg_dist_ns}
+\end{equation}
+legata alla funzione di partizione
+\begin{equation}
+Z = \sum_s e^{ - \beta E_s }
+\label{fun_part}
+\end{equation}
+Dove i moltiplicatori di Lagrange $\alpha$ e $\beta$ sono legati al numero di particelle $N$ e all'energia $U$.
+Il valore medio di una certa proprietà $F_{avg}$ dipendente dall'energia $E_s$
+\begin{equation}
+\begin{split}
+F_{avg} = \langle F \rangle & =  \frac{1}{N} \sum_s n_s F(E_s) \\
+& = \frac{1}{Z} \sum_s g_s F(E_s) e^{- \beta E_s}
+\end{split}
+\end{equation}
+
+\subsection{Temperatura}
+Classicamente la temperatura è stata introdotta per descrivere un'esperienza sensoriale, non statistica...
+Facendo l'analisi dimensionale delle equazioni di $n_s$ e $Z$ si deriva che il fattore $\beta$ deve essere espresso in $1/joule$
+affinché siano soddisfatte.
+
+Se nell'espressione dell'energia sostituisco i valori $n_s$ della \ref{leg_dist_ns}, trovo
+\begin{equation}
+\begin{split}
+U = n_1 E_1 + n_2 E_2 + ... & = \frac{ N}{Z } \Bigl(  g_1 E_1 e^{ -\beta E_1 } + g_2 E_2 e^{ -\beta E_2 } + ... \Bigr) \\
+& = \frac{ N}{Z } \Bigl(  \sum_s g_s E_s e^{ -\beta E_s }  \Bigr)
+\end{split}
+\end{equation}
+usando la definizione di funzione di partizione \ref{fun_part} si trova
+\begin{equation}
+\begin{split}
+U &= - \frac{ N}{Z } \frac{ d}{d\beta }  \Bigl(  \sum_s g_s E_s e^{ -\beta E_s }  \Bigr) \\
+& = - \frac{ N}{Z } \frac{ d Z}{d\beta } \\
+& = - N \frac{ d}{d\beta }(\ln Z)
+\label{energia_totale}
+\end{split}
+\end{equation}
+L'energia media di ogni particella del sistema sarà
+\begin{equation}
+E_{avg} =  \langle E \rangle = \frac{ U}{N } = - \frac{ d}{d\beta } (\ln Z)
+\label{energia_media}
+\end{equation}
+Da cui si vede che dato un certo sistema fisico descritto da valori $E_s$ e $g_s$ ben precisi, la funzione di partizione \ref{fun_part}, l'energia totale \ref{energia_totale} e l'energia media \ref{energia_media} risultano essere tutte funzioni di $\beta$;
+significa che posso utilizzare $\beta$ per caratterizzare tutte queste funzioni.
+Si trova però più conveniente introdurre un'altra variabile, funzione di $\beta$, ovvero la \textit{temperatura}, definita come:
+\begin{equation}
+\begin{split}
+& k_B T = \frac{1}{\beta} \\
+& k_B = \SI{1.3805e-23}{j / K} = \SI{8.6178e-5}{eV / K} \quad\quad \mbox{costante di Boltzmann}
+\end{split}
+\end{equation}
+si noti che la grandezza $k_B T$ è un'\textit{energia termica}, ad esempio ponendoci a temperatura ambiente con $T_{amb}=\SI{300}{K}$ l'energia termica equivale a $k_B T_{amb} = \SI{0.0258}{eV} \simeq \SI{26}{m eV} $. \\
+\textbf{NB:} Questa definizione di temperatura è valida solo per sistemi di particelle all'\textit{equilibrio statistico}. \\
+Posso allora riscrivere le relazioni precedenti 
+\begin{equation}
+Z = \sum_s g_s e^{ - \frac{E_s}{k_B T} }
+\end{equation}
+\begin{equation}
+n_s = \frac{N}{Z} g_s e^{ - \frac{E_s}{k_B T} }
+\label{funz_dist_ns_T}
+\end{equation}
+il differenziale di $\beta$ è
+\begin{equation}
+d \beta = - \frac{d T}{k T^2}
+\end{equation}
+allora la relazione per l'energia totale è
+\begin{equation}
+U = k N T^2 \frac{d}{dT} (\ln Z)
+\end{equation}
+e l'energia media per particella è
+\begin{equation}
+\langle E \rangle = \frac{U}{N} = k T^2 \frac{d}{dT} (\ln Z)
+\end{equation}
+Il valore medio di una certa grandezza $F$ dipendente dall'energia è
+\begin{equation}
+\langle F \rangle = \frac{1}{Z} \sum_s g_s F(E_s) e^{ -\frac{E_s}{k_B T} }
+\end{equation}
+quindi la media di una funzione dipendente dall'energia è funzione della temperatura.
+L'equazione \ref{funz_dist_ns_T} permette di capire che ad una certa temperatura $T$ fissata, l'occupazione di livelli di energia disponibili diminuisce all'aumentare della loro energia, si vanno ad occupare i livelli con energia sempre più elevata: 
+quello che succede è che l'aumento di temperatura equivale all'aumento dell'energia totale delle particelle.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.35]{/livelli_occupati}
+\caption{Grafico qualitativo della funzione di partizione \ref{funz_dist_ns_T} per diverse temperature }
+\end{figure}
+
+Il rapporto tra il numero di occupazione tra due stati generici $\frac{n_i}{n_j}$ è 
+\begin{equation}
+\begin{split}
+\frac{n_i}{n_j} & = \frac{g_i}{g_j} e^{ - \frac{(E_i - E_j)}{k_B T} } \\
+& = \frac{g_i}{g_j} e^{ - \frac{- \Delta E}{k_B T} }
+\end{split}
+\end{equation}
+permette di capire che due livelli sono confrontabili se $\Delta E \ll k_B T$ e l'esponenziale tende a 1.
 
 
-I moltiplicatori di Legrange $\alpha$ e $\beta$ sono legati al numero di particelle e all'energia.
+\subsection{Descrizione statistica del gas ideale}
+La maggior parte dei gas possono essere descritti dalla statistica di Maxwell Boltzmann in un ampio range di temperature.
+A seconda delle condizioni fisiche in cui ci troviamo, quindi a seconda della temperatura, della concentrazione del gas e quindi della massa totale delle particelle, un gas può comportarsi in modo classico o in modo quantistico, bosone o fermione. 
+Allora a seconda della circostanza userò una delle tre statistiche viste sopra.
 
-$$ \mbox{Siano: }  n_i = \frac{N}{Z} g_i e^{ - \beta E_i }  \mbox{ , }  Z = \sum_i e^{ - \beta E_i } $$
+Applichiamo ora la statistica classica ad un gas ideale e monoatomico, costituito da particelle identiche e non interagenti, all'interno di un volume $V$:
+in queste condizioni tutta l'energia delle particelle è energia cinetica.
+Se il volume è grande il sistema ha un continuo di livelli energetici e posso riscrivere le leggi di MB passando al continuo
 
-Definisco la funzione $F(E)$, tale che
+\begin{equation}
+n(E)dE = \frac{N g(E) e^{-\beta E} dE}{\int_0^\infty g(E) e^{-\beta E} dE }
+\label{numero_particelle}
+\end{equation}
 
-$$ < F > =  \frac{1}{N} \sum_i n_i F(E_i) = \frac{1}{Z} \sum_i g_i e^{- \beta E_i} F(E_i) $$
+dove
 
-Ad esempio consideriamo un sistema con due stati possibili $E_{1,2} = \pm \varepsilon  \Rightarrow g_1 = g_2 = 1 $ 
+\begin{equation}
+Z = \int_0^{\infty} g(E) e^{ -\beta E } dE
+\end{equation}
 
-$$ Z = e^{ - \beta E_1 } + e^{ - \beta E_2 } = e^{ \beta \varepsilon } + e^{ - \beta \varepsilon } = 2 \cosh ( \beta \varepsilon ) $$
+\begin{equation}
+g(E) = \frac{4 \pi V (2m^3)^{ \frac{1}{2} }}{h^3} E^{ \frac{1}{2} }
+\end{equation}
 
-$$  < E > = \frac{1}{Z} = \Bigl(  E_1  e^{ - \beta E_1 } + E_2 e^{ - \beta E_2 }  \Bigr)
-= \frac{ \varepsilon e^{-\beta \varepsilon }   \varepsilon e^{\beta \varepsilon }}{2 \cosh (\beta \varepsilon )}  = -  \varepsilon \tanh (\beta \varepsilon ) $$
 
-Poiché il termine $\beta E $ deve essere adimensionale allora $\beta$ deve avere le dimensioni di un inverso di un'energia.
 
-$$  U = \frac{N}{Z} \Bigl( g_1 E_1 e^{ - \beta E_1 } + g_2 E_2 e^{ - \beta E_2 }  + ... \Bigr)  
-= \frac{N}{Z} \sum_i g_i E_i e^{- \beta E_i} = - \frac{N}{Z}  \frac{d}{d\beta} \Bigl( \sum_i g_i e^{- \beta E_i}  \Bigr) = $$
 
-$$ = - \frac{N}{Z} \frac{d Z}{d \beta} = - N \frac{d}{d \beta} (\ln Z) \Rightarrow < E > = \frac{U}{N} = - \frac{d}{d \beta} ( \ln Z ) $$ 
 
-Sia l'energia totale del sistema di particelle sia quella media dipendono da $\beta$.
-
-Definisco ora la temperatura assoluta di sistemi in \textit{ equilibrio statistico } come $\beta = \frac{1}{k T} $ \\
-dove $k = \SI{1.38e-23}{J/K} = \SI{8.62e-5}{eV/K}$
-
-\begin{gather*} 
-Z = \sum_i g_i e^{- \frac{E_i}{k T}}  \\
-n_i = \frac{N}{Z} g_i e^{- \frac{E_i}{k T}}  \\
-d\beta =  - \frac{d T}{k T^2} \\
-U = k N T^2 \frac{d}{d T}(\ln Z)
-\end{gather*}
-
-$$ <E> = \frac{U}{N} = k T^2 \frac{d}{d T} (\ln Z) \Rightarrow <F> = \frac{1}{Z} \sum_i g_i F(E_i) e^{- \frac{E_i}{k T}} $$
-
-Al crescere del rapporto $\frac{E_i}{k T}$ diminuisce $n_i$, il numero di occupazione egli stati.
-Se fisso una temperatura $T$, al crescere di $E_i$ cala $n_i$,
-dunque si ha probabilità di occupazione maggiore per gli stati ad energia $E$ minore ed anche a temperature minori.
-Da notare è che allo zero assoluto si avrebbe un sovraffollamento totale.
-
-$$ \frac{n_i}{n_j} = \frac{g_i}{g_j} \Bigl[ e^{- \frac{E_i - E_j}{k T}}  \Bigr] $$
-Si possono confrontare $n_i$ ed $n_j$ con $ (E_i E_j ) = \Delta E \ll k T$
+\newpage
 
 I gas ideali, sistemi di particelle identiche non interagenti considerando poche moli in un gran volume.
 
