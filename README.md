@@ -18,5 +18,6 @@ Accetto ogni forma di *critica* ed eventuali correzioni saranno molto apprezzate
 Ricorda sempre che non puoi capire tutto tutto di un problema:
 \begin{equation}
 \Delta p_x \Delta x \ge \frac{ \hbar}{2 }
+\label{Principio_di_Indeterminazione_di_Heisemberg}
 \end{equation}
 ```
