@@ -111,6 +111,7 @@ P_1 = \frac{ N! g_1^{n_1}}{n_1! (N-n_1)! }
 analogo per tutti gli stati, quindi per lo stato $P_s$ ho
 \begin{equation}
 P_s = \frac{g_s^{n_s}(N-n_1 - n_2 - ... - n_{s-1})!}{n_s! ( N - n_1 - n_2 - ... - n_{s})!}
+= \frac{g_s^{n_s}(N- \sum_{i=1}^{s-1}n_i )!}{n_s! ( N - \sum_{i=1}^{s}n_i )!}
 \end{equation}
 Il numero di modi totali distinti $W$ sarà quindi dato da
 \begin{equation}
@@ -339,14 +340,26 @@ arrivando infine alla \textit{Legge di distribuzione di Fermi Dirac}
 \subsection{Riassunto statistiche}
 Distribuzione di Maxwell Boltzmann (eq \ref{dist_MB})
 \begin{equation}
+P_s = \frac{g_s^{n_s}(N- \sum_{i=1}^{s-1}n_i )!}{n_s! ( N - \sum_{i=1}^{s}n_i )!}  
+\quad\quad\quad  
+W = N! \prod_{s=1}^{\infty}\frac{ g_s^{n_s}}{ n_s!}
+\quad\quad\quad  
 \frac{ n_s}{g_s } = \frac{ 1}{e^{ \alpha + \beta E_s } }
 \end{equation}
 Distribuzione di Bose Einstein (eq \ref{dist_BE})
 \begin{equation}
+P_s = \frac{ (n_s + g_s - 1)!}{n_s! (g_s - 1)! }  
+\quad\quad\quad 
+W =  \prod_{s=1}^{ \infty } \frac{ (n_s + g_s - 1)!}{n_s! (g_s - 1)! }
+\quad\quad\quad
 \frac{ n_s}{g_s } = \frac{ 1}{e^{ \alpha + \beta E_s } - 1 }
 \end{equation}
 Distribuzione di Fermi Dirac (eq \ref{dist_FD})
 \begin{equation}
+P_s = \frac{ g_s !}{n_s! (g_s - n_s)! }
+\quad\quad\quad
+W = \prod_{s=1}^{\infty} \frac{ g_s !}{n_s! (g_s - n_s)! }
+\quad\quad\quad
 \frac{ n_s}{g_s } = \frac{ 1}{e^{ \alpha + \beta E_s } + 1 }
 \end{equation}
 

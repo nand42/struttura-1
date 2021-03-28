@@ -80,6 +80,7 @@ U = k N T^2 \frac{d}{dT} (\ln Z)
 e l'energia media per particella è
 \begin{equation}
 \langle E \rangle = \frac{U}{N} = k T^2 \frac{d}{dT} (\ln Z)
+\label{energia_cinetica_media}
 \end{equation}
 Il valore medio di una certa grandezza $F$ dipendente dall'energia è
 \begin{equation}
@@ -102,23 +103,6 @@ Il rapporto tra il numero di occupazione tra due stati generici $\frac{n_i}{n_j}
 \end{split}
 \end{equation}
 permette di capire che due livelli sono confrontabili se $\Delta E \ll k_B T$ e l'esponenziale tende a 1.
-
-
-\subsection{Descrizione statistica del gas ideale}
-La maggior parte dei gas possono essere descritti dalla statistica di Maxwell Boltzmann in un ampio range di temperature.
-A seconda delle condizioni fisiche in cui ci troviamo, quindi a seconda della temperatura, della concentrazione del gas e quindi della massa totale delle particelle, un gas può comportarsi in modo classico o in modo quantistico, bosone o fermione. 
-Allora a seconda della circostanza userò una delle tre statistiche viste sopra.
-Applichiamo ora la statistica classica ad un gas ideale e monoatomico, costituito da particelle identiche e non interagenti, all'interno di un volume $V$:
-in queste condizioni tutta l'energia delle particelle è energia cinetica.
-Se il volume è grande il sistema ha un continuo di livelli energetici e posso riscrivere le leggi di MB passando al continuo
-\begin{equation}
-n(E)dE = \frac{N g(E) e^{-\beta E} dE}{\int_0^\infty g(E) e^{-\beta E} dE }
-\label{numero_particelle}
-\end{equation}
-dove
-\begin{equation}
-Z = \int_0^{\infty} g(E) e^{ -\beta E } dE
-\end{equation}
 
 
 \subsection{La funzione densità degli stati}
@@ -239,123 +223,100 @@ in cui si è usato l'equazione \ref{numero_particelle} per  $n(E)dE$.
 Ora notiamo che le equazioni \ref{barvarepsilon_1} e \ref{barvarepsilon_2} per l'energia media $\bar \varepsilon$ sono uguali solo se la funzione $g(E)$ non dipende da $E$ ed è una costante, come abbiamo appena dimostrato sopra nella \ref{gE_costante}
 
 
+\subsection{Descrizione statistica del gas ideale}
+La maggior parte dei gas possono essere descritti dalla statistica di Maxwell Boltzmann in un ampio range di temperature.
+A seconda delle condizioni fisiche in cui ci troviamo, quindi a seconda della temperatura, della concentrazione del gas e quindi della massa totale delle particelle, un gas può comportarsi in modo classico o in modo quantistico, bosone o fermione. 
+Allora a seconda della circostanza userò una delle tre statistiche viste sopra.
 
-
-
-
-
-
-
-
-\newpage
-
-I gas ideali, sistemi di particelle identiche non interagenti considerando poche moli in un gran volume.
-
-Consideriamo un numero di particelle comprese nell'intervallo energetico $E$ e $E+dE$, cioè si considera la Funzione densità degli stati:
-$$ n(E)dE = \frac{N g(E) e^{-\beta E} dE}{\int_0^\infty g(E) e^{-\beta E} dE } $$
-si può definire a partire da questo approccio classico e non solo, come visto in precedenza nell'equazione di Schrodinger.
-
-L'energia di una particella libera è:
+Applichiamo ora la statistica classica ad un gas ideale e monoatomico, costituito da particelle identiche e non interagenti, e quindi libere, all'interno di un volume $V$: in queste condizioni tutta l'energia delle particelle è energia cinetica.
+Se il volume è grande il sistema ha un continuo di livelli energetici e posso riscrivere le leggi classiche
 \begin{equation}
-E = K = \frac{p^2}{2m}
-\mbox{ con }
-\begin{cases}
-p = (p_x, p_y, p_z) \\
-q = (x, y, z)
-\end{cases}
+\begin{split}
+n(E)dE & = \frac{N g(E) e^{-\beta E} dE}{\int_0^\infty g(E) e^{-\beta E} dE } \\
+& = \frac{N}{Z} e^{ -\frac{E}{k_B T} } g(E) dE \\
+& = \frac{N}{Z} \frac{4\pi V (2m^3)^{ \frac{1}{2} E^{ \frac{1}{2} } }}{h^3} e^{ -\frac{E}{k_B T} }dE
+\label{numero_particelle}
+\end{split}
 \end{equation}
-
-Si postula quindi che il numero di stati di energia disponibili sia proporzionale, e finito, rispetto al volume nello spazio delle fasi.
-
-\begin{gather*} 
- N(E) \propto \int d^3 p d^3 q = 4 \pi V \int p^2 dp \\
-\mbox{pongo }  x = \frac{p}{\sqrt{2 m E}} \Rightarrow x^2 \leq 1 \\
-N(E) \propto 4 \pi V \int_{x^2 \le 1}^{x > 0} x^2 (2mE)^{\frac{3}{2}} dx = 4 \pi V \Bigl[ \frac{x^3}{3}  \Bigr]_0^1 (2mE)^{\frac{3}{2}} = \frac{4}{3} \pi V (2m)^{\frac{3}{2}} E^{\frac{3}{2}}
-\end{gather*}
-
-$$  g(E)dE = \frac{dN(E)}{dE}dE \Rightarrow g(E)dE \propto 4 \pi V (2m^3)^{\frac{1}{2}} E^{\frac{1}{2}} dE $$
-
-Nello spazio delle fasi ogni stato di energia non è rappresentato da un punto ma da un volume $V = h^3$, per Heisemberg $\Delta x \Delta p \simeq h$.
-Dunque la correzione quantistica alla fisica classica consiste nello scrivere che:
-
-
-\begin{equation}\label{ge_de}
-g(E) dE = \frac{4 \pi V (2m^3)^{\frac{1}{2}} E^{\frac{1}{2}} dE}{h^3}
-\end{equation}
-
-
-Si considera ad esempio l'oscillatore armonico unidimensionale $ E = \frac{p^2}{2m} + \frac{K q^2}{2} $
-
-\begin{gather*} 
-N(E) \propto \int dp dq \\
-\frac{p^2}{2mE} + \frac{K q^2}{2E} \leq 1 \mbox{ sostituendo: } 
-\begin{cases}
-	x = \frac{p}{\sqrt{2mE}} \\
-	y = \frac{q}{\sqrt{2E}} \sqrt{K}
-\end{cases} \\
-N(E) \propto \int_{x^2 + y^2 = 1} dx dy \frac{2E}{\sqrt{K}} \sqrt{m}  \mbox{ con } \omega = 2 \pi \nu = \sqrt{\frac{K}{m}} \\
-N(E) \propto \frac{E}{\nu} \Rightarrow g(E)dE \propto \frac{dE}{\nu}
-\end{gather*} 
-
-$$ \bar\varepsilon =  \frac{1}{N} \int_0^{\infty} n(\varepsilon) \varepsilon d\varepsilon = \frac{N}{N} \frac{\int_0^{\infty} g(\varepsilon) e^{- \beta E} \varepsilon dE}{\int_0^{\infty} g(\varepsilon) e^{- \beta \varepsilon} \varepsilon dE }$$
-
-È la stessa formula usata per il corpo nero, in cui $P(\varepsilon) = C e^{- \frac{\varepsilon}{k T}} $ e $ C = \frac{1}{k T}$ valida se il numero di stati è indipendente dall'energia. Per il corpo nero $g(\varepsilon)$ è costante.
-
-$$ \bar\varepsilon =   \frac{\int_0^{\infty} \varepsilon p(\varepsilon) d \varepsilon}{\int_0^{\infty} p(\varepsilon) d \varepsilon}$$
-
-\begin{gather*} \label{fun_partizione}
-g(E)dE = \frac{4 \pi V (2m^3)^\frac{1}{2}  E^\frac{1}{2} }{ h^3 } \\
-Z =  \frac{4 \pi V (2m^3)^\frac{1}{2} }{ h^3 }  \int_0^{\infty}  E^\frac{1}{2} e^{- \frac{E}{k T}}  dE \\
-\mbox{pongo: } \beta = \frac{1}{k T} \mbox{ \space ;  }  E = x^2  \rightarrow dE = 2x dx \\
-Z =  \frac{4 \pi V (2m^3)^\frac{1}{2} }{ h^3 }  \int_0^{\infty}  E^\frac{1}{2} e^{- \frac{E}{k T}}  dE \\
-= \frac{4 \pi V (2m^3)^\frac{1}{2} }{ h^3 } \int_0^{\infty} 2x^2 e^{- \beta x^2 } dx \\
-= \frac{8 \pi V (2m^3)^\frac{1}{2} }{ h^3 } \Bigl[  \frac{1}{4} \sqrt{\frac{\pi}{\beta^3}}  \Bigr] 
-= \frac{V (2 \pi m k T)^\frac{3}{2}}{h^3}
-\end{gather*}
-
-Abbiamo ottenuto la \underline{funzione di partizione per un gas monoatomico ideale}.
-Applicando a destra e sinistra il logaritmo naturale ottengo:
-
-$$ \ln (Z) = C + \frac{3}{2} \ln ( k T ) $$
-$$ <E> = k T^2 \frac{d}{dT} (\ln Z)  \Rightarrow <E> = \frac{3}{2} k T$$
-Che è l'energia cinetica media di Boltzmann, da cui si deduce che $\beta = (k T)^{-1}$.
-
-$$  U_{tot} =  \frac{3}{2} k N T = \frac{3}{2} n k N_A T = \frac{3}{2} n R T $$
-
-dove si vede $R = k N_A = \SI{8.3145}{J / mol * k}$
-
-\begin{equation} 
-n(E) dE = d n = \frac{N}{Z} e^{- \frac{E}{k T} } g(E) dE = \frac{N}{Z} \frac{4 \pi V (2m^3)^\frac{1}{2} E^\frac{1}{2} }{ h^3 } e^{- \frac{E}{k T}}  dE 
-\end{equation}
-
-
-\begin{equation} \label{formula_maxwell}
-\frac{dn}{dE} = \frac{2 \pi N}{(\pi k T)^\frac{3}{2}} E^\frac{1}{2} e^{-\frac{E}{k T}}
-\end{equation}
-
-Abbiamo ottenuto così la \underline{formula di Maxwell}.
-
-Infine dall'equazione dell'energia cinetica $E = \frac{1}{2} m v^2$
-
+e, se descrivo particelle libere, la funzione di partizione è
 \begin{equation}
-\frac{dn}{dv} = \frac{dn}{dE} \frac{dE}{dv} = mv \frac{dn}{dE} = 4 \pi N (\frac{m}{2 \pi k T})^\frac{3}{2} v^2 e^{- \frac{m v^2}{2 k T}}
+g(E) = \frac{4 \pi V (2m^3)^{ \frac{1}{2} }}{h^3} E^{ \frac{1}{2} }
+\end{equation}
+dove la funzione $Z$ è
+\begin{equation}
+\begin{split}
+Z & = \int_0^{\infty} g(E) e^{ -\beta E } dE \\
+& = \frac{4\pi V (2m^3)^{\frac{1}{2}}}{h^3} \int_0^{\infty} E^{ \frac{1}{2} } e^{-\frac{E}{kT} } dE
+\end{split}
+\end{equation}
+dove imponendo
+\begin{equation}
+\beta = \frac{1}{k_B T} \quad\quad E = x^2 \quad\quad dE=2x dx
+\end{equation}
+calcolo l'integrale
+\begin{equation}
+\int_0^{\infty} e^{ -\beta x^2 } 2 x^2 dx = 2 \Bigl[  \frac{1}{4} \sqrt{\frac{\pi}{\beta^3}}  \Bigr] = \frac{1}{2} \sqrt{\pi (kT)^3}
+\end{equation}
+da cui si trova
+\begin{equation}
+\begin{split}
+Z &= \frac{4\pi V (2m^3)^{\frac{1}{2}}}{h^3} \frac{1}{2} \sqrt{\pi (kT)^3} \\
+& = \frac{V (2\pi m k_B T)^{ \frac{3}{2} }}{h^3}
+\label{funzione_partizione_gasmono}
+\end{split}
+\end{equation}
+funzione di partizione $Z$ di un gas monoatomico ideale in funzione della temperatura $T$ e del volume $V$ del gas, 
+in cui: $m$ è la massa delle particelle, $k_B$ è la costante di Boltzmann e $h$ è la costante di Planck.
+Eseguendone il logaritmo si trova
+\begin{equation}
+\ln Z = c + \frac{3}{2} \ln (k_B T)
+\end{equation}
+in cui $c$ è una costante che raccoglie tutte le quantità che nell'espressione precedente di $Z$ sono costanti.
+L'energia cinetica media è data dalla formula \ref{energia_cinetica_media}
+\begin{equation}
+\langle E \rangle = k_B T^2 \frac{d}{dT} (\ln Z)
+\end{equation}
+da cui ottengo
+\begin{equation}
+\langle E \rangle = \frac{3}{2} k_B T
+\end{equation}
+l'energia cinetica media di una particella di un gas monoatomico ideale all'equilibrio statistico risulta essere proporzionale alla sua temperatura.
+Questa relazione era già nota in fisica classica da molto prima della teoria quantistica, in termodinamica ed è proprio da questa relazione che si dedusse il valore del parametro $\beta = \frac{1}{k_B T}$.
+L'energia totale equivale a
+\begin{equation}
+U = \frac{3}{2} k_B N T
+\end{equation}
+introducendo il concetto di \textit{mole} e ponendo $n = \frac{N}{N_A}$ dove $N$ è il numero di particelle ed $N_A$ il numero di Avogadro
+\begin{equation}
+U = \frac{3}{2} n k_B N_A T = \frac{3}{2} n R T
+\end{equation}
+in cui compare la \textit{Costante Universale dei Gas}
+\begin{equation}
+\begin{split}
+R = k_B N_A & = \SI{8.3143}{\frac{j}{mol \cdot K}} \\
+& = \SI{1.9860}{\frac{cal}{mol \cdot K}} \\
+& = \SI{5.1894}{\frac{10^{19 } eV }{mol \cdot K}}
+\end{split}
+\end{equation}
+Utilizzando le espressioni \ref{numero_particelle} ed identificandola come
+\begin{equation}
+n(E) dE = d n
+\end{equation}
+e la \ref{funzione_partizione_gasmono}
+ottengo la formula di Maxwell per la distribuzione in energia delle molecole di un gas ideale (1857)
+\begin{equation}
+\frac{dn}{dE} = \frac{2\pi N}{(\pi k_B T)^{ \frac{3}{2} }} E^{ \frac{1}{2} } e^{ - \frac{E}{k_B T} }
 \end{equation}
 
-La formula $<E> = \frac{3}{2} k T $ è l'energia cinetica per particella e deriva dal \\
-\underline{Teorema di Equipartizione dell'energia}, 
-che afferma che ogni particella ha energia cinetica media pari a $\frac{1}{2} k T$ per ogni grado di libertà posseduto.
-
-
-
-
-
-
-
-
-
-
-
-
+\paragraph{Principio di equipartizione dell'energia} l'energia media per ciascuna molecola per grado di libertà è uguale a
+\begin{equation}
+\langle E \rangle = \frac{1}{2} k_B T
+\end{equation}
+per cui l'energia media totale \textit{traslazionale} per ogni atomo è 
+\begin{equation}
+\langle E \rangle = \frac{3}{2} k_B T
+\end{equation}
+formula utilizzata anche classicamente, ad esempio nel caso del corpo nero.
 
 
 
