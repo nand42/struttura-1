@@ -1,12 +1,10 @@
 %%
 %% Author: dariochinelli
-%% 2021-1-22
+%% 2021-03-28
 %%
 
-\section{Degenerazione}
-
-Riprendiamo le tre distribuzioni viste sopra:
-
+\section{Degenerazione statistica}
+Riprendiamo le tre distribuzioni statistiche viste sopra
 \begin{equation}
 \begin{split}
 \mbox{\underline{Maxwell-Boltzmann}}  \quad\quad  \frac{n_s}{g_s} & = \frac{1}{e^{\alpha + \beta E_s}} \\
@@ -14,12 +12,165 @@ Riprendiamo le tre distribuzioni viste sopra:
 \mbox{\underline{Fermi-Dirac}}  \quad\quad  \frac{n_s}{g_s} & = \frac{1}{e^{\alpha + \beta E_s} + 1 } 
 \end{split}
 \end{equation}
+Si nota subito che se 
+\begin{equation}
+e{\alpha + \beta E_s} \gg 1
+\label{condizione_e}
+\end{equation}
+allora si può trascurare l'$1$ a denominatore e applicare la statistica classica, questo implica
+\begin{equation}
+\frac{n_s}{g_s} \ll 1
+\end{equation}
+per cui la statistica di Maxwell Boltzmann si applica nel caso in cui il numero di particelle per stato sia molto minore di 1.
+Se si prende come $zero$ il livello più basso dell'energia o \textit{livello fondamentale} $E_s = 0$, allora si ha che l'espressione \ref{condizione_e} è verificata per
+\begin{equation}
+e^{\alpha} \gg 1 \quad\Leftrightarrow\quad  e^{-\alpha} \ll 1
+\end{equation}
 
-Si nota subito che se $e{\alpha + \beta E_s} \ll 1 $ si può comunque applicare la statistica classica, ma questo implica che allora  $\frac{n_s}{g_s} \ll 1 $,
-situazione che si ha nel caso in cui il numero di particelle per stato sia molto minore di 1.
-Se si prende come zero il livello più basso dell'energia $E_s = 0$, allora si ha che $e^{\beta E_s } \ge 1 \Rightarrow e^{\alpha} \gg 1 \Rightarrow e^{-\alpha} \ll 1$
-dove $e^{-\alpha} = \xi $ è detto parametro di degenerazione.
-Se questa condizione è soddisfatta e vale dunque la statistica classica, si dice che il gas considerato è \underline{non degenere}. 
+\paragraph{Parametro di degenerazione} introduciamo il parametro $\xi$ tale che 
+\begin{equation}
+e^{-\alpha} = \xi 
+\end{equation}
+Se la condizione 
+\begin{equation}
+\xi = e^{-\alpha} \ll 1
+\label{cond_deg}
+\end{equation}
+è verificata allora si dice che il gas è un \underline{gas non degenere} e posso utilizzare la statistica classica;
+se al contrario la condizione \ref{cond_deg} non è soddisfatta allora il gas si definisce \underline{gas degenere} e dovrà essere descritto dalle statistiche quantistiche.
+
+\paragraph{Esplicitiamo la condizione di degenerazione}
+Riprendendo la relazione nel caso della statistica di MB
+\begin{equation}
+e^{\alpha} = \frac{Z}{N}
+\end{equation}
+e la funzione di partizione \ref{funzione_partizione_gasmono}
+\begin{equation}
+Z = \frac{V (2\pi m k_B T)^{ \frac{3}{2} }}{h^3}
+\end{equation}
+che si può riscrivere 
+\begin{equation}
+Z = \frac{V}{\lambda_{th}^3}
+\end{equation}
+in funzione del parametro detto \textit{$\lambda$ termica di De Broglie}
+\begin{equation}
+\lambda_{th} = \Bigl(  \frac{h^2}{2 m k_B T}  \Bigr)^{ \frac{1}{2} }
+\label{lambda_th_debroglie}
+\end{equation}
+allora il parametro di degenerazione diventa
+\begin{equation}
+\begin{split}
+& e^{\alpha} = \frac{V}{N} \frac{1}{\lambda_{th}^3} = \frac{1}{n} \frac{1}{\lambda_{th}^3} \\
+\Rightarrow\quad & \xi = e^{-\alpha} = n \lambda_{th}^3
+\end{split}
+\end{equation}
+La condizione \ref{cond_deg} si otterrà con
+\begin{itemize}
+\item piccole densità $\quad\Rightarrow\quad n$ piccolo 
+\item alte temperature $\quad\Rightarrow\quad T$ grande $\quad\Rightarrow\quad \lambda_{th}$ piccolo
+\end{itemize}
+equivalente a
+\begin{equation}
+e^{-\alpha} = \frac{N}{Z} =  \frac{N h^3}{V (2 \pi m k T)^{\frac{3}{2}}} \ll 1
+\end{equation}
+
+\paragraph{Gas di bosoni} consideriamo un gas ideale di bosoni, quindi composto da particelle che seguono la statistica di Bose Einstein, situazione abbastanza comune poiché le molecole di un gas hanno in genere \textit{spin} intero $(0, 1, ...)$.
+La legge di distribuzione di Bose Einstein, nel caso abbia un continuo di livelli di energia, la posso scrivere come
+\begin{equation}
+n(E)dE = g(E) \frac{1}{e^{ \alpha } e^{ \frac{E}{k_B T} } - 1 } dE
+\end{equation}
+allora il numero totale delle particelle del sistema
+\begin{equation}
+\begin{split}
+N & = \int_0^{\infty} \frac{1}{e^{ \frac{E}{k_B T} } - 1} g(E) dE \\
+g(E)dE & = \frac{4\pi V (2m^3)^{ \frac{1}{2} }}{h^3} E^{\frac{1}{2} } dE
+\end{split}
+\end{equation}
+risolviamo allora questo integrale
+\begin{equation}
+\begin{split}
+pongo & \quad\quad x = \frac{E}{kT} \\
+uso & \quad\quad Z = \frac{V (2 \pi m k_B T)^{ \frac{3}{2} } }{h^3}
+\end{split}
+\end{equation}
+e trovo
+\begin{equation}
+N = \frac{2Z}{\sqrt{\pi}} \int_0^{\infty} \frac{x^{ \frac{1}{2} }}{e^{ \alpha + x } - 1} dx
+\label{integrale_num_part}
+\end{equation}
+notare che per la statistica di BE il parametro $\alpha$ \underline{deve} essere positivo, per non rischiare di avere il rapporto $\frac{n_s}{g_s}$ negativo.
+Il denominatore nell'integrale precedente \ref{integrale_num_part} si può riscrivere come
+\begin{equation}
+(e^{ \alpha + x } - 1)^{-1} = e^{ - \alpha - x } (1 - e^{ - \alpha - x })^{ -1 }
+\end{equation}
+per cui l'integrale diventa
+\begin{equation}
+N = \frac{2Z}{\sqrt{\pi}} \int_0^{\infty} \frac{x^{ \frac{1}{2} }}{e^{ \alpha + x }} (1 - e^{ - \alpha - x })^{ -1 } dx
+\end{equation}
+dove la parentesi risulta essere la serie geometrica, che si può sviluppare in serie di Taylor
+$$ \frac{1}{1-y} = 1 + y + y^2 + ... $$
+e per cui posso scrivere l'integrando come
+\begin{equation}
+N = \frac{2Z}{\sqrt{\pi}} \int_0^{\infty} \frac{x^{ \frac{1}{2} }}{e^{ \alpha + x }} (1 + e^{ - (\alpha + x) } + e^{ - 2 (\alpha + x) } + ... ) dx
+\end{equation}
+integrando questa espressione termine a termine ottengo (è la funzione \textit{gamma})
+\begin{equation}
+N = Z e^{ -\alpha } \Bigl(  1 + \frac{1}{2^{\frac{3}{2}}}e^{ -\alpha } + \frac{1}{3^{\frac{3}{2}}} e^{ -2\alpha } + ...  \Bigr)
+\end{equation}
+da cui allora 
+\begin{equation}
+e^{ -\alpha } = \frac{N}{Z} \Bigl(  1 + \frac{1}{2^{\frac{3}{2}}}e^{ -\alpha } + \frac{1}{3^{\frac{3}{2}}} e^{ -2\alpha } + ...  \Bigr)^{ -1 }
+\end{equation}
+fermandomi al primo termine $\quad\Rightarrow\quad $ \textbf{risultato classico}
+\begin{equation}
+e^{ -\alpha } = \frac{N}{Z} \quad\Rightarrow\quad e^{ \alpha } = \frac{Z}{N}
+\end{equation}
+fermarsi al primo termine significa assumere che $e^{ -\alpha } \ll 1$, appunto.
+
+
+\paragraph{Energia totale} Calcoliamo ora l'energia totale del sistema, calcolando un integrale analogo al precedente tranne che per la dipendenza dalla temperatura $T$ a numeratore e la variabile $x^{ \frac{3}{2} }$ sotto integrale
+\begin{equation}
+\begin{split}
+U & = \int_0^{\infty} E n(E)dE = \frac{2Zk_B T}{\sqrt{\pi}} \int_0^{\infty} \frac{x^{ \frac{3}{2} }}{e^{ \alpha + x } - 1 } dx \\
+& = \frac{3}{2} k_B T Z e^{ -\alpha } \Bigl(  1 + \frac{1}{2^{ \frac{2}{5} }} e^{ -\alpha } +  \frac{1}{3^{ \frac{2}{5} }} e^{ -2 \alpha } + ... \Bigr)
+\end{split}
+\end{equation}
+fermandomi al primo termine e ricordando che $e^{ -\alpha } = \frac{N}{Z}$
+\begin{equation}
+\begin{split}
+U & = \frac{3}{2} k_B T Z e^{ -\alpha } \\
+& = \frac{3}{2} k_B T Z \frac{N}{Z} = \frac{3}{2} N k_B T
+\end{split}
+\end{equation}
+ritrovo allora l'energia totale di un gas classico. \\
+Da cui ricavo inoltre l'energia media per particella nel risultato classico
+\begin{equation}
+\frac{U}{N} = \langle E \rangle = \frac{3}{2} k_B T
+\end{equation}
+
+Fermandomi invece al secondo termine
+\begin{equation}
+\bar U = \frac{U}{N} = \frac{3}{2} k_B T \Bigl[  1 - \frac{1}{2^{ \frac{5}{2} }}  \frac{N h^3}{V (2\pi m k_B T)^{ \frac{3}{2} }}  \Bigr]
+\end{equation}
+il secondo termine in parentesi esprime la \textit{deviazione} di un gas di bosoni da un gas classico, per cui
+\begin{equation}
+\frac{N h^3}{V (2\pi m k_B T)^{ \frac{3}{2} }}  \ll 1 
+\end{equation}
+è la condizione per la statistica classica, che è proprio la quantità $e^{-\alpha}$ ovvero $\xi$.
+Ciò significa che nel caso quantistico dei bosoni, rispetto ad un caso classico, l'energia del sistema sarà un po' inferiore:
+la probabilità di trovare due particelle in uno stesso stato di energia è più grande per un gas di bosoni che per un gas classico, "i bosoni preferiscono stare in uno stesso stato".
+Da questo ragionamento discende inoltre che un gas di bosoni ha una \textit{pressione} inferiore rispetto al gas classico, hanno infatti una energia media per particella inferiore.
+
+
+
+
+
+
+
+
+
+
+\newpage
 
 \begin{equation}
 \begin{split}
@@ -121,21 +272,6 @@ Dunque $d$ è la distanza media tra una particella e l'altra e se $\lambda \ge d
 & \mbox{si ritrova } \quad \frac{ \lambda^3}{d^3} \ge 1
 \end{split}
 \end{equation}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
