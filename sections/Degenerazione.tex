@@ -1,6 +1,6 @@
 %%
 %% Author: dariochinelli
-%% 2021-03-28
+%% 2021-03-31
 %%
 
 \section{Degenerazione statistica}
@@ -27,7 +27,7 @@ Se si prende come $zero$ il livello più basso dell'energia o \textit{livello fo
 e^{\alpha} \gg 1 \quad\Leftrightarrow\quad  e^{-\alpha} \ll 1
 \end{equation}
 
-\paragraph{Parametro di degenerazione} introduciamo il parametro $\xi$ tale che 
+\subsection{Parametro di degenerazione} Introduciamo il parametro di degenerazione $\xi$ tale che 
 \begin{equation}
 e^{-\alpha} = \xi 
 \end{equation}
@@ -50,11 +50,11 @@ Z = \frac{V (2\pi m k_B T)^{ \frac{3}{2} }}{h^3}
 \end{equation}
 che si può riscrivere 
 \begin{equation}
-Z = \frac{V}{\lambda_{th}^3} \sqrt{\pi^3}
+Z = \frac{V}{\lambda_{th}^3}
 \end{equation}
-in funzione del parametro detto \textit{$\lambda$ termica di De Broglie}
+in funzione del parametro $\lambda_{th}$ detto \textit{lambda termica di De Broglie}
 \begin{equation}
-\lambda_{th} = \Bigl(  \frac{h^2}{2 m k_B T}  \Bigr)^{ \frac{1}{2} }
+\lambda_{th} = \Bigl(  \frac{h^2}{2 \pi m k_B T}  \Bigr)^{ \frac{1}{2} }
 \label{lambda_th_debroglie}
 \end{equation}
 allora il parametro di degenerazione diventa
@@ -62,6 +62,7 @@ allora il parametro di degenerazione diventa
 \begin{split}
 & e^{\alpha} = \frac{V}{N} \frac{1}{\lambda_{th}^3} = \frac{1}{n} \frac{1}{\lambda_{th}^3} \\
 \Rightarrow\quad & \xi = e^{-\alpha} = n \lambda_{th}^3
+\label{disaccordo1}
 \end{split}
 \end{equation}
 La condizione \ref{cond_deg} si otterrà per
@@ -74,7 +75,7 @@ equivalente a
 e^{-\alpha} = \frac{N}{Z} =  \frac{N h^3}{V (2 \pi m k T)^{\frac{3}{2}}} \ll 1
 \end{equation}
 
-\paragraph{\underline{Gas di bosoni}} consideriamo un gas ideale di bosoni, quindi composto da particelle che seguono la statistica di Bose Einstein, situazione abbastanza comune poiché le molecole di un gas hanno in genere \textit{spin} intero $(0, 1, ...)$.
+\subsection{Gas di bosoni} consideriamo un gas ideale di bosoni, quindi composto da particelle che seguono la statistica di Bose Einstein, situazione abbastanza comune poiché le molecole di un gas hanno in genere \textit{spin} intero $(0, 1, ...)$.
 La legge di distribuzione di Bose Einstein, nel caso abbia un continuo di livelli di energia, la posso scrivere come
 \begin{equation}
 n(E)dE = g(E) \frac{1}{e^{ \alpha } e^{ \frac{E}{k_B T} } - 1 } dE
@@ -122,9 +123,7 @@ fermandomi al primo termine $\quad\Rightarrow\quad $ \textbf{risultato classico}
 \begin{equation}
 e^{ -\alpha } = \frac{N}{Z} \quad\Rightarrow\quad e^{ \alpha } = \frac{Z}{N}
 \end{equation}
-fermarsi al primo termine significa assumere che $e^{ -\alpha } \ll 1$, appunto.
-
-
+fermarsi al primo termine significa assumere che $e^{ -\alpha } \ll 1$, appunto. \\
 Calcoliamo ora l'\textbf{energia totale del sistema}, calcolando un integrale analogo al precedente tranne che per la dipendenza dalla temperatura $T$ a numeratore e la variabile integranda $x^{ \frac{3}{2} }$ 
 \begin{equation}
 \begin{split}
@@ -157,7 +156,7 @@ Ciò significa che nel caso quantistico di \textit{bosoni}, rispetto ad un caso 
 la probabilità di trovare due particelle in uno stesso stato di energia è più grande per un gas di bosoni che per un gas classico, \textit{"i bosoni preferiscono stare in uno stesso stato"}.
 Da questo ragionamento discende inoltre che un gas di bosoni ha una \textit{pressione inferiore} rispetto al gas classico, dovuto al fatto che hanno una energia media per particella inferiore.
 
-\paragraph{\underline{Gas di fermioni}} Rifacendo tutto lo stesso ragionamento utilizzando la statistica di Fermi Dirac, quindi per un \textbf{gas di fermioni}, trovo che l'energia media per ogni fermione è 
+\subsection{Gas di fermioni} Rifacendo tutto lo stesso ragionamento utilizzando la statistica di Fermi Dirac, quindi per un \textbf{gas di fermioni}, trovo che l'energia media per ogni fermione è 
 \begin{equation}
 \bar U = \frac{U}{N} = \frac{3}{2} k_B T \Bigl[  1 + \frac{1}{2^{ \frac{5}{2} }} \frac{N h^3}{V (2\pi m k_B T)^{ \frac{3}{2} }} \Bigr]
 \end{equation}
@@ -170,7 +169,7 @@ Ciò significa che nel caso quantistico di \textit{fermioni}, rispetto ad un cas
 la probabilità di trovare due particelle in uno stesso stato di energia è nulla per un gas di fermioni che per un gas classico, infatti obbediscono al Principio di Esclusione di Pauli, \textit{"i fermioni preferiscono stare da soli in uno stesso stato"}.
 Da questo ragionamento discende inoltre che un gas di bosoni ha una \textit{pressione maggiore} rispetto al gas classico, dovuto al fatto che hanno una energia media per particella maggiore.
 
-\paragraph{esempio}
+\paragraph{NB:}
 \textit{Ogni volta che la distanza tra le particelle diventa confrontabile o più piccola della lunghezza d'onda di De Broglie a loro assegnata, ci aspettiamo di osservare effetti quantistici, caso in cui le funzioni d'onda delle particelle si sovrappongono e non posso più trattarle classicamente.} \\
 Supponiamo di avere un gas all'equilibrio ad una certa temperatura $T$, l'energia cinetica media per particella ed il momento medio sono
 \begin{equation}
@@ -178,50 +177,48 @@ K_{media} = \frac{3}{2} k_B T
 \quad\quad\quad
 p_{medio} = \sqrt{2mK} = \sqrt{3 m k_B T}
 \end{equation}
-La lambda di De Broglie
+La lambda di De Broglie è \textit{proporzionale} alla \ref{lambda_th_debroglie} lambda termica di De Broglie $\lambda_{th}$, per cui
 \begin{equation}
 \lambda = \frac{h}{p} 
 = \frac{h}{(3mk_B T)^{ \frac{1}{2} }}
-= \Bigl(  \frac{h^2}{(3mk_B T)}  \Bigr)^{ \frac{1}{2} }
+= \Bigl(  \frac{2\pi}{3}  \Bigr)^{ \frac{1}{2} }\Bigl(  \frac{h^2}{2\pi mk_B T}  \Bigr)^{ \frac{1}{2} }
+= \lambda_{th} \sqrt{\frac{2\pi}{3}} 
 \end{equation}
-\textit{proporzionale} alla \ref{lambda_th_debroglie} lambda termica di De Broglie $\lambda_{th}$, per cui
-\begin{equation}
-\lambda = \lambda_{th} \sqrt{\frac{2}{3}\pi} 
-\end{equation}
-Supponiamo allora di avere un sistema di $N$ particelle in un volume $V$, per cui il \textit{volume medio} per ogni particella sarà
+Supponiamo allora di avere un sistema di $N$ particelle in un volume $V$, per cui il \textit{volume medio} per ogni particella e quindi la \textit{distanza media} saranno rispettivamente
 \begin{equation}
 d^3 = \frac{V}{N}
-\end{equation}
-e la \textit{distanza media} sarà appunto
-\begin{equation}
+\quad\quad\quad
 d = \Bigl(   \frac{V}{N}  \Bigr)^{\frac{1}{3}}
 \end{equation}
-come detto sopra, gli effetti quantistici sono importanti se
+gli \textit{effetti quantistici} sono importanti se
 \begin{equation}
 \lambda \ge d
 \end{equation}
-da cui trovo
+da cui sostituendo si trova quanto segue, da $(\ast)$ si trovano due risultati in parallelo:
 \begin{equation}
 \begin{split}
-& \frac{h}{(3mk_B T)^{ \frac{1}{2} }} \ge \Bigl(   \frac{V}{N}  \Bigr)^{\frac{1}{3}} \quad\Rightarrow\quad \frac{h^3}{(3mk_B T)^{ \frac{3}{2} }} \ge \frac{V}{N}  \\
-\quad\Rightarrow\quad & \frac{N h^3}{V(3mk_B T)^{ \frac{3}{2} }} \ge 1 
+\Bigl(  \frac{2\pi}{3}  \Bigr)^{ \frac{1}{2} } \Bigl(  \frac{h^2}{2\pi mk_B T}  \Bigr)^{ \frac{1}{2} }  & \ge \Bigl(   \frac{V}{N}  \Bigr)^{\frac{1}{3}} \\
+\frac{N}{V} \Bigl(  \frac{h^2}{2\pi mk_B T}  \Bigr)^{ \frac{3}{2} } & \ge \Bigl(  \frac{3}{2\pi}  \Bigr)^{ \frac{3}{2} }  \\
+(\ast) & \\
+\xi \ge  \Bigl(  \frac{3}{2\pi}  \Bigr)^{ \frac{3}{2} } \approx 0.33
+\quad\quad\quad & \quad\quad
+\frac{N}{V} \lambda_{th}^3 = n\lambda_{th}^3 \ge  \Bigl(  \frac{3}{2\pi}  \Bigr)^{ \frac{3}{2} } \approx 0.33
 \end{split}
 \end{equation}
-che si può riscrivere in funzione del parametro di degenerazione
+in cui $\xi$ è il parametro di degenerazione
 \begin{equation}
-\xi = \frac{N h^3}{V(2mk_B T)^{ \frac{3}{2} }} \ge \frac{1}{3} 
+\xi = \frac{N h^3}{V(2\pi mk_B T)^{ \frac{3}{2} }}
 \end{equation}
-tale che 
+per cui si ottiene
 \begin{equation}
-\xi = e^{ -\alpha } =\frac{N}{V} \lambda_{th}^3 = n \lambda_{th}^3
+\xi = \frac{N}{V} \lambda_{th}^3 = n \lambda_{th}^3
 \end{equation}
-ottengo che il parametro di degenerazione deve essere maggiore di $\frac{1}{3}$ affinché siano consistenti gli effetti quantistici, per cui il gas è degenere.
+Risultato in accordo con la \ref{disaccordo1}.
 
-Se la temperatura è sufficientemente alta che la lambda termica di De Broglie è molto più piccola della distanza fra particelle, allora un gas si comporta classicamente e posso applicare la statistica di Maxwell Boltzmann
-
-Intorno alla temperatura ambiente si ha $\xi \ll 1$, quindi posso trattare il sistema con la statistica di Maxwell Boltzmann.
-
-Quando la massa $m$ diventa piccola o la temperatura $T$ diventa molto bassa o quando la densità diventa elevata dovrò considerare effetti quantistici.
+\textbf{Concludo} che il parametro di degenerazione deve essere maggiore di $\approx \frac{1}{3}$ affinché siano consistenti gli effetti quantistici, per cui il gas è degenere.
+Intorno alla temperatura ambiente, per normali gas, si ha $\xi \ll 1$ e posso trattare il sistema con la statistica di Maxwell Boltzmann.
+Se la temperatura è sufficientemente alta che la lambda termica di De Broglie $\lambda_{th}$ è molto più piccola della distanza fra particelle, allora un gas si comporta classicamente e posso applicare la statistica di Maxwell Boltzmann. 
+Quando la massa $m$ diventa piccola o la temperatura $T$ diventa molto bassa o quando la densità $\frac{N}{V}$ diventa elevata dovrò considerare effetti quantistici.
 
 
 
