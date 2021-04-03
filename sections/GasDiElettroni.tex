@@ -38,7 +38,7 @@ ed in cui, per temperature $T=\SI{0}{K}$
 \end{equation}
 Valutiamo ora lo studio di funzione di $\frac{ n_s}{g_s }$ al variare di $T$.
 Analizziamo tre casi significativi dell'andamento del rapporto $\frac{ n_s}{g_s }$ rispetto a diverse temperature
-In riferimento alla figura \ref{grafico_distribuzioni}:
+In riferimento alla figura \ref{degenerazione3}:
 \begin{enumerate}[label=Caso \alph*)]
 % T = T_A
 \item La temperatura, sopra lo zero assoluto, è $T \ll T_F$ dove introduco la \textit{Temperatura di Fermi}
@@ -67,12 +67,12 @@ per cui le particelle occuperanno tutti gli stati disponibili di energia più ba
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.35]{/degenerazione3}
-\label{grafico_distribuzioni}
 \caption{Nel grafico vengono riportate tre distribuzioni calcolate su tre temperature, nel testo: \quad
 Caso a) funzione $f_{T_A}$
 Caso b) funzione $f_{T_B}$
 Caso c) funzione $f_{T=\SI{0}{K}}$
 }
+\label{degenerazione3}
 \end{figure}
 
 \subsection{Gas di elettroni}
@@ -216,7 +216,10 @@ n^{ \frac{2}{3} } = \Bigl(  \frac{1}{d^3}  \Bigr)^{ \frac{2}{3} } = d^{ -2 }
 allora la Temperatura di Fermi risulta
 \begin{equation}
 \begin{split}
-T_F = 
+T_F & = \frac{E_F(0)}{k_B} = \frac{h^2}{8k_B m} \Bigl(  \frac{3}{\pi}  \Bigr)^{ \frac{2}{3} } d^{ -2 } \\
+& = \Bigl(\frac{3}{\pi}\Bigr)^{\frac{2}{3}}\frac{6.6^2}{8 \cdot 1.38 \cdot 9.1 \cdot 1} 
+\cdot \frac{10^{-68}}{10^{-23}10^{-31}10^{-20}} \frac{\SI{}{J^2.s^2}}{\SI{}{\frac{J}{K}.Kg.m^2}} \\
+& = \SI{4.20e5}{K}
 \end{split}
 \end{equation}
 
