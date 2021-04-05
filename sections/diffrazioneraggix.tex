@@ -1,38 +1,31 @@
 %%
 %% Author: dariochinelli
-%% 2021-03-15
+%% 2021-04-05
 %%
 
 
 \section{Diffrazione raggi X}
-Nel 1913 Bragg scoprì che i solidi cristallini producevano pattern molto particolari nella diffrazione di raggi $X$.
-Scoprì infatti che questi cristalli, a determinate lunghezze d'onda, producono picchi di intensità di radiazione diffusa ad angoli ben precisi.
+Nel 1913 Bragg scoprì che i solidi cristallini producono pattern molto particolari nella diffrazione di raggi $X$.
+Scoprì infatti che i cristalli, a determinate lunghezze d'onda, producono picchi di intensità di radiazione diffusa ad angoli ben precisi.
 
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.5]{/diffusione_raggiX}
-\caption{Picchi di intensità per un materiale cristallino con struttura cubica}
-\end{figure}
+\paragraph{Cos'è un \textit{reticolo cristallino}?} 
+Si consideri ad esempio un pezzo di ferro, gli atomi che lo compongono sono localizzati nello spazio in una struttura ordinata, esso possiede un \textit{ordine cristallino}.
+È come avere una matrice di atomi, posti in posizioni ben precise e ripetute "infinitamente", semplificando la trattazione, consideriamo celle di forma cubica.
 
-Cos'è un \textit{reticolo cristallino}? 
-Si consideri ad esempio un pezzo di ferro, o alluminio, esso possiede un \textit{ordine cristallino}, ovvero gli atomi che lo compongono sono localizzati nello spazio in una struttura ordinata.
-È come avere una matrice di atomi, posti in posizioni ben precise e ripetute "infinitamente" che compongono il materiale.
-Per semplicità, consideriamo celle di forma cubica.
-
-Per angoli ben precisi vedo quindi picchi della radiazione X, ciò è dovuto all'interferenza costruttiva che si ottiene dalla differenza di cammino ottico fra i due raggi riflessi da due atomi della struttura cristallina.
-Venne spiegato da Max Von Laue.
+\paragraph{Irraggiamento di un cristallo}
+Per angoli ben precisi si osservano picchi della radiazione, dovuti all'interferenza costruttiva di due onde \textit{riflesse} da due diversi piani atomici dell struttura cristallina.
+Questo concetto venne spiegato da Max Von Laue.
+Pensando ad un reticolo di diffrazione: ogni fenditura è sorgente di onde,
+allo stesso modo ogni atomo si comporta come una sorgente d'onde e si verifica l'interferenza costruttiva.
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.7]{/atomi_radiazineX}
-\caption{Diagramma esplicativo della situazione}
+\caption{Diagramma dei piani atomici di un cristallo}
 \end{figure}
 
-Pensando ad un reticolo di diffrazione: ogni fenditura è sorgente di onde;
-Allo stesso modo ogni atomo si comporta come una sorgente d'onde e si verifica l'interferenza costruttiva.
-
 Il contributo fondamentale per capire il fenomeno fu dato da William Henry Bragg e da William Lawrence Bragg, padre e figlio, i quali conoscendo i lavori di Von Laue capirono che si poteva spiegare il fenomeno assumendo che: \\ 
-\textit{"per ogni raggio diffratto esiste un set di piani reticolari cosicché il raggio diffratto appare come riflesso specularmente da tale set di piani"}.
-L'ipotesi di Bragg è che i piani siano semi-riflettenti.
+\textit{"per ogni raggio diffratto esiste un set di piani reticolari cosicché il raggio diffratto appare come riflesso specularmente da tale set di piani"}. \\
+
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.7]{/schema_bragg}
@@ -40,6 +33,7 @@ L'ipotesi di Bragg è che i piani siano semi-riflettenti.
 \label{cammino_ottico}
 \end{figure}
 
+\textbf{L'ipotesi di Bragg} è che i piani siano semi-riflettenti.
 Come si vede in figura \ref{cammino_ottico} la differenza di cammino ottico sarà data da
 \begin{equation}
 \begin{split}
@@ -47,19 +41,23 @@ Come si vede in figura \ref{cammino_ottico} la differenza di cammino ottico sar�
 & 2 d \sin\theta = n \lambda 
 \end{split}
 \end{equation}
-
-Dove l'ultima equazione è la parte analitica della \textbf{Legge di Bragg}.
-
+Dove l'ultima equazione è la parte analitica della \textbf{Legge di Bragg}. \\
 Bragg interpreta il fenomeno come una riflessione e non come una diffrazione, quando è verificata la condizione precedente.
 Significa quindi che si tratta di picchi di \textit{riflessione} detti "picchi di riflessione di Bragg".
 Per ogni tipo di cristallo potrò osservare tanti picchi di diffrazione ad angoli diversi, che corrispondono ad una riflessione da un set reticolare diverso.
-
 Questo fenomeno è utile per investigare la materia:
 sottoponendo un campione ad un fascio di raggi X risalgo alla sua struttura cristallina attraverso l'osservazione del pattern di diffrazione ottenuto.
 
 \begin{figure}[h]
-\centering
-\includegraphics[scale=0.8]{/pattern_diffrazione_X}
-\caption{Esempio di spettro di diffrazione}
+    \centering
+    \subfloat[Picchi di intensità per un materiale cristallino con struttura cubica]{
+        \label{es_diff_1}
+        \includegraphics[width=0.5\textwidth]{/diffusione_raggiX}
+    }
+    \subfloat[Spettro di diffrazione in funzione dell'angolo]{
+        \label{es_diff_1}
+        \includegraphics[width=0.5\textwidth]{/pattern_diffrazione_X}
+    }
+    \caption{Esempi di spettri di diffrazione}
+    \label{es_diff}
 \end{figure}
-
