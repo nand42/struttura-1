@@ -1,6 +1,6 @@
 %%
 %% Author: dariochinelli
-%% 2021-03-31
+%% 2021-04-05
 %%
 
 \section{Approfondimento sulla statistica di Fermi-Dirac}
@@ -75,6 +75,7 @@ Caso c) funzione $f_{T=\SI{0}{K}}$
 \label{degenerazione3}
 \end{figure}
 
+
 \subsection{Gas di elettroni}
 
 Gli elettroni sono fermioni, la loro statistica è perciò descritta dal modello di Fermi-Dirac, poiché si tratta di particelle soggette al principio di esclusione di Pauli.
@@ -95,7 +96,8 @@ n(E)dE & = 2 \cdot \frac{4 \pi V (2m^3)^{\frac{1}{2}} }{h^3} E^{\frac{1}{2}} \fr
 \end{split}
 \end{equation}
 
-\paragraph{Cerco l'espressione generale del Livello di Fermi}
+
+\subsubsection{Cerco l'espressione generale del Livello di Fermi}
 Calcolo il numero totale delle particelle nel sistema, integrando in $[0, \infty]$, vedi figura \ref{fig_integrali_a}
 \begin{equation}
 N = \int_0^{\infty} n(E)dE
@@ -122,7 +124,8 @@ E_F(0) & = \frac{h^2}{8m}\Bigl(  \frac{3N}{\pi V}  \Bigr)^{ \frac{2}{3} } \\
 \end{equation}
 in cui $n=\frac{N}{V}$ è una densità, infatti è definito come il numero di particelle sul volume, è importante notare che il Livello di Fermi dipende da $n^{ \frac{2}{3} }$ e quindi cresce al crescere della densità.
 
-\paragraph{Calcolo dell'energia totale del sistema}
+
+\subsubsection{Calcolo dell'energia totale del sistema}
 È dato dall'integrale della funzione energia $E$ moltiplicata la distribuzione $n(E)$
 \begin{equation}
 U = \int_0^{\infty} E n(E) dE
@@ -131,7 +134,8 @@ in cui è possibile utilizzare lo stesso ragionamento usato sopra ed integrare n
 \begin{equation}
 \begin{split}
 U & = \int_0^{E_F(0)} E g(E) dE = \frac{8\pi V (2m^3)^{ \frac{1}{2} }}{h^3} \int_0^{E_F(0)} E^{ \frac{3}{2} } dE \\
-& = \frac{2}{5} \frac{8\pi V (2m^3)^{ \frac{1}{2} }}{h^3} E_F(0)^{ \frac{5}{2} } = \frac{3}{5} N E_F(0)
+& = \frac{2}{5} \frac{8\pi V (2m^3)^{ \frac{1}{2} }}{h^3} E_F(0)^{ \frac{5}{2} } = \frac{3}{5} N E_F(0) \\
+& = \frac{3}{5} N \frac{h^2}{8m}\Bigl(  \frac{3}{\pi}  \Bigr)^{ \frac{2}{3} } n^{ \frac{2}{3} }
 \end{split}
 \end{equation}
 dove l'ultimo passaggio è possibile considerando il risultato ottenuto nella \ref{num_parti_N} per $N$. \\
@@ -167,8 +171,7 @@ Anche allo zero assoluto esiste una pressione \textit{residua} del sistema.
 \end{figure}
 
 
-
-\paragraph{Stima di $T_F$}
+\subsubsection{Calcolo della temperatura di Fermi $T_F$}
 Nella teoria di Fermi Dirac, avendo fissato $\alpha$, ricavo il valore di $\xi$
 \begin{equation}
 \begin{split}
@@ -196,6 +199,7 @@ Il gas non è degenere se
 k_B T \gg E_F(0) \quad\Rightarrow\quad T \gg T_F
 \end{equation}
 
+\paragraph{Stima di $T_F$}
 Supponiamo un metallo in cui ogni atomo fornisce un elettrone alla banda di conduzione, quindi un metallo con \textit{valenza} 1 (numero di elettroni fornito da ogni atomo).
 La distanza tra gli elettroni sia circa
 \begin{equation}
@@ -222,69 +226,63 @@ T_F & = \frac{E_F(0)}{k_B} = \frac{h^2}{8k_B m} \Bigl(  \frac{3}{\pi}  \Bigr)^{ 
 & = \SI{4.20e5}{K}
 \end{split}
 \end{equation}
+La temperatura di Fermi stabilisce il confine che separa il regime in cui vale la statistica classica $(T>T_F)$ da quello in cui vale la statistica quantistica $(T<T_F)$, quindi per un gas di elettroni a temperature \textit{ordinarie} sono sempre in un regime degenere.
 
 
-
-
-
-\newpage
-\iffalse
-
-Poiché $\alpha = -\frac{ E_F}{k T} \quad \Rightarrow \quad \xi = e^{-\alpha} = e^{ \frac{ E_F}{k T}}$ allora si ha che per $T=\SI{0}{K} \Rightarrow \xi = +\infty $
-e si è in presenza di un gas totalmente degenere, che significa, nel caso di fermioni, che le particelle sono tutte "ammassate", pur rispettando il Principio di Esclusione di Pauli, nei livelli più bassi.
-Un gas di fermioni continua a rimanere degenere se $T \ll T_F$ dove $T_F = \frac{ E_F(0)}{k}$, cioè se $kT \ll E_F(0)$, 
-dove $E_F(T) \approx E_F(0)$ e quindi $\xi \gg 1$
-In tal caso occorre usare la statistica di Fermi-Dirac.
-Tuttavia se $kT \gg E_F(0) \Rightarrow T \gg T_F $, si deve (o si può?) applicare la statistica classica.
-
-Supponiamo ora di avere un metallo di \underline{valenza 1} (la valenza esprime quanti elettroni di conduzione possono essere forniti da ogni atomo del metallo).
-Supponiamo che la distanza fra gli elettroni sia $a \simeq \SI{0.1}{nm}$, allora una stima della densità elettronica è $n = \frac{ 1}{a^{ 3}} = a^{ -3}$.
-Stimiamo $T_F$, perciò:
-
+\subsubsection{Calore specifico elettronico}
+Si definisce \textbf{calore specifico molare} il calore necessario per innalzare di un grado la temperatura di una mole di una sostanza
 \begin{equation}
-\begin{cases}
-	T_F = \frac{ E_F(0)}{k} = \frac{ h^2}{8 k m} \Bigl(  \frac{ 3}{\pi}  \Bigr)^{ \frac{ 2}{3}} n^{ \frac{ 2}{3}} \simeq \frac{ h^2}{k m a^2} \simeq \frac{ 10^{ -68}}{10^{-23 } 10^{ 30} 10^{-20 }} \frac{ J \cdot s^2 \cdot K}{J \cdot Kg \cdot m^2} = 10^{5} K \\
-	n^{ \frac{ 2}{3}} = \Bigl(  a^{ -3}  \Bigr)^{ \frac{ 2}{3}} = a^{ -2}
-\end{cases}
+c_V = \frac{dU}{dT}
+\end{equation}
+l'energia totale è 
+\begin{equation}
+U = \frac{3}{2}N k_B T
+\end{equation}
+quindi classicamente otterrei
+\begin{equation}
+c_V =  \frac{dU}{dT} = \frac{3}{2} N k_B
 \end{equation}
 
-$T_F$ separa il regime di Fermi-Dirac da quello classico di Maxwell-Boltzmann, ed essendo dell'ordine di $10^{ -5}$, si ha che in situazioni ordinarie il sistema di elettroni è sempre degenere.
-Il calcolo precedente è semplice perché si ha a che fare con lo zero assoluto, mentre le cose si complicano per $T \not =\SI{0}{K} $.
-
-Studiamo ora la \underline{capacità termica} $C_V$, a volume costante: tale grandezza è legata a $T$ (temperatura assoluta).
-Il contributo fondamentale alla capacità termica è dato dal reticolo del solido cristallino, ora studiamo il contributo elettronico.
-Solo una frazione delle particelle vede variare la propria energia, perché siamo nel caso $T \not = o \ll T_F$, e tale variazione è:
-$$ \Delta U \simeq N \frac{ k T}{E_F(0)} kT \simeq N\Bigl(  \frac{ T}{T_F}  \Bigr)kT $$
-
-Poiché $C_V = \frac{ dU}{dT} \simeq N k \Bigl(  \frac{ T}{T_F}  \Bigr) $ usando $U = \frac{ 3}{2} N k T$ si ha che $C_V = \frac{ 3}{2} N k$ 
-ed è allora necessario che $T$ sia confrontabile con $T_F \quad (T \approx T_F)$, ma ciò non accade nel caso ordinario per i fermioni,
-per i quali quindi $C_V = C_V(T)$, e in particolare:
+Cerco il calore specifico di un gas di elettroni a volume costante, quindi non essendo banale calcolarlo, applico una approssimazione: ipotizzo di essere ad una temperatura diversa dallo zero assoluto ma di poco più alta per cui vale la relazione
+$$k_B T \ll E_F(0)$$
+allora la differenza tra questo caso ed il caso allo zero assoluto differisce di una frazione delle $N$ particelle (elettroni) data da 
 \begin{equation}
-C_V = \frac{ \pi^2}{2} N k \Bigl(  \frac{ T}{T_F}  \Bigr)
+N \Bigl(  \frac{k_B T}{E_F(0)}  \Bigr)
 \end{equation}
+che aumenta la sua energia di un ordine di $k_BT$.
+Per cui c'è un aumento totale dell'energia del sistema di
+\begin{equation}
+\Delta U \simeq N \Bigl(  \frac{k_B T}{E_F(0)}  \Bigr) \cdot k_B T
+\end{equation}
+dove compare il numero delle particelle moltiplicato l'energia. \\
+Allora il calore specifico è dato da
+\begin{equation}
+c_V =  \frac{dU}{dT} \simeq N k_B \Bigl(  \frac{T}{T_F}  \Bigr)
+\end{equation}
+Con un calcolo più preciso si trova la seguente relazione, che differisce solo di un fattore numerico
+\begin{equation}
+c_V = \frac{\pi^2}{2} N k_B \Bigl(  \frac{T}{T_F}  \Bigr)
+\end{equation}
+da cui si vede che solo al di sopra della temperatura di Fermi si trova il risultato classico.
+
+\paragraph{Buca di potenziale}
+La descrizione di pareti di potenziale infinite non è realistica, ciò che si ha è che gli elettroni possono uscire da una buca di potenziale, a patto che si possa fornirgli energia sufficiente.
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.1]{/buca_potenziale}
-\caption{Buca di potenziale in un metallo}
+\includegraphics[scale=0.8]{/buca_poten_calspec}
+\caption{Buca di potenziale di un metallo}
 \end{figure}
 
-Consideriamo ora una \underline{buca di potenziale}: \\
+Questo spiega l'\textbf{effetto termoionico}: è un fenomeno per cui un metallo riscaldato ad una temperatura sufficientemente alta inizia ad emettere elettroni presenti sulla sua superficie. 
+A $T \not= \SI{0}{K} $ gli elettroni cominciano ad occupare gli strati più elevati e ad uscire dalla buca di potenziale.
+Per i metalli, la funzione lavoro ed il livello di Fermi sono dell'ordine degli $\SI{}{eV}$.
 
-Funzione lavoro $W_0 = h\nu_0 \Rightarrow V_0 = E_F(0) + W_0$ ed in generale si ha che $V_0$ è dell'ordine di qualche $eV$,
-ad esempio l'argento ha $W_0 = \SI{4.7}{eV}$ e $ E_F(0) = \SI{5.5}{eV} $
-Gli elettroni nel metallo riempiono i livelli energetici fino a $E_f(0)$. 
-$W_0$ nei metalli è generalmente tale che $\SI{5}{eV} < V_0 < \SI{15}{eV} $
-
-Questo spiega l'\underline{effetto termoionico}: è un fenomeno per cui un metallo riscaldato ad una temperatura sufficientemente alta inizia ad emettere elettroni presenti sulla sua superficie. A $T \noT=\SI{0}{K} $ gli elettroni cominciano ad occupare gli strati più elevati e ad uscire dalla buca di potenziale.
-
-\fi
-
-
-
-
-
-
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.9]{/metalli_energia_estrazione_livello_Fermi}
+\caption{Funzione lavoro e livello di Fermi di alcuni metalli}
+\end{figure}
 
 
 
