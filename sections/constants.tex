@@ -1,9 +1,13 @@
 %%
 %% Author: dariochinelli
-%% 2021-03-10
+%% 2021-04-05
 %%
+
+
 \section{Varie info utili}
-Riassumo qui molte delle formule ricavate e le costanti utilizzate nei paragrafi successivi.
+Riassumo qui molte delle formule dal testo e le costanti utilizzate nei paragrafi successivi.
+
+
 \subsection{Formule}
 \begin{equation}
 \begin{split}
@@ -11,14 +15,15 @@ Riassumo qui molte delle formule ricavate e le costanti utilizzate nei paragrafi
 \mbox{Legge di Stefan-Boltzmann} & \quad R_T = \sigma T^4 \\
 \mbox{Densità energia Corpo Nero Raylight-Jeans} & \quad \rho_T d\nu = \frac{ 8 \pi \nu^2}{c^3 } kT d\nu \\
 \mbox{Densità energia Corpo Nero Planck} & \quad  \rho_T d\nu = \frac{ 8 \pi \nu^2}{c^3 }\frac{ h\nu}{e^{ \frac{ h\nu}{kT } } - 1 } d\nu  \\
-\mbox{Densità energia $\propto$ Radianza} & \quad \frac{ c}{4 } \rho_T(\nu) = R_T(\nu) \\
+\mbox{Relazione tra radianza e radiazione di cavità} & \quad \frac{ c}{4 } \rho_T(\nu) = R_T(\nu) \\
+\mbox{Energia quantizzata} & \quad E = n h \nu \\
 \mbox{Energia effetto fotoelettrico} & \quad K_{max} = h\nu - W_0 = eV_0 \\
 \mbox{Variazione lunghezza d'onda effetto Compton} & \quad \Delta \lambda = \frac{ h}{m_{e} c } (1 - \cos \theta) = \lambda_c (1 - \cos \theta) \\
 \mbox{Diffrazione differenza cammino ottico} & \quad \Delta = 2 d \sin \theta = n \lambda \\
 \mbox{Equazione equil mecc elettrone (Bohr)} & \quad 
 \begin{cases}
-	F_{coul} = \frac{ 1}{4 \pi \varepsilon_0 } \frac{ Z e^2}{r^2 } = m \frac{ v^2}{r } = F_{cent} \\
-	L = m v r =  n \hbar
+F_{coul} = \frac{ 1}{4 \pi \varepsilon_0 } \frac{ Z e^2}{r^2 } = m \frac{ v^2}{r } = F_{cent} \\
+L = m v r =  n \hbar
 \end{cases} \\
 \mbox{Energia livelli orbitali (Bohr)} & \quad E = -\frac{ 1}{8 } \frac{ m e^4}{\varepsilon_0^2 h^2 } \frac{ Z^2}{n^2 } \\
 \mbox{Regola di Wilson-Sommerfeld} & \quad \oint P_q dq = n_q h \\
@@ -26,12 +31,13 @@ Riassumo qui molte delle formule ricavate e le costanti utilizzate nei paragrafi
 \mbox{Calore specifico Dulong-Petit} & \quad C_V = 3R \quad T \gg 0 \\
 \mbox{Calore specifico Einstein} & \quad C_V = \frac{ 3 N_A (h\nu)^2}{kT^2 } e^{ -\beta h \nu } \quad \mbox{quasi-ovunque} \\
 \mbox{Calore specifico Debye} & \quad C_V = 
-	\begin{cases}
-		\frac{ 12}{5 } \pi^4 R \Bigl(  \frac{ T}{\Theta }  \Bigr)^3 \quad \mbox{contrib. reticolare} \\
-		\frac{ \pi^2}{2 } N k \Bigl(  \frac{ T}{T_F}  \Bigr) \quad \mbox{contrib. elettronico} 
-	\end{cases} \\
+\begin{cases}
+\frac{ 12}{5 } \pi^4 R \Bigl(  \frac{ T}{\Theta }  \Bigr)^3 \quad \mbox{contrib. reticolare} \\
+\frac{ \pi^2}{2 } N k \Bigl(  \frac{ T}{T_F}  \Bigr) \quad \mbox{contrib. elettronico} 
+\end{cases} \\
 \end{split}
 \end{equation}
+
 
 \subsection{Costanti}
 \begin{equation}
