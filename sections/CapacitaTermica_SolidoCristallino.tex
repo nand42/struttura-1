@@ -1,6 +1,6 @@
 %%
 %% Author: dariochinelli
-%% 2021-04-05
+%% 2021-04-06
 %%
 
 
@@ -14,9 +14,15 @@ dove $N$ rappresenta il numero di moli.
 Questa grandezza misura l'energia necessaria per far variare di un grado la temperatura di una mole di sostanza.
 Un cristallo è una struttura geometrica in cui gli atomi occupano posizioni ben precise.
 Quindi studiamo il calore specifico di un reticolo tridimensionale di atomi.
-In Fisica classica il calore specifico di un solido è lo stesso per tutti i materiali, in una mole ci sono $N_A$ atomi ed ognuno di questi atomi può eseguire oscillazioni armoniche semplici attorno alla posizione di equilibrio, da cui si scrive l'energia totale come
+In Fisica classica il calore specifico di un solido è lo stesso per tutti i materiali, in una mole ci sono $N_A$ atomi ed ognuno di questi atomi può eseguire oscillazioni armoniche semplici attorno alla posizione di equilibrio, da cui si scrive l'energia totale considerando le tre dimensioni come
 \begin{equation}
 U = 3 N_A k_B T = 3 R T
+\end{equation}
+in cui ogni oscillatore armonico ha una energia media $k_B T$, come calcolato anche grazie alla statistica classica di Maxwell Boltzmann nei capitoli precedenti, 
+ed in cui $R$ è la costante universale dei gas.
+Eseguendo la derivata ottengo la \textbf{legge classica di Dulong Petit (1819)}
+\begin{equation}
+c_V = \frac{dU}{dT} = 3 R = \SI{6}{cal / mol . K}
 \end{equation}
 
 
