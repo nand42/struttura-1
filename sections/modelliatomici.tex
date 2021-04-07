@@ -1,70 +1,71 @@
 %%
 %% Author: dariochinelli
-%% 2021-03-18
+%% 2021-04-07
 %%
 
+
 \section{Modelli atomici}
+Analizziamo di seguito i modelli atomici presentati dalla fisica classica fino alla \textit{"old quantum theory"}.
 
 
-%% ----------------------------------------------------------------------------------------------------------------------------------------
-\subsection{Atomo di Thomson}
+\subsection{Modello di Thomson}
 Nel 1904 Thomson propose il modello atomico detto a \textit{panettone}, per il quale l'atomo è costituito da una distribuzione di carica positiva diffusa dove all'interno si trovano inserite le cariche negative.
-Tale atomo complessivamente neutro, risulterebbe sostanzialmente pieno e gli elettroni sarebbero fissi nelle posizioni di equilibrio e regolari. 
-All'epoca si considerava il \textbf{raggio atomico} $r \sim \SI{1}{\AA}$, stimato considerando la densità di un solido, il suo peso atomico ed il numero di Avogadro.
+Tale atomo, complessivamente neutro, risulterebbe sostanzialmente pieno e gli elettroni sarebbero fissi nelle posizioni di equilibrio. 
 Nello stato di più bassa energia gli elettroni sono fissi in posizioni di equilibrio, mentre per atomi eccitati (a cui viene fornita energia ad esempio riscaldando il materiale) si ha una vibrazione intorno alla posizione di equilibrio emettendo onde elettromagnetiche.
+All'epoca si considerava che il \textbf{raggio atomico} fosse dell'ordine di $\SI{1}{\AA}$, stimato considerando la densità, il peso atomico ed il numero di Avogadro. \\
 Questo modello ha molti problemi, tra cui non riuscire a spiegare completamente gli spettri atomici e l'esperimento di scattering delle particelle alfa.
-Fu Rutherford a smentire il modello a panettone.
-
+Fu Rutherford a smentire il modello a \textit{panettone}.
 
 \paragraph{Esperimento di Rutherford (1911): scattering di particelle $\alpha$}
-Venne fatto incidere un fascio di particelle $\alpha$, un atomo di Elio doppiamente ionizzato quindi di carica positiva, emesso da una sorgente radioattiva, contro una sottile lamina d'oro, il cui spessore era di poche migliaia di atomi.
+Venne fatto incidere un fascio di particelle $\alpha$, atomo di Elio doppiamente ionizzato di carica positiva, emesso da una sorgente radioattiva, contro una sottile lamina d'oro, il cui spessore era di poche migliaia di atomi.
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.5]{/ruth_alpha}
+\includegraphics[scale=0.55]{/ruth_alpha}
 \caption{Schema esperimento di Rutherford}
 \end{figure}
 Venne posizionato uno schermo fluorescente (ZnS) tutto intorno alla lamina d'oro, in modo da evidenziare il passaggio di ogni particella alfa.
 In questo modo fu possibile ricostruire la traiettoria percorsa dalle particelle dopo la diffusione con la lamina.
-Secondo il modello Thomson le particelle avrebbero dovuto attraversare il foglio d'oro ed uscire con una traiettoria variata di al più di pochi gradi, quindi poco diffuse.
+Secondo il modello di Thomson le particelle avrebbero dovuto attraversare il foglio d'oro ed uscire con una traiettoria variata al più di pochi gradi, quindi poco diffuse.
+
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.5]{/thomson_alpha}
-\caption{Se vale il modello di Thomson}
+\includegraphics[scale=0.55]{/thomson_alpha}
+\caption{Interazione della particella alfa con il nucleo nel modello di Thomson}
 \end{figure}
 Misurando la diffusione delle particelle si poterono ricavare informazioni sulla distribuzione della carica elettrica all'interno dell'atomo.
-
-Sia $N$ il numero di atomi che deflettono una particella alfa nel suo passaggio attraverso la lamina.
 La formula seguente unisce l'angolo di scattering $\Theta$, ovvero l'angolo di deflessione totale della particella nel passaggio dell'intera lamina e l'angolo della deflessione $\theta$ causata da un atomo solo.
+Sia $N$ il numero di atomi che deflettono una particella alfa nel suo passaggio attraverso la lamina.
 \begin{equation}
-\begin{split}
-& \Bigl(  \overline{ \Theta^2 }  \Bigr)^{ \frac{ 1}{2 } } = \sqrt{N} \Bigl(  \overline{ \theta^2 }  \Bigr)^{ \frac{ 1}{2 } } \\ 
-& N(\Theta)d\Theta = \frac{2 I \Theta}{\overline{\Theta^2}} e^{-{\Theta^2}/{\overline{\Theta^2}}} d\Theta
-\end{split}
+\Bigl(  \overline{ \Theta^2 }  \Bigr)^{ \frac{ 1}{2 } } = \sqrt{N} \Bigl(  \overline{ \theta^2 }  \Bigr)^{ \frac{ 1}{2 } }
 \end{equation}
-$N(\Theta)d\Theta$ esprime il numero di particelle diffuse in un angolo $d\Theta$. 
+$N(\Theta)d\Theta$ esprime il numero di particelle diffuse in un angolo $d\Theta$
+\begin{equation}
+N(\Theta)d\Theta = \frac{2 I \Theta}{\overline{\Theta^2}} e^{-{\Theta^2}/{\overline{\Theta^2}}} d\Theta
+\end{equation}
 In cui $I$ rappresenta il numero di particelle $\alpha$ che attraversano la lamina.
 L'esponenziale descrive come il numero di particelle diffuse diminuisca drasticamente all'aumentare dell'angolo di scattering.
-
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.44]{/Geiger_Marsden_experiment_expectation_and_result}
-\caption{ Confronto tra i due modelli }
+\includegraphics[scale=0.4]{/Geiger_Marsden_experiment_expectation_and_result}
+\caption{Confronto dei risultati previsti dai due modelli}
 \end{figure}
-
-Questa formula si ottiene trascurando le interazioni Coulombiane tra le particelle $\alpha$ e gli elettroni (la cui massa è assai piccola) e si conta solo la deflessione dovuta alla parte positiva dell'atomo.
+Questa formula si ottiene trascurando le interazioni coulombiane tra le particelle $\alpha$ e gli elettroni (la cui massa è assai piccola) e si conta solo la deflessione dovuta alla parte positiva dell'atomo. \\
 Secondo Thomson, se la carica positiva fosse stata distribuita in modo continuo, non sarebbe possibile avere $\theta$ grandi poiché deve essere $\theta \le \SI{e-4}{rad}$.
 
-A questo proposito si consideri l'esperimento di Geiger e Marsden (1909).
+A questo proposito si consideri l'\textbf{esperimento di Geiger e Marsden (1909)}.
 Sperimentalmente venne accertato che alcune particelle, 1 su 8000, venivano diffuse ad angoli maggiori di $\frac{ \pi}{2 }$, evento completamente imprevisto da Thomson, ma in accordo con Rutherford.
 
 \paragraph{Esempio} 
 dato lo spessore della lamina d'oro pari a \SI{e-6}{m} e sia l'angolo medio di scattering pari a $(\overline{\Theta^2})^{1/2} = 2\cdot 10^{-2} RAD$ , si calcoli $(\overline{\theta^2})^{1/2}$
+\begin{equation}
+\begin{split}
+N = \frac{\SI{e-6}{m}}{\SI{e-10}{m}} = \SI{e-4}{} 
+\quad\Rightarrow\quad 
+(\overline{\theta^2})^{1/2} = \frac{(\overline{\Theta^2})^{1/2}}{\sqrt{N}} = \frac{2\cdot 10^{-2}}{10^{2}} = \SI{2e-4}{rad}
+\end{split}
+\end{equation}
 
-$$ N = \frac{\SI{e-6}{m}}{\SI{e-10}{m}} = 10^{-4} $$
-$$(\overline{\theta^2})^{1/2} = \frac{(\overline{\Theta^2})^{1/2}}{\sqrt{N}} = \frac{2\cdot 10^{-2}}{10^{2}} = 2 \cdot 10^{-4} RAD $$
 
-
-%% ----------------------------------------------------------------------------------------------------------------------------------------
 \subsection{Modello di Rutherford}
 Tutta la carica positiva è concentrata nel \textit{nucleo} di raggio $r = \SI{e-14}{m}$.
 In questo modello una particella alfa che passi molto vicino ad esso può essere scatterata da una forza repulsiva ed essere deviata di angoli molto ampi.
@@ -146,13 +147,9 @@ e considerando che $d\Omega = 2\pi\sin\Theta d\Theta$, si riscrive la formula di
 \end{split}
 \end{equation}
 
-
-
-
 \paragraph{Problemi nel modello di Rutherford}
 Il modello di Rutherford non era però in grado di spiegare alcuni fenomeni.
 \begin{enumerate}
-
 \item Alte energie di impatto \\
 Degli esperimenti in cui si fa variare l'energia delle particelle incidenti evidenziarono che oltre un certo valore di energia pari a $\SI{27.5}{MeV}$ il modello di Rutherford è completamente in disaccordo con i dati sperimentali.
 \begin{figure}[h]
@@ -160,17 +157,14 @@ Degli esperimenti in cui si fa variare l'energia delle particelle incidenti evid
 \includegraphics[scale=0.5]{/errore_ruth}
 \caption{Il grafico mostra che oltre una certa energia il modello di Rutherford non funziona più e che subentrano altre interazioni}
 \end{figure}
-
 \item Stabilità dell'atomo \\
 Se immaginiamo che gli elettroni siano fermi intorno al nucleo, questi dovrebbero cadere sul nucleo sotto l'azione coulombiana, quindi non possono essere fermi ed in tal caso l'intero atomo avrebbe le dimensioni del nucleo, e non è così.
 Allora si può pensare agli elettroni orbitanti intorno al nucleo, ma siccome sono cariche accelerate dovrebbero emettere energia sotto forma di onde elettromagnetiche e perderebbero energia al punto da cadere sul nucleo: di nuovo l'atomo dovrebbe coincidere con le dimensioni del nucleo.
-
 \item Spettro atomico discreto \\
 Gli elettroni dovrebbero irradiare energia sotto forma di onde elettromagnetiche con uno spetto continuo della radiazione emessa, ma ciò che si osserva negli esperimenti che sono spettri atomici discreti.
 \end{enumerate}
 
 
-%% ----------------------------------------------------------------------------------------------------------------------------------------
 \subsection{Spettri atomici} 
 Quando si parla di spettro atomico si fa riferimento all'emissione elettromagnetica discreta di un gas monoatomico.
 Gli spetti atomici possono essere osservati utilizzando una scarica elettrica passante attraverso una regione contenete il gas.
@@ -225,9 +219,7 @@ Occorre sapere che per ogni riga dello spettro di emissione ce n'è una nello sp
 \end{figure}
 
 
-
-%% ----------------------------------------------------------------------------------------------------------------------------------------
-\subsection{Modello atomico di Bohr (1913)}
+\subsection{Modello di Bohr (1913)}
 Entrambi i modelli precedenti (di Thompson e di Rutherford) non riescono però a spiegare l'emissione e l'assorbimento degli spettri atomici prodotti da elementi gassosi.
 Il modello di Rutherford inoltre presentava molti problemi di stabilità dell'atomo stesso, come visto in precedenza.
 Bohr costruisce un modello atomico sulla base dei risultati degli esperimenti di spettroscopia sull'idrogeno, fondandolo su quattro \underline{postulati}:
@@ -237,7 +229,7 @@ Bohr costruisce un modello atomico sulla base dei risultati degli esperimenti di
 \item L'elettrone che si muove sulle orbite permesse non produce emissione elettromagnetica, la sua energia totale non varia (viene rimosso il problema della stabilità dell'atomo)
 \item Viene emessa radiazione elettromagnetica, di frequenza $\nu$, quando un elettrone passa da un' orbita permessa ad un'altra; tale frequenza è data da $ \nu = \frac{(E_i - E_f)}{h}$
 \end{enumerate}
-%
+
 \paragraph{Atomo di idrogeno} Consideriamo un atomo con un nucleo di carica $Ze$ e massa $M$ ed un solo elettrone di carica $e$ e massa $m$, quindi un atomo di idrogeno, ed assumiamo inizialmente che $m \ll M$ approssimando così il nucleo fisso nello spazio e l'elettrone orbitante attorno ad esso.
 Impostiamo la condizione di stabilità meccanica dell'elettrone, dove compare la forza di attrazione coulombiana tra nucleo ed elettrone che viene compensata dalla forza centrifuga
 \begin{equation}
@@ -312,7 +304,7 @@ E_{min} = -\SI{2.179868e-18}{J} = - \SI{13.6}{eV}
 \caption{Diagramma delle energie permesse nell'atomo di idrogeno}
 \label{energie_permesse}
 \end{figure}
-%
+
 \paragraph{Modello di Bohr vs spettri atomici}
 Utilizzando la formula \ref{energia_quantizzata} per le energie permesse ed applichiamo il quarto postulato di Bohr per calcolare la frequenza della radiazione emessa nel passaggio tra uno stato iniziale $E_i$ ed uno stato finale $E_f$ di energia
 \begin{equation}
@@ -329,6 +321,9 @@ In termini di lunghezza d'onda reciproca, che compare nella formula di Ridberg \
 \end{equation}
 Dove $R_{\infty}$ risulta un po' più grande della costante di Ridberg $R_H$ per l'idrogeno.
 Tale formula restituisce tutti i valori di $k$ del set di linee che costituiscono lo spettro atomico, con il vincolo sui numeri $n_i, n_f \in \mathbb{N} \quad t.c \quad n_i > n_f$.
+Il modello di Bohr spiega anche lo spettro di assorbimento: i fotoni assorbiti sono solo quelli che permettono agli elettroni di saltare ad uno stato con energia maggiore, per cui solo a determinate frequenze.
+Nello spettro di assorbimento possono avvenire solo quei processi per cui da $n=1$ si passa a orbite di energia maggiore ovvero con $n>1$ ed è per questo che potremo vedere in assorbimento solo la serie di Lyman;
+ciò è dovuto al fatto che il gas si trova inizialmente allo stato fondamentale, solo se fosse inizialmente in uno stato eccitato allora si vedrebbero ulteriori serie in assorbimento (Balmer, Paschen).
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.5]{/spettro_atomico_idrogeno}
@@ -337,9 +332,6 @@ La serie di Balmer è costituita da tutte le transizioni da un qualsiasi stato $
 Analogamente per le altre serie.
 Nel transire da orbite superiori ad orbite inferiori l'elettrone perde energia emessa sotto forma di radiazione elettromagnetica.}
 \end{figure}
-Il modello di Bohr spiega anche lo spettro di assorbimento: i fotoni assorbiti sono solo quelli che permettono agli elettroni di saltare ad uno stato con energia maggiore, per cui solo a determinate frequenze.
-Nello spettro di assorbimento possono avvenire solo quei processi per cui da $n=1$ si passa a orbite di energia maggiore ovvero con $n>1$ ed è per questo che potremo vedere in assorbimento solo la serie di Lyman;
-ciò è dovuto al fatto che il gas si trova inizialmente allo stato fondamentale, solo se fosse inizialmente in uno stato eccitato allora si vedrebbero ulteriori serie in assorbimento (Balmer, Paschen).
 
 \paragraph{Correzione massa ridotta} Nei conti precedenti si era approssimato il nucleo fisso nello spazio, se invece si considerano nucleo ed elettrone entrambi orbitanti intorno al centro di massa si deve utilizzare la massa ridotta
 \begin{equation}
@@ -369,37 +361,41 @@ con questa correzione il valore su $R_H$ teorico si avvicina notevolmente al val
 
 
 \subsection{Esperimento di Franck-Hertz}
-Il setup sperimentale prevede un'ampolla con atomi di mercurio si trova un filamento riscaldato che emette elettroni, una differenza di potenziale tra due piastre per accelerarli e farli passare attraverso una griglia carica positivamente.
+Il setup sperimentale, vedi figura \ref{esp_Franck_Hertz_a}, prevede un'ampolla con atomi di mercurio in cui si trova un filamento riscaldato che emette elettroni, una differenza di potenziale tra due piastre per accelerarli e farli passare attraverso una griglia carica positivamente.
 \paragraph{La prima parte dell'esperimento}
-Consiste nell'aumentare gradualmente il voltaggio accelerante, quindi l'energia degli elettroni, e per ogni valore misurare la corrente elettrica con un amperometro.
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.35]{/esp_Franck_Hertz}
-\caption{strumentazione dell'esperimento}
-\end{figure}
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.5]{/ris2_esp_Franck_Hertz}
-\caption{Dati ottenuti nell'esperimento di Franck-Hertz}
-\end{figure}
+Consiste nell'aumentare gradualmente il voltaggio accelerante, quindi l'energia degli elettroni, e per ogni valore misurare la corrente elettrica con un amperometro, vedi figura \ref{esp_Franck_Hertz_b},.
 Si accorsero che in corrispondenza dei minimi, a $\SI{4.89}{V}$, $\SI{6.67}{V}$, $\SI{8.84}{V}$, $\SI{9.80}{V}$, gli elettroni non raggiungono il piatto collettore.
-La spiegazione che diedero è che con energie minori di $\SI{4.0}{eV}$ l'elettrone urta contro l'atomo di mercurio senza perdere energia, mentre quando l'energia aumenta, ad esempio a $\SI{4.9}{eV}$, l'elettrone perde tutta la sua energia non avendo più energia rimanente per raggiungere l'altro elettrodo; quando l'energia supera la soglia precedente, ad esempio a $\SI{6.0}{eV}$ l'elettrone perde parte della sua energia ma ne ha ancora per arrivare all'altro elettrodo; in corrispondenza degli altri minimi succedono cose analoghe; ed infine per energie vicine a $\SI{10}{eV}$ ipotizzarono una doppia interazione che porta a perdere molta energia.
+La spiegazione che diedero è che con energie minori di $\SI{4.0}{eV}$ l'elettrone urta contro l'atomo di mercurio senza perdere energia, mentre quando l'energia aumenta, ad esempio a $\SI{4.9}{eV}$, l'elettrone perde tutta la sua energia non potendo più raggiungere l'altro elettrodo; quando l'energia supera ad esempio $\SI{6.0}{eV}$ l'elettrone perde parte della sua energia ma ne possiede ancora per arrivare all'altro elettrodo; in corrispondenza degli altri minimi succedono cose analoghe; ed infine per energie vicine a $\SI{10}{eV}$ ipotizzarono una doppia interazione che porta a perdere molta più energia.
 Solo gli elettroni che hanno energie precise fanno compiere agli elettroni dell'atomo salti energetici.
-\paragraph{La prima parte dell'esperimento} 
-Consiste nell'andare ad osservare la radiazione emessa dagli atomi di mercurio.
+\begin{figure}[h]
+    \centering
+    \subfloat[Strumentazione]{
+        \label{esp_Franck_Hertz_a}
+        \includegraphics[width=0.5\textwidth]{/esp_Franck_Hertz}
+    }
+    \subfloat[Dati ottenuti]{
+        \label{esp_Franck_Hertz_b}
+        \includegraphics[width=0.5\textwidth]{/ris2_esp_Franck_Hertz}
+    }
+    \caption{Esperimento di Franck e Hertz}
+    \label{esp_Franck_Hertz_overall}
+\end{figure}
+
+\paragraph{La seconda parte dell'esperimento} 
+Consiste nell'osservare la radiazione emessa dagli atomi di mercurio.
 Trovarono una corrispondenza, utilizzando l'equazione $E=h\nu$, tra le energie dei minimi di voltaggio e le frequenze della luce emessa.
+Vedi figura \ref{emissione_Hg}.
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.7]{/ionizzazione}
 \caption{Livelli di ionizzazione degli elettroni all'interno dell'atomo di mercurio}
+\label{emissione_Hg}
 \end{figure}
 
-\newpage
-%% ----------------------------------------------------------------------------------------------------------------------------------------
+
 \subsection{Interpretazione di De Broglie}
 Interpretazione di De Broglie della regola di quantizzazione di Bohr.
 Parte fondamentale della "old quantum theory".
-
 \begin{equation}
 \begin{split}
 & L = mvr = pr = \frac{ n h }{2 \pi } \quad \mbox{con } n = 1, 2, 3, ... \\
@@ -418,14 +414,13 @@ Quindi l'onda che descrive l'elettrone può essere visualizzata come un'onda sta
 \end{figure}
 
 
-%% ----------------------------------------------------------------------------------------------------------------------------------------
 \subsection{Modello di Wilson-Sommerfeld: orbita ellittica}
 Sommerfeld sviluppa un modello atomico simile a quello di Bohr ma con importanti differenze.
 Questo modello atomico adotta orbite ellittiche e non più circolari come nel modello di Bohr.
 Sommerfeld costruì questo modello per riuscire a modellizzare e spiegare una caratteristica degli spettri atomici: la \textit{struttura fine}.
 Alcune linee degli spettri atomici sono in realtà composte da più linee, è possibile distinguere ciò a patto che si utilizzi un apparato di misura che abbia una grande precisione.
 La distanza tra queste linee che compongono le linee di emissione "grossolane", in termini di lunghezza d'onda, è $\Delta \lambda \sim \SI{e-4}{}$ rispetto alla separazione tra diverse linee.
-Quindi vi è uno splitting della linea principale in sottolinee molto piccolo.
+Quindi vi è uno splitting della linea principale in sotto-linee molto piccolo.
 Il modello di Bohr non riesce a spiegare questo fenomeno, motivo per cui Sommerfeld pensa a questo diverso modello.
 
 Sommerfeld applica le sue regole di quantizzazione alla coordinata angolare $\theta$ e alla coordinata radiale $r$
@@ -465,7 +460,6 @@ infatti nel caso in cui
 \item se $n=2 \Rightarrow n_{\theta}=1,2$ quindi ho due possibili orbite di cui una circolare e una ellittica
 \item se $n=3 \Rightarrow n_{\theta}=1,2,3$ quindi ho tre possibili orbite di cui una circolare e due ellittiche
 \end{itemize}
-
 e così via al crescere di $n$.
 L'energia dipende solo da $n$, di conseguenza tutte le orbite con stesso $n$ hanno la stessa energia e si dice che queste orbite sono \textit{degeneri}.
 
@@ -486,7 +480,7 @@ La relazione per l'energia con la correzione relativistica trovata da Sommerfeld
 introducendo la \textit{costante di struttura fine} $\alpha$.
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.5]{/livelli_energ_sommerfeld}
+\includegraphics[scale=0.4]{/livelli_energ_sommerfeld}
 \caption{Ogni livello energetico viene splittato in più livelli energetici molto vicini fra loro, a seconda del valore del numero quantico $n$. Le transizioni indicate con una linea tratteggiata non sono possibili.}
 \end{figure}
 
@@ -495,15 +489,14 @@ introducendo la \textit{costante di struttura fine} $\alpha$.
 n_{\theta_i} - n_{\theta_f} = \pm 1
 \end{equation}
 
-\paragraph{Conclusioni} Il modello di Sommerfeld funziona molto bene ed ebbe un notevole successo, è però basato su una considerazione non corretta: la struttura fine non è conseguenza della correzione relativistica ma è conseguenza dell'interazione \textit{spin-orbita} (vedi corso di Struttura della Materia 2).
+\paragraph{Conclusioni} Il \textbf{modello di Sommerfeld} funziona molto bene ed ebbe un notevole successo, è però basato su una considerazione non corretta: la struttura fine non è conseguenza della correzione relativistica ma è conseguenza dell'interazione \textit{spin-orbita} (vedi corso di Struttura della Materia 2).
 A Sommerfeld va attribuito il fatto di aver intuito che fosse necessario rimuovere la degenerazione delle orbite per interpretare la struttura fine.
-Questo modello non riesce, ad esempio, a descrivere la probabilità delle transizioni e quindi l'intensità delle linee degli spettri atomici.
+Questo modello non riesce a descrivere la probabilità delle transizioni e quindi l'intensità delle linee degli spettri atomici.
 Il modello descrive bene solo gli atomi ad un elettrone, quindi come l'idrogeno e pochi altri ionizzati.
-
-Sarà la teoria quanto-meccanica di Schrodinger a rispondere a queste domande irrisolte con una interpretazione probabilistica piuttosto che deterministica.
-Le teorie di Sommerfeld sono superate dalla fisica moderna introdotta da Schrodinger ma rimangono molto valide e utili per analizzare sistemi semplici come l'atomo di idrogeno e sistemi periodici nel tempo, permettono di utilizzare un apparato matematico molto più semplice seppur lasciando una precisione minore sui risultati.
 Inoltre questo modello offre una possibilità di visualizzazione grafica dei fenomeni che i modelli successivi non garantiranno.
 
+Sarà la \textbf{teoria quanto-meccanica di Schrodinger} a rispondere a queste domande irrisolte con una interpretazione \textit{probabilistica} piuttosto che deterministica.
+Le teorie di Sommerfeld sono superate dalla fisica moderna introdotta da Schrodinger ma rimangono molto valide e utili per analizzare sistemi semplici come l'atomo di idrogeno e sistemi periodici nel tempo, permettono di utilizzare un apparato matematico molto più semplice seppur lasciando una precisione minore sui risultati.
 
 \paragraph{Regole di Wilson-Sommerfeld}
 Wilson-Sommerfeld enunciarono delle regole per generalizzare i fenomeni fisici di quantizzazione di ogni sistema fisico in cui le coordinate sono funzioni periodiche del tempo.
@@ -535,42 +528,40 @@ Quindi ogni stato istantaneo del moto di un oscillatore è rappresentato da un p
 Durante un ciclo di vibrazione l'ellisse viene percorso una volta.
 Quindi l'integrale dell'equazione \ref{integrale_pq} rappresenta l'area del grafico nello spazio delle fasi ed equivale a
 \begin{equation}
-\begin{split}
-& \oint P_x dx = \pi a b \\
-& \oint P_x dx = \frac{ 2\pi E}{\sqrt{\frac{ k}{m }} } \\
-& \mbox{per un oscillatore armonico} \quad \sqrt{\frac{ k}{m }} = 2\pi\nu \\
-& \oint P_x dx = \frac{ E}{\nu } \\
-& \oint P_x dx = n_x h \quad\Rightarrow\quad  \frac{ E}{\nu } = n_x h = n h
-\end{split}
+\oint P_x dx 
+= \pi a b
+= \frac{ 2\pi E}{\sqrt{\frac{ k}{m }} }
 \end{equation}
-da cui si ottiene la relazione
+per un qualsiasi oscillatore armonico vale $\sqrt{\frac{ k}{m }} = 2\pi\nu$
+\begin{equation}
+\oint P_x dx = \frac{ E}{\nu }= n_x h 
+\quad\Rightarrow\quad
+\frac{ E}{\nu } = n_x h = n h
+\end{equation}
+da cui si ottiene la \textbf{legge di quantizzazione di Planck}.
 \begin{equation}
 E = n h \nu
 \label{quant_planck}
 \end{equation}
-ovvero la legge di quantizzazione di Planck.
-Quindi tutti gli stati di oscillazione permessi sono tutti ellissi nello spazio delle fasi e l'area racchiusa tra due ellissi successivi vale $h$.
+Quindi tutti gli stati di oscillazione permessi sono ellissi nello spazio delle fasi e l'area racchiusa tra due ellissi successivi vale $h$.
 \begin{figure}[h]
 \centering
-\includegraphics[scale=1]{/ellissi_spaziofasi}
+\includegraphics[scale=0.8]{/ellissi_spaziofasi}
 \caption{Rappresentazione grafica dello spazio delle fasi di un oscillatore armonico}
 \end{figure}
 
 \paragraph{esempio: elettrone in orbita circolare}
-Consideriamo un elettrone in un'orbita circolare con raggio $r$, in cui prendo come coordinata l'angolo $\theta$ funzione del tempo (andamento a "dente di sega"), allora il momento angolare $L$ è costante
+Consideriamo un elettrone in un'orbita circolare con raggio $r$, in cui prendo come coordinata l'angolo $\theta$ funzione del tempo (andamento a "dente di sega"), allora il momento angolare è costante, $L = mvr = const$
 \begin{equation}
 \begin{split}
-& L = mvr = costante \\
-& \oint p_q dq = n_q h \quad\Rightarrow\quad \oint L d\theta = n h \\
-& \oint L d\theta = L \int_{0}^{2\pi} d\theta = 2\pi L \\
-& 2\pi L = n h
+& \oint p_q dq = n_q h \oint L d\theta = n h \\
+& \oint L d\theta = L \int_{0}^{2\pi} d\theta = 2\pi L
 \end{split}
 \end{equation}
-da cui trovo ritrovo la legge di quantizzazione del momento angolare di Bohr
+da cui trovo ritrovo la \textbf{legge di quantizzazione del momento angolare} di Bohr
 \begin{equation}
-L = \frac{ n h}{2 \pi } = n \hbar
+2\pi L = n h \quad\Rightarrow\quad L = \frac{ n h}{2 \pi } = n \hbar
 \end{equation}
-
 
 \paragraph{esempio: particella confinata}
 Consideriamo una particella confinata in una dimensione, libera di muoversi, lungo l'asse $x$, da $-\frac{ a}{2 }$ a $+\frac{ a}{2 }$, che sono appunto gli estremi della "scatola" di lunghezza totale $a$.
@@ -582,13 +573,7 @@ La regola di Wilson-Sommerfeld si traduce in
 & \frac{ n h }{p } = 2 a \quad\Rightarrow\quad n\lambda = 2a
 \end{split}
 \end{equation}
-ovvero lo spazio $2a$ deve essere uguale ad un numero intero di lunghezze d'onda di De Broglie.
-Significa che l'onda associata alla particella che si muove in una direzione è in fase con l'onda associata alla stessa particella che si muove nel verso opposto, la risultante è quindi un'onda stazionaria.
+lo spazio $2a$ deve essere uguale ad un numero intero di lunghezze d'onda di De Broglie.
+Significa che l'onda associata alla particella che si muove in una direzione è in fase con l'onda associata alla stessa particella che si muove nel verso opposto, la risultante è un'\textbf{onda stazionaria}.
 La regola di quantizzazione di Wilson-Sommerfeld può essere intesa come la richiesta che l'onda di De Broglie associata alla particella confinata in moto periodico sia stazionaria.
-
-
-
-
-
-
 
