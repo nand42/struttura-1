@@ -5,10 +5,9 @@
 
 
 \section{Principio di indeterminazione di Heisemberg}
+Il principio di Heisemberg è costituito da due parti: la prima parte riguarda la misura simultanea di momento e posizione di una particella mentre la seconda parte riguarda l'energia ed il tempo della misura.
 
-Il principio di Heisemberg è costituito da due parti:
-la prima parte riguarda la misura simultanea di momento e posizione di una particella.
-Un esperimento non può determinare il valore esatto di una componente del momento $p_x$ e anche il valore esatto della $x$, la precisione della misura è limitata dal processo stesso della misura per cui
+Un esperimento non può determinare simultaneamente il valore esatto di una componente del momento $p_x$ e anche il valore esatto della posizione $x$, la precisione della misura è limitata dal processo stesso della misura, per cui
 \begin{equation}
 \begin{split}
 & \Delta p_x \Delta x \ge \frac{ \hbar}{2 } \\
@@ -18,16 +17,15 @@ Un esperimento non può determinare il valore esatto di una componente del momen
 È implicato il prodotto tra le incertezze per cui se l'incertezza sul momento è nulla, l'incertezza sulla posizione sarà infinita: $\Delta p_x = 0 \Rightarrow \Delta x = \infty$
 Valgono le espressioni analoghe per le altre componenti
 \begin{equation}
-\begin{split}
-& \Delta p_y \Delta y \ge \frac{ \hbar}{2 } \\
-& \Delta p_z \Delta z \ge \frac{ \hbar}{2 }
-\end{split}
+\Delta p_y \Delta y \ge \frac{ \hbar}{2 }
+\quad\quad\quad\quad
+\Delta p_z \Delta z \ge \frac{ \hbar}{2 }
 \end{equation}
 La seconda parte riguarda una relazione analoga tra l'energia ed il tempo richiesto per effettuare la misura:
 \begin{equation}
 \Delta E \Delta t \ge \frac{\hbar}{2}
 \end{equation}
-Il fatto che la costante di Planck sia tanto piccolo non permette di vedere questi fenomeni nella vita ordinaria, quindi la fisica classica è ancora valida per descrivere oggetti macroscopici.
+Il fatto che la costante di Planck sia tanto piccola non permette di vedere questi fenomeni nella vita ordinaria, quindi la fisica classica è ancora valida per descrivere oggetti macroscopici.
 
 
 \paragraph{Esperimento concettuale di Bohr}
@@ -35,9 +33,30 @@ Cosa accade quando si desidera misurare con grandissima precisione la posizione 
 Si può utilizzare un "microscopio" e illuminare l'elettrone con un fotone per poi vederlo mediante scattering Compton.
 Osservare la particella non è un'azione priva di conseguenze poiché illuminandolo si produce un'interazione fotone-elettrone.
 Tale perturbazione può essere ridotta al minimo, ma non eliminata, mandando un solo fotone per volta.
-Si noti comunque che anche in meccanica classica, in un certo senso, l'osservatore disturba il moto del corpo in esame: se si studia il moto di un pianeta la massa dell'osservatore da luogo ad un'interazione gravitazionale,
-ma data la piccolezza della massa di questi rispetto al pianeta, e tale interferenza è trascurabile.
+Si noti che anche in meccanica classica, l'osservatore disturba il moto del corpo in esame: se si studia il moto di un pianeta la massa dell'osservatore dà luogo ad un'interazione gravitazionale, ma data la piccolezza di questa massa rispetto al pianeta, tale interferenza è trascurabile.
 In figura \ref{esp_bohr} è rappresentato l'esperimento mentale proposto da Bohr.
+
+\paragraph{Momento angolare} Il momento angolare del fotone è dato dalla solita equazione
+\begin{equation}
+\begin{split}
+p & = \frac{h}{\lambda} \\
+p_x & = \frac{h}{\lambda} \sin\theta'
+\end{split}
+\end{equation}
+e tale momento angolare potrà variare da $+p \sin \theta '$ a $-p \sin \theta '$, allora
+\begin{equation}
+\Delta p_x = 2p \sin \theta ' = 2(\frac{h }{\lambda }) \sin \theta '
+\end{equation}
+è l'incertezza sulla componente $x$ del momento angolare $p_x$ del fotone, che, per la conservazione del momento angolare, sarà uguale a quella dell'elettrone.
+
+\paragraph{Posizione} Cosa si può dire sulla posizione $x$ dell'elettrone?
+L'immagine di un microscopio è un reticolo di diffrazione, allora possiamo considerare l'ampiezza del massimo centrale di diffrazione come misura dell'incertezza della posizione del fotone, e anche questa misura è analoga per l'elettrone, si ottiene allora
+\begin{equation}
+\begin{split}
+\Delta x = \frac{\lambda}{\sin \theta '}
+\end{split}
+\end{equation}
+
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.5]{/microsopio_bohr}
@@ -45,60 +64,34 @@ In figura \ref{esp_bohr} è rappresentato l'esperimento mentale proposto da Bohr
 \label{esp_bohr}
 \end{figure}
 
-\paragraph{momento angolare} Il momento angolare del fotone è dato dalla solita equazione
-\begin{equation}
-\begin{split}
-p & = \frac{h}{\lambda} \\
-p_x & = \frac{h}{\lambda} \sin\theta'
-\end{split}
-\end{equation}
-e tale momento angolare potrà variare da $+P\sin \theta '$ a $-P \sin \theta '$ allora
-\begin{equation}
-\Delta p_x = 2p \sin \theta ' = 2(\frac{h }{\lambda }) \sin \theta '
-\end{equation}
-è l'incertezza sulla componente $x$ del momento angolare del fotone $p_x$, che, per la conservazione del momento angolare, sarà uguale a quella dell'elettrone.
-
-\paragraph{posizione} Cosa si può dire sulla posizione $x$ dell'elettrone?
-L'immagine di un microscopio è un reticolo di diffrazione, allora possiamo considerare l'ampiezza del massimo centrale di diffrazione come misura dell'incertezza della posizione del fotone, e anche questa misura è analoga per l'elettrone
-\begin{equation}
-\begin{split}
-\Delta x = \frac{\lambda}{\sin \theta '}
-\end{split}
-\end{equation}
-
-Per ridurre l'incertezza sul momento dovrei aumentare la $\lambda$, viceversa per ridurre l'incertezza sulla posizione dovrei aumentare la $\lambda$, ovvero l'esatto contrario.
+\paragraph{Conclusione} Per ridurre l'incertezza sul momento dovrei aumentare la $\lambda$, viceversa per ridurre l'incertezza sulla posizione dovrei aumentare la $\lambda$, ovvero l'esatto contrario.
 Facendo il prodotto tra le due incertezze trovo:
 \begin{equation}
 \Delta p_x \Delta x = (\frac{2h}{\lambda} \sin \theta ')(\frac{\lambda}{\sin \theta '}) = 2h > \frac{\hbar}{2}
 \end{equation}
 che non è propriamente il valore previsto dal Principio di Indeterminazione ma è comunque una costante.
-Significa che far interferire un fotone con l'elettrone perturba la misura in un modo che non posso evitare, ovvero il PdI riguarda strettamente l'incapacità di una misurazione infinitamente precisa.
+Significa che far interferire un fotone con l'elettrone perturba la misura in un modo che non posso evitare, ovvero il \textit{principio di indeterminazione} riguarda strettamente l'incapacità di una misurazione infinitamente precisa.
 
 Per quanto riguarda la seconda parte, scriviamo l'energia del fotone ed il tempo necessario per la misura
 \begin{equation}
 \begin{split}
-& E = \frac{ p_x^2}{2m } \\
-\Rightarrow & \Delta E = \Bigl(  \frac{ p_x}{m }  \Bigr) \Delta p_x = v_x \Delta p_x \\
-& \Delta x = v_x \Delta t \\
-\Rightarrow & \Delta t = \frac{ \Delta x}{v_x }
+E = \frac{ p_x^2}{2m }
+& \quad\Rightarrow\quad  \Delta E = \Bigl(  \frac{ p_x}{m }  \Bigr) \Delta p_x = v_x \Delta p_x \\
+x = v_x  t 
+& \quad\Rightarrow\quad  \Delta t = \frac{ \Delta x}{v_x }
 \end{split}
 \end{equation}
-dove $v_x$ è la velocità, allora si trova
+dove $v_x$ è la velocità. 
+In modo analogo all'equazione precedente, si trova
 \begin{equation}
-\begin{split}
-& \Delta E \Delta t = \Delta p_x \Delta x \\
-& \Delta E \Delta t = 2h \ge \frac{ \hbar}{2 }
-\end{split}
+\Delta E \Delta t =  v_x \Delta p_x  \Delta x \frac{1}{v_x} = \Delta p_x \Delta x = 2h \ge \frac{ \hbar}{2 }
 \end{equation}
-in modo analogo all'equazione precedente, ovvero l'osservatore modifica in modo non trascurabile ed inevitabile l'osservato.
+quindi l'osservatore modifica in modo non trascurabile ed inevitabile la misura.
 
+\paragraph{Esempio} La velocità di un proiettile di massa $m_p = \SI{0.05}{kg}$ e di un elettrone di massa $m_e = \SI{9.1e-31}{kg}$ sono uguali $v_x = \SI{300}{m/s}$, con un'incertezza di $10^{-4}$.
+Con quale precisione posso localizzare la posizione di entrambi, se la posizione è misurata simultaneamente alla velocità?
+Considero la direzione lungo l'asse $x$.
 
-\paragraph{Esempio} La velocità di un proiettile di massa $m_p = \SI{50}{g}$ e di un elettrone di massa
-$m_e = \SI{9.1e-28}{g}$ sono misurate contemporaneamente e sono uguali $V = \SI{300}{m/s}$, con un'incertezza di $10^{-4}$.
-Con quale precisione posso localizzare la posizione di entrambi, se la posizione è misurata simultaneamente con la velocità nello stesso esperimento?
-
-Considero solo la direzione lungo l'asse $x$.
- 
 \underline{Per il proiettile:}
 \begin{equation}
 \begin{split}
@@ -135,14 +128,12 @@ Ad esempio un gruppo di due onde è così costruito
 \end{split}
 \label{eq_onde_gen}
 \end{equation}
-
+Per localizzare maggiormente lo spazio in cui trovare la particella $\Delta x$devo aumentare il range di $\Delta k$.
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.5]{/wave_packet}
 \caption{Come produrre un'onda localizzata}
 \end{figure}
-
-Per localizzare maggiormente lo spazio in cui trovare la particella $\Delta x$devo aumentare il range di $\Delta k$.
 
 \paragraph{Analisi di Fourier} 
 queste sono le relazioni universali per tutte le onde
@@ -153,28 +144,41 @@ queste sono le relazioni universali per tutte le onde
 \end{split}
 \label{eq_univ}
 \end{equation}
-Ciò deriva dallo studio della velocità di gruppo delle onde.
-
-La velocità di propagazione di un'onda è $W=\lambda \nu$ per De Broglie è $$W = \lambda \nu = \frac{h}{p} \frac{E}{h} = \frac{E}{p}$$
-Assumendo che la particella si muova a velocità non relativistiche $V$ in una regione definita, si ottiene che:
+Partendo dalle equazioni \ref{eq_univ} universali delle onde, dalle proprietà delle onde e dalle espressioni \ref{dualita_oc} troviamo il risultato cercato
 \begin{equation}
-W = \frac{E}{p} = \frac{1}{2} \frac{m V^2}{m V} = \frac{V}{2}
+\begin{split}
+& \Delta x \Delta k = \Delta x \Delta \frac{1}{\lambda} = \Delta x \Delta \frac{p}{h}  \ge \frac{1}{4\pi} 
+\quad\Rightarrow\quad \Delta x \Delta p \ge \frac{\hbar}{2} \\
+& \Delta t \Delta \nu = \Delta t \Delta \frac{E}{h} \ge \frac{1}{4\pi} 
+\quad\Rightarrow\quad  \Delta t \Delta E \ge \frac{\hbar}{2}
+\end{split}
+\end{equation}
+Ottenendo quindi le relazioni del principio di indeterminazione:
+\begin{equation}
+\Delta p \Delta x \ge \frac{\hbar}{2} 
+\quad\quad\quad\quad
+\Delta E \Delta t \ge \frac{\hbar}{2}
+\end{equation}
+
+\paragraph{Velocità di gruppo delle onde}
+Le equazioni \ref{eq_univ} derivano dallo studio della velocità di gruppo delle onde.
+La velocità di propagazione di un'onda è $W=\lambda \nu$ per De Broglie è $$W = \lambda \nu = \frac{h}{p} \frac{E}{h} = \frac{E}{p}$$
+Assumendo che la particella si muova a velocità non relativistiche $v$ in una regione definita, si ottiene che:
+\begin{equation}
+W = \frac{E}{p} = \frac{1}{2} \frac{m v^2}{m v} = \frac{v}{2}
 \end{equation}
 tuttavia questo risultato non è buono poiché sembra affermare che le onde di materia non siano capaci di "tenere il passo" rispetto alla particella...
-
 Si immagini che la particella si muova libera lungo l'asse x, e si associ a tale moto un'onda di materia. Al tempo $t=0$ si registra la sua ampiezza.
 Si associa quindi una funzione $\Psi (x,t)$.
 Consideriamo ora la velocità di gruppo di tali onde, data dalla $g=\frac{d \nu}{d k}$ con $k= \lambda^{-1}$ e si consideri quindi la generica onda.
-
 Si può trattare un gruppo di onde come una semplice somma di più onde, come in equazione \ref{eq_onde_gen}, da cui si ottiene 
 \begin{equation}
 \Psi (x, t) = 2 \cos [ 2 \pi ( \frac{dk}{2} x - \frac{d\nu}{2} t ) ] \sin [ 2\pi ( \frac{2k + dk}{2} x - \frac{2\nu + d\nu}{2} t ) ]  
 \end{equation}
-e se $ d\nu \ll 2\nu $ e $ dk \ll 2k $
+e se considero $ d\nu \ll 2\nu $ e $ dk \ll 2k $
 \begin{equation}
  \Psi (x, t) = 2 \cos [ 2 \pi ( \frac{dk}{2} x - \frac{d\nu}{2} t ) ] \sin [ 2 \pi ( k x - \nu t )] 
 \end{equation}
-
 Dunque due onde con una lieve differenza di frequenza e di lunghezza d'onda interferiscono e producono una successione di gruppi che si muovono lungo l'asse $x$.
 La velocità $W$ delle onde individuali può essere valutata considerando il secondo fattore di $\Psi (x, t)$, e la velocità $g$ di gruppo può essere trovata dal primo fattore.
 Ciò non cambia considerando più di due onde.
@@ -185,30 +189,11 @@ $$ g = \frac{d\nu}{2}\frac{2}{dk} = \frac{d\nu}{dk} $$
 & k = \frac{1}{\lambda} = \frac{p}{h} \rightarrow dk=\frac{d p}{h}
 \end{split}
 \end{equation}
-Così si ottiene la velocità di gruppo: 
+si ottiene così la velocità di gruppo: 
 \begin{equation}
-\begin{split}
-& g = \frac{d E}{d p} = \frac{m v dv}{m dv} = v \\
-& \Rightarrow g = v
-\end{split}
+g = \frac{d E}{d p} = \frac{m v dv}{m dv} = v 
+\quad\Rightarrow\quad  g = v
 \end{equation}
-Partendo dalle equazioni \ref{eq_univ} universali delle onde, dalle proprietà delle onde e dalle espressioni \ref{dualita_oc} troviamo il risultato cercato
-\begin{equation}
-\begin{split}
-& \Delta x \Delta k = \Delta x \Delta \frac{1}{\lambda} = \Delta x \Delta \frac{p}{h}  \ge \frac{1}{4\pi} \\
-& \Rightarrow \Delta x \Delta p \ge \frac{\hbar}{2} \\
-& \Delta t \Delta \nu = \Delta t \Delta \frac{E}{h} \ge \frac{1}{4\pi} \\
-& \Rightarrow \Delta t \Delta E \ge \frac{\hbar}{2}
-\end{split}
-\end{equation}
-Ovvero:
-\begin{equation}
-\begin{split}
-& \Delta p \Delta x \ge \frac{\hbar}{2} \\
-& \Delta E \Delta t \ge \frac{\hbar}{2}
-\end{split}
-\end{equation}
-
 
 
 
