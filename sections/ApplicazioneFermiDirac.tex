@@ -1,0 +1,293 @@
+%%
+%% Author: dariochinelli
+%% 2021-04-05
+%%
+
+\section{Approfondimento sulla statistica di Fermi-Dirac}
+
+\paragraph{Analisi matematica} della statistica di Fermi-Dirac
+\begin{equation}
+\frac{n_s}{g_s} = \frac{1}{e^{\alpha + \beta E_s} + 1 } 
+\end{equation}
+Applico le seguenti condizioni ai parametri di Lagrange: 
+come per tutte le statistiche viste il parametro $\beta$, legato all'energia del sistema e dipendente da $T$, vale
+\begin{equation}
+\beta = \frac{ 1}{k T }
+\end{equation}
+mentre il parametro $\alpha$, legato al numero di particelle ed anch'esso dipendente da $T$, vale
+\begin{equation}
+\alpha = - \frac{ E_F}{k T }
+\end{equation}
+in cui compare l'\textit{Energia di Fermi} $E_F(T)$, dipendente da $T$, energia alla quale $\frac{n_s}{g_s}=\frac{1}{2}$.
+Per cui la statistica di Fermi Dirac diventa
+\begin{equation}
+\frac{n_s}{g_s} = \frac{ 1}{e^{ \frac{ E_s - E_F}{k T } } + 1 }
+\end{equation}
+ed al continuo
+\begin{equation}
+\frac{n(E)}{g(E)} = \frac{ 1}{e^{ \frac{ E - E_F}{k T } } + 1 }
+\end{equation}
+
+\paragraph{Energia di Fermi} La funzione $E_F$ introdotta descrive il comportamento della distribuzione di Fermi Dirac $\frac{n_s}{g_s}$ in cui, per temperature $T\not=\SI{0}{K}$, varrà
+\begin{equation}
+\frac{n_s}{g_s} (E_F) = \frac{1}{2}
+\end{equation}
+ed in cui, per temperature $T=\SI{0}{K}$
+\begin{equation}
+\frac{n_s}{g_s} (E_F) = funzione \quad gradino
+\end{equation}
+Valutiamo ora lo studio di funzione di $\frac{ n_s}{g_s }$ al variare di $T$.
+Analizziamo tre casi significativi dell'andamento del rapporto $\frac{ n_s}{g_s }$ rispetto a diverse temperature
+In riferimento alla figura \ref{degenerazione3}:
+\begin{enumerate}[label=Caso \alph*)]
+% T = T_A
+\item La temperatura, sopra lo zero assoluto, è $T \ll T_F$ dove introduco la \textit{Temperatura di Fermi}
+\begin{equation}
+T_F = \frac{ E_F(0)}{k_B }
+\label{temp_fermi}
+\end{equation}
+la funzione si discosta dalla funzione gradino del caso c).
+L'energia termica permette lo spostamento di fermioni da stati al di sotto del Livello di Fermi $E_F(0)$ a stati oltre tale livello.
+In queste condizioni il cambiamento di popolazione interessa una regione dell'ordine $k_B T$, vedi grafico, i fermioni in livelli di energia più basso non risentono di questo innalzamento minimo di temperatura.
+% T = T_B
+\item La temperatura è più alta che nei casi a) e c), tale che $T \gg T_F$.
+La distribuzione permette ai fermioni di disporsi ad energie più alte del Livello di Fermi.
+Anche negli stati di più bassa energia il numero medio di particelle per stato diventa minore di 1.
+% T = \SI{0}{K}
+\item La temperatura è $T = \SI{0}{K}$ quindi analizzando la distribuzione
+\begin{equation}
+\begin{split}
+& E<E_F(0) \quad\Rightarrow\quad \lim_{T \to 0} \frac{n_s}{g_s} = 1 \\
+& E>E_F(0) \quad\Rightarrow\quad \lim_{T \to 0} \frac{n_s}{g_s} = 0
+\end{split}
+\end{equation}
+per cui le particelle occuperanno tutti gli stati disponibili di energia più bassa, in accordo con il Principio di esclusione di Pauli, fino ad arrivare all'energia di Fermi per $T=\SI{0}{K}$, anche detto \textit{Livello di Fermi} $= E_F(0)$.
+\end{enumerate}
+% plot dei tre casi
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.35]{/degenerazione3}
+\caption{Nel grafico vengono riportate tre distribuzioni calcolate su tre temperature, nel testo: \quad
+Caso a) funzione $f_{T_A}$
+Caso b) funzione $f_{T_B}$
+Caso c) funzione $f_{T=\SI{0}{K}}$
+}
+\label{degenerazione3}
+\end{figure}
+
+
+\subsection{Gas di elettroni}
+
+Gli elettroni sono fermioni, la loro statistica è perciò descritta dal modello di Fermi-Dirac, poiché si tratta di particelle soggette al principio di esclusione di Pauli.
+Gli \textbf{elettroni di conduzione nei metalli} sono un sistema quantistico anche a temperature \textit{normali} e non vicine allo zero assoluto, le densità tipiche di questi elettroni sono dell'ordine di $\SI{e28}{elettroni/m^3}$.
+
+Quindi consideriamo un gas di elettroni, che seguono la statistica di Fermi Dirac, poiché fermioni, e si ha che la legge di distribuzione continua è la seguente, in cui compare $g(E)$ la \textit{funzione densità degli stati} (vedi \ref{fun_den_stat})
+\begin{equation}
+n(E)dE = \frac{ g(E)}{e^{ \frac{ E - E_F}{k_B T } } + 1 }
+\quad\quad\quad\quad
+g(E) = \frac{4 \pi V (2m^3)^{ \frac{1}{2} }}{h^3} E^{ \frac{1}{2} }
+\end{equation}
+trattandosi di elettroni, che hanno $spin=1/2$, gli stati disponibili raddoppiano e moltiplico x2, ottenendo
+\begin{equation}
+\begin{split}
+n(E)dE & = 2 \cdot \frac{4 \pi V (2m^3)^{\frac{1}{2}} }{h^3} E^{\frac{1}{2}} \frac{1}{e^{\frac{E - E_F}{k_B T}} + 1} \\
+& = \frac{8 \pi V (2m^3)^{\frac{1}{2}} E^{\frac{1}{2}}}{h^3} \frac{1}{e^{\frac{E - E_F}{k_B T}} + 1}
+\label{nede_elet}
+\end{split}
+\end{equation}
+
+
+\subsubsection{Cerco l'espressione generale del Livello di Fermi}
+Calcolo il numero totale delle particelle nel sistema, integrando in $[0, \infty]$, vedi figura \ref{fig_integrali_a}
+\begin{equation}
+N = \int_0^{\infty} n(E)dE
+\end{equation}
+Se suppongo di essere alla temperatura dello \textit{zero assoluto} la temperatura è $T=\SI{0}{K}$ per cui la distribuzione è rappresentata dalla funzione a gradino ed allora ha senso calcolare l'integrale nell'intervallo $[0, E_F(0)]$ dove la distribuzione vale 1, oltre il valore $E_F(0)$ la distribuzione (il secondo fattore nella \ref{nede_elet}) vale 0.
+Per una rappresentazione grafica vedi figura \ref{fig_integrali_b}.
+Per cui equivale a calcolare il seguente integrale
+\begin{equation}
+\begin{split}
+N & = \int_0^{E_F(0)} g(E)dE \\
+& = \int_0^{E_F(0)} \frac{8 \pi V (2m^3)^{\frac{1}{2}} E^{\frac{1}{2}}}{h^3} dE \\
+& = \frac{8 \pi V (2m^3)^{\frac{1}{2}}}{h^3} \int_0^{E_F(0)} E^{\frac{1}{2}} dE \\
+& = \frac{16 \pi V (2m^3)^{\frac{1}{2}}}{3 h^3} E_F(0)^{\frac{3}{2}}
+\label{num_parti_N}
+\end{split}
+\end{equation}
+Da cui posso ricavare un'espressione per il \textit{Livello di Fermi}
+\begin{equation}
+\begin{split}
+E_F(0) & = \frac{h^2}{8m}\Bigl(  \frac{3N}{\pi V}  \Bigr)^{ \frac{2}{3} } \\
+& = \frac{h^2}{8m}\Bigl(  \frac{3}{\pi} n  \Bigr)^{ \frac{2}{3} } \\
+& = \frac{h^2}{8m}\Bigl(  \frac{3}{\pi}  \Bigr)^{ \frac{2}{3} } n^{ \frac{2}{3} }
+\end{split}
+\end{equation}
+in cui $n=\frac{N}{V}$ è una densità, infatti è definito come il numero di particelle sul volume, è importante notare che il Livello di Fermi dipende da $n^{ \frac{2}{3} }$ e quindi cresce al crescere della densità.
+
+
+\subsubsection{Calcolo dell'energia totale del sistema}
+È dato dall'integrale della funzione energia $E$ moltiplicata la distribuzione $n(E)$
+\begin{equation}
+U = \int_0^{\infty} E n(E) dE
+\end{equation}
+in cui è possibile utilizzare lo stesso ragionamento usato sopra ed integrare nell'intervallo $[0,E_F(0)]$
+\begin{equation}
+\begin{split}
+U & = \int_0^{E_F(0)} E g(E) dE = \frac{8\pi V (2m^3)^{ \frac{1}{2} }}{h^3} \int_0^{E_F(0)} E^{ \frac{3}{2} } dE \\
+& = \frac{2}{5} \frac{8\pi V (2m^3)^{ \frac{1}{2} }}{h^3} E_F(0)^{ \frac{5}{2} } = \frac{3}{5} N E_F(0) \\
+& = \frac{3}{5} N \frac{h^2}{8m}\Bigl(  \frac{3}{\pi}  \Bigr)^{ \frac{2}{3} } n^{ \frac{2}{3} }
+\end{split}
+\end{equation}
+dove l'ultimo passaggio è possibile considerando il risultato ottenuto nella \ref{num_parti_N} per $N$. \\
+L'\textbf{energia media per particella} è data da
+\begin{equation}
+\frac{U}{N} = \frac{3}{5} E_F(0)
+\end{equation}
+Questo risultato è importante in quanto ci dice che anche alla temperatura dello zero assoluto, quindi a $T = \SI{0}{K}$ l'energia media è diversa da zero, cosa che non succede classicamente in cui l'energia media è $U = n K T$ per cui a $T=\SI{0}{K}$ sarebbe nulla.
+
+\paragraph{Pressione di Pauli} Per la termodinamica: la pressione che un gas esercita sulla parete è pari a
+\begin{equation}
+P = \frac{2}{3} \frac{U}{V}
+\end{equation}
+che per un gas di elettroni diventa
+\begin{equation}
+P = \frac{2}{3} \frac{U}{V} = \frac{2}{3V} \frac{3}{5} N E_F(0) = \frac{2}{5} n E_F(0) 
+\end{equation}
+detta \textit{Pressione di Pauli}.
+Anche allo zero assoluto esiste una pressione \textit{residua} del sistema.
+
+\begin{figure}[h]
+    \centering
+    \subfloat[In \textit{verde}: l'integrale ad una temperatura $T$ generica]{
+        \label{fig_integrali_a}
+        \includegraphics[ width=0.5\textwidth]{/integrale_1}
+    }
+    \subfloat[In \textit{blu}: l'integrale alla temperatura $T=\SI{0}{K}$]{
+        \label{fig_integrali_b}
+        \includegraphics[ width=0.5\textwidth]{/integrale_2}
+    }
+    \caption{Gli integrali di questo capitolo vengono eseguiti a temperatura fissata $T=\SI{0}{K}$ per semplificare i conti, ciò è lecito poiché le due aree, \textit{verde} e \textit{blu} delle figure sopra, sono equivalenti.}
+    \label{fig_integrali}
+\end{figure}
+
+
+\subsubsection{Calcolo della temperatura di Fermi $T_F$}
+Nella teoria di Fermi Dirac, avendo fissato $\alpha$, ricavo il valore di $\xi$
+\begin{equation}
+\begin{split}
+\alpha & = - \frac{E_F}{k_B T} \\
+\xi & = e^{ -\alpha } = e^{ \frac{E_F}{k_B T} }
+\end{split}
+\end{equation}
+se la temperatura è allo zero assoluto il parametro di degenerazione tende ad infinito per cui \textbf{il gas è totalmente degenere}
+\begin{equation}
+T=\SI{0}{K} \quad\Rightarrow\quad \xi \to + \infty
+\end{equation}
+le particelle sono "ammassate" nei livelli di più bassa energia, fino al Livello di Fermi.
+Il gas rimane degenere fino a quando
+\begin{equation}
+k_B T \ll E_F(0) \quad\Rightarrow\quad T \ll T_F
+\end{equation}
+dove ribadiamo la Temperatura di Fermi \ref{temp_fermi}
+$$T_F= \frac{E_F(0)}{k_B}$$
+ovvero, per tali condizioni, si ha che l'Energia di Fermi $E_F$ coincide con il Livello di Fermi $E_F(0)$
+\begin{equation}
+\xi = e^{ \frac{E_F}{k_B T} } \simeq e^{ \frac{E_F(0)}{k_B T} } \gg 1
+\end{equation}
+Il gas non è degenere se
+\begin{equation}
+k_B T \gg E_F(0) \quad\Rightarrow\quad T \gg T_F
+\end{equation}
+
+\paragraph{Stima di $T_F$}
+Supponiamo un metallo in cui ogni atomo fornisce un elettrone alla banda di conduzione, quindi un metallo con \textit{valenza} 1 (numero di elettroni fornito da ogni atomo).
+La distanza tra gli elettroni sia circa
+\begin{equation}
+d \simeq \SI{0.1}{n m} = \SI{1}{\AA}
+\end{equation}
+la densità
+\begin{equation}
+n = \frac{1}{d^3}
+\end{equation}
+stimiamo la Temperatura di Fermi
+\begin{equation}
+T_F = \frac{E_F(0)}{k_B} = \frac{h^2}{8k_B m} \Bigl(  \frac{3}{\pi}  \Bigr)^{ \frac{2}{3} } n^{ \frac{2}{3} }
+\end{equation}
+considero che 
+\begin{equation}
+n^{ \frac{2}{3} } = \Bigl(  \frac{1}{d^3}  \Bigr)^{ \frac{2}{3} } = d^{ -2 }
+\end{equation}
+allora la Temperatura di Fermi risulta
+\begin{equation}
+\begin{split}
+T_F & = \frac{E_F(0)}{k_B} = \frac{h^2}{8k_B m} \Bigl(  \frac{3}{\pi}  \Bigr)^{ \frac{2}{3} } d^{ -2 } \\
+& = \Bigl(\frac{3}{\pi}\Bigr)^{\frac{2}{3}}\frac{6.6^2}{8 \cdot 1.38 \cdot 9.1 \cdot 1} 
+\cdot \frac{10^{-68}}{10^{-23}10^{-31}10^{-20}} \frac{\SI{}{J^2.s^2}}{\SI{}{\frac{J}{K}.Kg.m^2}} \\
+& = \SI{4.20e5}{K}
+\end{split}
+\end{equation}
+La temperatura di Fermi stabilisce il confine che separa il regime in cui vale la statistica classica $(T>T_F)$ da quello in cui vale la statistica quantistica $(T<T_F)$, quindi per un gas di elettroni a temperature \textit{ordinarie} sono sempre in un regime degenere.
+
+
+\subsubsection{Calore specifico elettronico}
+Si definisce \textbf{calore specifico molare} il calore necessario per innalzare di un grado la temperatura di una mole di una sostanza
+\begin{equation}
+c_V = \frac{dU}{dT}
+\end{equation}
+l'energia totale è 
+\begin{equation}
+U = \frac{3}{2}N k_B T
+\end{equation}
+quindi classicamente otterrei
+\begin{equation}
+c_V =  \frac{dU}{dT} = \frac{3}{2} N k_B
+\end{equation}
+
+Cerco il calore specifico di un gas di elettroni a volume costante, quindi non essendo banale calcolarlo, applico una approssimazione: ipotizzo di essere ad una temperatura diversa dallo zero assoluto ma di poco più alta per cui vale la relazione
+$$k_B T \ll E_F(0)$$
+allora la differenza tra questo caso ed il caso allo zero assoluto differisce di una frazione delle $N$ particelle (elettroni) data da 
+\begin{equation}
+N \Bigl(  \frac{k_B T}{E_F(0)}  \Bigr)
+\end{equation}
+che aumenta la sua energia di un ordine di $k_BT$.
+Per cui c'è un aumento totale dell'energia del sistema di
+\begin{equation}
+\Delta U \simeq N \Bigl(  \frac{k_B T}{E_F(0)}  \Bigr) \cdot k_B T
+\end{equation}
+dove compare il numero delle particelle moltiplicato l'energia. \\
+Allora il calore specifico è dato da
+\begin{equation}
+c_V =  \frac{dU}{dT} \simeq N k_B \Bigl(  \frac{T}{T_F}  \Bigr)
+\end{equation}
+Con un calcolo più preciso si trova la seguente relazione, che differisce solo di un fattore numerico
+\begin{equation}
+c_V = \frac{\pi^2}{2} N k_B \Bigl(  \frac{T}{T_F}  \Bigr)
+\end{equation}
+da cui si vede che solo al di sopra della temperatura di Fermi si trova il risultato classico.
+
+\paragraph{Buca di potenziale}
+La descrizione di pareti di potenziale infinite non è realistica, ciò che si ha è che gli elettroni possono uscire da una buca di potenziale, a patto che si possa fornirgli energia sufficiente.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.8]{/buca_poten_calspec}
+\caption{Buca di potenziale di un metallo}
+\end{figure}
+
+Questo spiega l'\textbf{effetto termoionico}: è un fenomeno per cui un metallo riscaldato ad una temperatura sufficientemente alta inizia ad emettere elettroni presenti sulla sua superficie. 
+A $T \not= \SI{0}{K} $ gli elettroni cominciano ad occupare gli strati più elevati e ad uscire dalla buca di potenziale.
+Per i metalli, la funzione lavoro ed il livello di Fermi sono dell'ordine degli $\SI{}{eV}$.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1]{/metalli_energia_estrazione_livello_Fermi}
+\caption{Funzione lavoro e livello di Fermi di alcuni metalli}
+\end{figure}
+
+
+
+
+
+
+
+
